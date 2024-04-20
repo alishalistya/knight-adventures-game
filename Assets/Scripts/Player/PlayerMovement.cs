@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     Rigidbody playerRigidbody;
     int floorMask;
+    Animator anim;                      // Reference to the animator component.
     float camRayLength = 100f;
     bool isGrounded = true;
 
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
+        anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
     }
     void Start()
@@ -23,11 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
 
-        MovePlayer(h, v);
-        Turning();
+
+        MoveAndTurn();
         Animating();
     }
 
@@ -37,18 +39,19 @@ public class PlayerMovement : MonoBehaviour
         movement = movement.normalized * speed * Time.deltaTime;
         playerRigidbody.MovePosition(transform.position + movement);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isGrounded)
-            {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * 5f, ForceMode.Impulse);
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     if (isGrounded)
+        //     {
+        //         GetComponent<Rigidbody>().AddForce(Vector3.up * 5f, ForceMode.Impulse);
+        //     }
+        // }
 
     }
 
-    void Turning()
+    void MoveAndTurn()
     {
+        float v = Input.GetAxisRaw("Vertical");
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit floorHit;
@@ -57,6 +60,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 playerToMouse = floorHit.point - transform.position;
             playerToMouse.y = 0f;
+            movement = playerToMouse.normalized * Math.Abs(v) * speed * Time.deltaTime;
+            // if v is negative, move backwards
+            if (v < 0)
+            {
+                movement = -movement;
+            }
+            playerRigidbody.MovePosition(transform.position + movement);
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             playerRigidbody.MoveRotation(newRotation);
@@ -66,7 +76,12 @@ public class PlayerMovement : MonoBehaviour
     void Animating()
     {
         bool walking = movement.magnitude > 0;
-        // anim.SetBool("IsWalking", walking);
+        // check if walking backwards
+        Vector3 copyMovement = movement;
+        copyMovement.y = 0;
+        bool walkingBackwards = walking && Vector3.Dot(copyMovement, transform.forward) < 0;
+        anim.SetBool("IsWalkingBackward", walkingBackwards);
+        anim.SetBool("IsWalking", walking && !walkingBackwards);
     }
 
     private void OnCollisionEnter(Collision collision)
