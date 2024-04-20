@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    [SerializeField] GameObject target;
-    [SerializeField] Vector3 offset;
-    [SerializeField] Vector3 rotation;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Transform target;
+    [SerializeField] float smoothing = 5f;
+
+    Vector3 offset;
+
+    private void Start()
     {
-        transform.position = target.transform.position + offset;
-        transform.rotation = Quaternion.Euler(rotation);
+        offset = transform.position - target.position;
     }
 
-    void LateUpdate()
+    private void FixedUpdate()
     {
-        transform.position = target.transform.position + offset;
-        transform.rotation = Quaternion.Euler(rotation);
+        Vector3 targetCamPos = target.position + offset;
+
+        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
     }
 }
