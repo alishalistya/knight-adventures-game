@@ -4,11 +4,21 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+enum MovementState
+{
+    Idle,
+    Walking,
+    Running,
+    Jumping
+}
+
 public class PlayerMovement : MonoBehaviour
 {
-    float moveSpeed = 6f;
+    float moveSpeed = 10f;
+    float runningSpeed = 20f;
     [HideInInspector] public Vector3 dir;
     float hzInput, vInput;
+    bool isWalking = false;
 
     [SerializeField] float groundYOffset;
     [SerializeField] LayerMask groundMask;
@@ -23,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
+        anim.SetInteger("MovementState", (int)MovementState.Idle);
     }
     void Start()
     {
@@ -31,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         GetDirectionAndMove();
-        isGrounded();
+        CheckJump();
         Animating();
     }
 
@@ -39,21 +50,52 @@ public class PlayerMovement : MonoBehaviour
     {
         vInput = Input.GetAxisRaw("Vertical");
         hzInput = Input.GetAxisRaw("Horizontal");
+        isWalking = Input.GetKey(KeyCode.LeftShift);
+
         dir = transform.forward * vInput + transform.right * hzInput;
         dir.Normalize();
-        dir = moveSpeed * Time.deltaTime * dir.normalized;
-        rb.MovePosition(transform.position + dir);
+        dir = (isWalking ? moveSpeed : runningSpeed) * dir.normalized;
+        rb.MovePosition(transform.position + dir * Time.deltaTime);
     }
 
-    bool isGrounded()
+    void CheckJump()
     {
-        return true;
+        Debug.Log(rb.velocity.y);
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+        }
+    }
+
+    bool IsGrounded()
+    {
+        // rb.velocity.y near 0
+        return rb.velocity.y < 0.01f && rb.velocity.y > -0.01f;
     }
 
 
     void Animating()
     {
-        bool walking = dir.magnitude > 0;
-        anim.SetBool("IsWalking", walking);
+        bool isMoving = dir.magnitude > 0;
+        if (!IsGrounded())
+        {
+            anim.SetInteger("MovementState", (int)MovementState.Jumping);
+            return;
+        }
+
+        if (!isMoving || !IsGrounded())
+        {
+            anim.SetInteger("MovementState", (int)MovementState.Idle);
+            return;
+        }
+        if (isWalking)
+        {
+            anim.SetInteger("MovementState", (int)MovementState.Walking);
+        }
+        else
+        {
+            anim.SetInteger("MovementState", (int)MovementState.Running);
+        }
     }
 }
+
