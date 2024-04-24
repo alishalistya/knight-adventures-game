@@ -27,13 +27,13 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider boxCollider;
     [SerializeField] Transform camFollowPos;
 
-    Animator anim;
+    public Animator Anim;
     void Awake()
     {
-        anim = GetComponent<Animator>();
+        Anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        anim.SetInteger("MovementState", (int)MovementState.Idle);
+        Anim.SetInteger("MovementState", (int)MovementState.Idle);
     }
     void Start()
     {
@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        Debug.Log(rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
@@ -79,22 +78,22 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = dir.magnitude > 0;
         if (!IsGrounded())
         {
-            anim.SetInteger("MovementState", (int)MovementState.Jumping);
+            Anim.SetInteger("MovementState", (int)MovementState.Jumping);
             return;
         }
 
         if (!isMoving || !IsGrounded())
         {
-            anim.SetInteger("MovementState", (int)MovementState.Idle);
+            Anim.SetInteger("MovementState", (int)MovementState.Idle);
             return;
         }
         if (isWalking)
         {
-            anim.SetInteger("MovementState", (int)MovementState.Walking);
+            Anim.SetInteger("MovementState", (int)MovementState.Walking);
         }
         else
         {
-            anim.SetInteger("MovementState", (int)MovementState.Running);
+            Anim.SetInteger("MovementState", (int)MovementState.Running);
         }
     }
 }
