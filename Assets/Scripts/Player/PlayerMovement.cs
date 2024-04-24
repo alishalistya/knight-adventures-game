@@ -6,97 +6,54 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6f;
-    Vector3 movement;
-    Rigidbody playerRigidbody;
-    int floorMask;
-    Animator anim;                      // Reference to the animator component.
-    float camRayLength = 100f;
-    bool isGrounded = true;
+    float moveSpeed = 6f;
+    [HideInInspector] public Vector3 dir;
+    float hzInput, vInput;
 
+    [SerializeField] float groundYOffset;
+    [SerializeField] LayerMask groundMask;
+    Vector3 spherePos;
+    Rigidbody rb;
+    BoxCollider boxCollider;
+    [SerializeField] Transform camFollowPos;
+
+    Animator anim;
     void Awake()
     {
-        floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
-        playerRigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        boxCollider = GetComponent<BoxCollider>();
     }
     void Start()
     {
-
     }
 
-    void FixedUpdate()
+    void Update()
     {
-
-
-        MoveAndTurn();
+        GetDirectionAndMove();
+        isGrounded();
         Animating();
     }
 
-    void MovePlayer(float h, float v)
+    void GetDirectionAndMove()
     {
-        movement.Set(h, 0f, v);
-        movement = movement.normalized * speed * Time.deltaTime;
-        playerRigidbody.MovePosition(transform.position + movement);
-
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     if (isGrounded)
-        //     {
-        //         GetComponent<Rigidbody>().AddForce(Vector3.up * 5f, ForceMode.Impulse);
-        //     }
-        // }
-
+        vInput = Input.GetAxisRaw("Vertical");
+        hzInput = Input.GetAxisRaw("Horizontal");
+        dir = transform.forward * vInput + transform.right * hzInput;
+        dir.Normalize();
+        dir = moveSpeed * Time.deltaTime * dir.normalized;
+        rb.MovePosition(transform.position + dir);
     }
 
-    void MoveAndTurn()
+    bool isGrounded()
     {
-        float v = Input.GetAxisRaw("Vertical");
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit floorHit;
-
-        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
-        {
-            Vector3 playerToMouse = floorHit.point - transform.position;
-            playerToMouse.y = 0f;
-            movement = playerToMouse.normalized * Math.Abs(v) * speed * Time.deltaTime;
-            // if v is negative, move backwards
-            if (v < 0)
-            {
-                movement = -movement;
-            }
-            playerRigidbody.MovePosition(transform.position + movement);
-
-            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            playerRigidbody.MoveRotation(newRotation);
-        }
+        return true;
     }
+
 
     void Animating()
     {
-        bool walking = movement.magnitude > 0;
-        // check if walking backwards
-        Vector3 copyMovement = movement;
-        copyMovement.y = 0;
-        bool walkingBackwards = walking && Vector3.Dot(copyMovement, transform.forward) < 0;
-        anim.SetBool("IsWalkingBackward", walkingBackwards);
-        anim.SetBool("IsWalking", walking && !walkingBackwards);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGrounded = false;
-        }
+        bool walking = dir.magnitude > 0;
+        anim.SetBool("IsWalking", walking);
     }
 }
