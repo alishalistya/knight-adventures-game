@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,32 +8,11 @@ enum KerocoMovementState
     Running = 1
 }
 
-public class KerocoMovement : MonoBehaviour
+public class KerocoMovement : MobMovement
 {
-    public Animator Anim;
-
-    protected Transform player;
-    protected NavMeshAgent nav;
-
-    void Awake()
+    protected void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        nav = GetComponent<NavMeshAgent>();
-        Anim = GetComponent<Animator>();
-    }
-
-    void Update()
-    {
-        nav.SetDestination(player.position);
-        Animating();
-    }
-
-    void Animating()
-    {
-        /* todo animation follow agent
-         * match speed with agent speed
-         * https://docs.unity3d.com/Packages/com.unity.ai.navigation@2.0/manual/MixingComponents.html
-         */
-        Anim.SetInteger("MovementState", (int)KerocoMovementState.Running);
+        base.Awake();
+        runningStateNumber = (int)KerocoMovementState.Running;
     }
 }

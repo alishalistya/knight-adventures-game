@@ -2488,6 +2488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f69f723787471ad499fa72f1c264d164, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: f69f723787471ad499fa72f1c264d164, type: 3}
       propertyPath: m_Controller
       value: 
@@ -2619,6 +2623,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   camFollowPos: {fileID: 9009395803429779995}
+  Anim: {fileID: 0}
 --- !u!114 &4831041938350060376
 MonoBehaviour:
   m_ObjectHideFlags: 0
