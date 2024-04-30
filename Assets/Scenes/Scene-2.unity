@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05400797, g: 0.07360754, b: 0.13267839, a: 1}
+  m_IndirectSpecularColor: {r: 0.053989045, g: 0.0735779, b: 0.1326285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6988144}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fences
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -399,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27757447}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CryptFences
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 74248803}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Candle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,6 +951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mountain_B_grass (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4935a273e8c64f8cbe3430c24227dd9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1023,6 +1031,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1109,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_orange_medium
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2897e2dd4006467c89cb805ea624aee, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1170,6 +1186,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1332,7 +1352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116488797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Candle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,6 +1583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1588,7 +1612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 133224045}
   - component: {fileID: 133224046}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,6 +1895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1950,6 +1978,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2031,6 +2063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mountain_B_grass_trees
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c710fe60a4c9e427884214115e752134, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2087,6 +2123,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2168,6 +2208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_gate_closed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d79d64d0859e4ae18eb057ad213b973, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2246,6 +2290,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2372,6 +2420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2467,6 +2519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffinA_bottom
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70a7ecc7ee9a94eef801c67a59d5f9ea, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2491,7 +2547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212029694}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2646,6 +2702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grave_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 69de4a5c8bf3b48cfb34dcd4225efc6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2732,7 +2792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 232389604}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2955,6 +3015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_yellow_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8677cf56f54a4af0b10d8784fc3dd55, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2974,7 +3038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243505807}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3195,6 +3259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3214,7 +3282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 264044062}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3439,6 +3507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treeC_graveyard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7a43ee29634f4de6ba2c5f763d4ed49, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3512,6 +3584,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3590,6 +3666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grave_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 69de4a5c8bf3b48cfb34dcd4225efc6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3609,7 +3689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289505173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3694,6 +3774,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6d456d2fbda204eeda5986ac3cb65b46, type: 3}
       propertyPath: m_Name
       value: tree_dead_large
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d456d2fbda204eeda5986ac3cb65b46, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3869,6 +3953,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plaque_candles (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 006bec3c76ac04130b6e05752f4968d5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4007,6 +4095,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4b770812a17bc4d779663638110c2f0a, type: 3}
       propertyPath: m_Name
       value: grave_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b770812a17bc4d779663638110c2f0a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4283,6 +4375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4297,7 +4393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 376787579}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4383,6 +4479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffinB_top
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6a3c4a21e82742d19f473e88fc17178, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4461,6 +4561,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4935a273e8c64f8cbe3430c24227dd9, type: 3}
       propertyPath: m_Name
       value: mountain_B_grass (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4935a273e8c64f8cbe3430c24227dd9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4609,6 +4713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4682,6 +4790,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4955,6 +5067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4972,7 +5088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 449549225}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5009,7 +5125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450922388}
   - component: {fileID: 450922387}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5108,7 +5224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455980399}
   - component: {fileID: 455980400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5399,6 +5515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5481,6 +5601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate_broken (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d956830a02f4d59a3c970df681303a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5555,6 +5679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: detail_graveyard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b917cf38907d42838a674458f69753a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5569,7 +5697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507728835}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gravestones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5841,7 +5969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 530006526}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5952,6 +6080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: arch
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97b989fac2ffd450890e2e129fe8b49a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6025,6 +6157,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6180,6 +6316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fencePost
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 708f7ca9ffdd240d29562092b6e60199, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6270,7 +6410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552994734}
   - component: {fileID: 552994735}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6566,6 +6706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: detail_graveyard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b917cf38907d42838a674458f69753a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6713,6 +6857,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 006bec3c76ac04130b6e05752f4968d5, type: 3}
       propertyPath: m_Name
       value: plaque_candles
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 006bec3c76ac04130b6e05752f4968d5, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6951,7 +7099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592896956}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7272,7 +7420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622726616}
   - component: {fileID: 622726617}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7425,6 +7573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pumpkin_orange
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d2a93deaabca4599b5aecbe82ef57f6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7564,6 +7716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7632,6 +7788,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4935a273e8c64f8cbe3430c24227dd9, type: 3}
       propertyPath: m_Name
       value: mountain_B_grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4935a273e8c64f8cbe3430c24227dd9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7734,6 +7894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7812,6 +7976,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8139,6 +8307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8164,7 +8336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 671931809}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8260,7 +8432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 694369648}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8399,7 +8571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 704437114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8430,7 +8602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706183917}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8592,7 +8764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 719661667}
   - component: {fileID: 719661668}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8740,6 +8912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -8822,6 +8998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8892,6 +9072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8917,7 +9101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744448902}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9077,6 +9261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pumpkin_orange (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d2a93deaabca4599b5aecbe82ef57f6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9150,6 +9338,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c07a15d2d2cd740d9a21f238a7b08a48, type: 3}
       propertyPath: m_Name
       value: wall_straight (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c07a15d2d2cd740d9a21f238a7b08a48, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9293,6 +9485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_dead_large_decorated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb5b82c8fffb74d1c8f234fd18e56651, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9312,7 +9508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759585525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9409,7 +9605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 764587096}
   - component: {fileID: 764587097}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9507,7 +9703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766956849}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9736,6 +9932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: detail_graveyard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b917cf38907d42838a674458f69753a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9814,6 +10014,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dd59d31bb843c4cbc98d2231fe2f8478, type: 3}
       propertyPath: m_Name
       value: treeA_graveyard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd59d31bb843c4cbc98d2231fe2f8478, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9962,11 +10166,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6206430951374841446, guid: 1312c0b35574bde4283b7afaa66e98b8, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1544571054}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1312c0b35574bde4283b7afaa66e98b8, type: 3}
+--- !u!4 &792042366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5365541681090631422, guid: 1312c0b35574bde4283b7afaa66e98b8, type: 3}
+  m_PrefabInstance: {fileID: 792042365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &794186740
 GameObject:
   m_ObjectHideFlags: 0
@@ -9976,7 +10189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794186741}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10061,6 +10274,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ac091ce6ce2194b8dba72a37bd2c9376, type: 3}
       propertyPath: m_Name
       value: gravestone 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac091ce6ce2194b8dba72a37bd2c9376, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10176,7 +10393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 822428680}
   - component: {fileID: 822428681}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10275,7 +10492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 828955826}
   - component: {fileID: 828955827}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10498,6 +10715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mountain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d737fb94d39e1462bb78bcc68c4ed9ee, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10650,6 +10871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_yellow_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ed07cec8a134149b8d1294439e5ecd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10719,6 +10944,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10823,6 +11052,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dd92669dea8fc4a74a7a774cc37409e9, type: 3}
       propertyPath: m_Name
       value: plaque
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd92669dea8fc4a74a7a774cc37409e9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11033,6 +11266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -11104,6 +11341,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd876dae7e9c54c41ab189b10ffb37cb, type: 3}
       propertyPath: m_Name
       value: fence_broken
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd876dae7e9c54c41ab189b10ffb37cb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11263,6 +11504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: candleLarge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 580b9fe3d8b8f4d81bd3124fe6c1fc6b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11341,6 +11586,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11709,6 +11958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravestone
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e721c52f378045588a7aaff76974359, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11782,6 +12035,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11910,7 +12167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 968264371}
   - component: {fileID: 968264372}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12056,6 +12313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12105,7 +12366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975235327}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Candle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12192,6 +12453,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 41153ce27311a4316b8e8cce13233ad2, type: 3}
       propertyPath: m_Name
       value: mountain_C_grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41153ce27311a4316b8e8cce13233ad2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12366,98 +12631,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
   m_PrefabInstance: {fileID: 264662066}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1000871362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1000871365}
-  - component: {fileID: 1000871364}
-  - component: {fileID: 1000871363}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1000871363
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000871362}
-  m_Enabled: 1
---- !u!20 &1000871364
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000871362}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1000871365
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000871362}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003699560 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
@@ -12581,7 +12754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1022615539}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12737,6 +12910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12810,6 +12987,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d737fb94d39e1462bb78bcc68c4ed9ee, type: 3}
       propertyPath: m_Name
       value: mountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d737fb94d39e1462bb78bcc68c4ed9ee, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12963,6 +13144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: candleLarge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 580b9fe3d8b8f4d81bd3124fe6c1fc6b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12987,7 +13172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1056036725}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13078,6 +13263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13152,6 +13341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -13170,7 +13363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081005476}
   - component: {fileID: 1081005477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13263,7 +13456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081378339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Candle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13551,6 +13744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_yellow_large (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ed07cec8a134149b8d1294439e5ecd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13634,6 +13831,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d772af85a2fa42069944c59311948ef, type: 3}
       propertyPath: m_Name
       value: fenceSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d772af85a2fa42069944c59311948ef, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13839,6 +14040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravestone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e721c52f378045588a7aaff76974359, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13967,6 +14172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14033,7 +14242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147779623}
   - component: {fileID: 1147779622}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NatureBarrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14376,6 +14585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grave_A_destroyed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 712d1e21e6cf84cf3b9a293ee3753417, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14525,7 +14738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157888368}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14676,6 +14889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14747,6 +14964,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14894,6 +15115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14913,7 +15138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1183172690}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15024,6 +15249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15098,6 +15327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mountain_B_grass (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4935a273e8c64f8cbe3430c24227dd9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -15115,7 +15348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1195853895}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15280,7 +15513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205309333}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15385,7 +15618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206803395}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15612,7 +15845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1216458525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15823,6 +16056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15934,6 +16171,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aeeba35297e654acfb0dc479b3e194a8, type: 3}
       propertyPath: m_Name
       value: tree_pine_yellow_medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aeeba35297e654acfb0dc479b3e194a8, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16214,7 +16455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1264517428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CryptArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16310,6 +16551,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 01d956830a02f4d59a3c970df681303a, type: 3}
       propertyPath: m_Name
       value: fence_seperate_broken (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d956830a02f4d59a3c970df681303a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16455,6 +16700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -16514,6 +16763,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16589,7 +16842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300459258}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16651,7 +16904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306142304}
   - component: {fileID: 1306142305}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16804,6 +17057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16866,6 +17123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_yellow_medium (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aeeba35297e654acfb0dc479b3e194a8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16895,7 +17156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342311321}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16976,6 +17237,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17076,6 +17341,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffin
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0811462824644954aa646807616b2a6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795726869945489556, guid: f0811462824644954aa646807616b2a6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17141,6 +17414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: candleLarge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 580b9fe3d8b8f4d81bd3124fe6c1fc6b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17160,7 +17437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358484211}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17245,6 +17522,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 613ecbc9d077f48248b6322be65c536b, type: 3}
       propertyPath: m_Name
       value: crypt
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 613ecbc9d077f48248b6322be65c536b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17398,6 +17679,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17598,6 +17883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17696,6 +17985,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
       propertyPath: m_Name
       value: fence_seperate (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17843,6 +18136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_orange_medium (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2897e2dd4006467c89cb805ea624aee, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17922,6 +18219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_broken (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd876dae7e9c54c41ab189b10ffb37cb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17995,6 +18296,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
       propertyPath: m_Name
       value: fence (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18150,7 +18455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410540293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GraveTrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18325,6 +18630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate_broken
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d956830a02f4d59a3c970df681303a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18404,6 +18713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -18426,7 +18739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447898256}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18591,6 +18904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravemarker_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82842dc00a3674713a2bfc73ab1e46fb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18645,7 +18962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475034154}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18730,6 +19047,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18874,6 +19195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fencePost (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 708f7ca9ffdd240d29562092b6e60199, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18948,6 +19273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -18970,7 +19299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489582162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19001,7 +19330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1495340329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19088,6 +19417,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
       propertyPath: m_Name
       value: fence_seperate (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19216,6 +19549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_yellow_small (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8677cf56f54a4af0b10d8784fc3dd55, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19236,7 +19573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506239532}
   - component: {fileID: 1506239533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19410,6 +19747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravemarker_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8839faf1760b1432e9a8d1e4a56d6871, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19429,7 +19770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1508730552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19655,6 +19996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grave_B (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b770812a17bc4d779663638110c2f0a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19744,7 +20089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1538811591}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19835,6 +20180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19845,6 +20194,124 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
   m_PrefabInstance: {fileID: 1539807758}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1544571053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1544571054}
+  - component: {fileID: 1544571056}
+  - component: {fileID: 1544571055}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1544571054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544571053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.17824745, y: 0, z: 0, w: 0.9839857}
+  m_LocalPosition: {x: 0, y: 5, z: -12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1544571055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544571053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!20 &1544571056
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544571053}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
+  orthographic: 0
+  orthographic size: 10
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!4 &1544912022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
@@ -19913,6 +20380,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20047,6 +20518,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20250,6 +20725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pathCobbled
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 287afd170a35746b59ecf7e0fbcc6069, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20323,6 +20802,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f9228983ab7e46c6b8d7765708fcd82, type: 3}
       propertyPath: m_Name
       value: fenceCorner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f9228983ab7e46c6b8d7765708fcd82, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20403,6 +20886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20460,6 +20947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20504,7 +20995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582641830}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20595,6 +21086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravestone 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac091ce6ce2194b8dba72a37bd2c9376, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20669,6 +21164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fenceSingle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d772af85a2fa42069944c59311948ef, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20730,6 +21229,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20897,6 +21400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fenceSingle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d772af85a2fa42069944c59311948ef, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20958,6 +21465,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21063,6 +21574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravemarker_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8839faf1760b1432e9a8d1e4a56d6871, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21152,7 +21667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1663258102}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CryptTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21373,7 +21888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741945855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21522,6 +22037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate_broken (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d956830a02f4d59a3c970df681303a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21595,6 +22114,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
       propertyPath: m_Name
       value: fence_seperate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21749,6 +22272,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
       propertyPath: m_Name
       value: fence (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ab89735e9f81422896d892575d7b429, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21946,6 +22473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21971,7 +22502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785313428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22044,6 +22575,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22144,6 +22679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22233,7 +22772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798395320}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22481,6 +23020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -22541,6 +23084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lantern_hanging
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c28e9031dd3a54447813d1fccbbd08b4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22556,7 +23103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812117282}
   - component: {fileID: 1812117283}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22719,6 +23266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -22849,6 +23400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileLarge_graveyard (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22958,7 +23513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1831030442}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23013,7 +23568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839582070}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23103,6 +23658,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d737fb94d39e1462bb78bcc68c4ed9ee, type: 3}
       propertyPath: m_Name
       value: mountain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d737fb94d39e1462bb78bcc68c4ed9ee, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23228,6 +23787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: candleLarge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 580b9fe3d8b8f4d81bd3124fe6c1fc6b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23249,7 +23812,7 @@ GameObject:
   - component: {fileID: 1877001001}
   - component: {fileID: 1877001000}
   - component: {fileID: 1877000999}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23456,6 +24019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gravestone 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac091ce6ce2194b8dba72a37bd2c9376, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23522,6 +24089,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2cb8b3ae49fc346939f6363ef652c730, type: 3}
       propertyPath: m_Name
       value: tree_pine_orange_large (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2cb8b3ae49fc346939f6363ef652c730, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23766,6 +24337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: detail_graveyard (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b917cf38907d42838a674458f69753a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23850,7 +24425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959080597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23995,6 +24570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -24055,6 +24634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_yellow_small (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8677cf56f54a4af0b10d8784fc3dd55, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24079,7 +24662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978376344}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24164,6 +24747,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
       propertyPath: m_Name
       value: fence_seperate (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24373,6 +24960,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24633,6 +25224,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2cb8b3ae49fc346939f6363ef652c730, type: 3}
       propertyPath: m_Name
       value: tree_pine_orange_large
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2cb8b3ae49fc346939f6363ef652c730, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24916,6 +25511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_seperate (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24989,6 +25588,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
       propertyPath: m_Name
       value: Lantern 01 Blender 2_79
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 637436c72799e4de08955b4a3de087b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25209,6 +25812,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trees_A_large (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -25280,6 +25887,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
       propertyPath: m_Name
       value: trees_A_large (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b514546cc44db46859b0ebc5fa29cd10, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25418,6 +26029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pathCobbled (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 287afd170a35746b59ecf7e0fbcc6069, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25551,7 +26166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2085991941}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25726,7 +26341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2113144508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25856,6 +26471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_pine_orange_large (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2cb8b3ae49fc346939f6363ef652c730, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25929,6 +26548,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
       propertyPath: m_Name
       value: fence_seperate (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9117bffd39cd1420692089070ea38eed, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26123,6 +26746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fenceSingle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d772af85a2fa42069944c59311948ef, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26184,6 +26811,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
       propertyPath: m_Name
       value: tileLarge_graveyard (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cd323f14f263497eabe54cbd58986ad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26350,12 +26981,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b132843865c74a02a7705f4dcf09622, type: 3}
+--- !u!1001 &3086488859483461432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3318894297071311536, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 792042366}
+    - target: {fileID: 3318894297071311536, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 792042366}
+    - target: {fileID: 6281725811369552821, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_Name
+      value: Third Person Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000018988336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000030850345
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 3086488859483461432}
+  - {fileID: 1544571054}
   - {fileID: 517452284}
-  - {fileID: 1000871365}
   - {fileID: 514410832}
   - {fileID: 1877001001}
   - {fileID: 1415872192}

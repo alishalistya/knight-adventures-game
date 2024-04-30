@@ -22,17 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float groundYOffset;
     [SerializeField] LayerMask groundMask;
-    Vector3 spherePos;
     Rigidbody rb;
-    BoxCollider boxCollider;
-    [SerializeField] Transform camFollowPos;
+    [SerializeField] Transform cam;
 
-    public Animator Anim;
+    float turnSmoothVelocity;
+    float turnSmoothTime = 0.1f;
+
+    [SerializeField] public Animator Anim;
     void Awake()
     {
-        Anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        boxCollider = GetComponent<BoxCollider>();
         Anim.SetInteger("MovementState", (int)MovementState.Idle);
     }
     void Start()
@@ -52,10 +51,23 @@ public class PlayerMovement : MonoBehaviour
         hzInput = Input.GetAxisRaw("Horizontal");
         isWalking = Input.GetKey(KeyCode.LeftShift);
 
-        dir = transform.forward * vInput + transform.right * hzInput;
+        dir = new Vector3(hzInput, 0f, vInput);
         dir.Normalize();
-        dir = (isWalking ? moveSpeed : runningSpeed) * dir.normalized;
-        rb.MovePosition(transform.position + dir * Time.deltaTime);
+
+        if (dir.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * (isWalking ? moveSpeed : runningSpeed);
+            rb.MovePosition(transform.position + dir * Time.deltaTime);
+        }
+        else
+        {
+            dir = Vector3.zero;
+        }
     }
 
     void CheckJump()
