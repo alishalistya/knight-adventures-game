@@ -4,22 +4,31 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-enum MovementState
+public enum MovementState
 {
     Idle,
-    Walking,
     Running,
     Jumping
 }
 
 public class PlayerMovement : MonoBehaviour
 {
-    float moveSpeed = 10f;
-    float runningSpeed = 20f;
+    MovementState _movementState;
+    public MovementState MovementState
+    {
+        get { return _movementState; }
+        set
+        {
+            _movementState = value;
+            Anim.SetInteger("MovementState", (int)_movementState);
+        }
+    }
+
+    float moveSpeed = 20f;
     [HideInInspector] public Vector3 dir;
     float hzInput, vInput;
-    bool isWalking = false;
 
+    public bool disableMove = false;
     [SerializeField] float groundYOffset;
     [SerializeField] LayerMask groundMask;
     Rigidbody rb;
@@ -29,10 +38,11 @@ public class PlayerMovement : MonoBehaviour
     float turnSmoothTime = 0.1f;
 
     [SerializeField] public Animator Anim;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Anim.SetInteger("MovementState", (int)MovementState.Idle);
+        MovementState = MovementState.Idle;
     }
     void Start()
     {
@@ -49,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
     {
         vInput = Input.GetAxisRaw("Vertical");
         hzInput = Input.GetAxisRaw("Horizontal");
-        isWalking = Input.GetKey(KeyCode.LeftShift);
 
         dir = new Vector3(hzInput, 0f, vInput);
         dir.Normalize();
@@ -61,8 +70,11 @@ public class PlayerMovement : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * (isWalking ? moveSpeed : runningSpeed);
-            rb.MovePosition(transform.position + dir * Time.deltaTime);
+            if (!disableMove)
+            {
+                dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * moveSpeed;
+                rb.MovePosition(transform.position + dir * Time.deltaTime);
+            }
         }
         else
         {
@@ -90,23 +102,17 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = dir.magnitude > 0;
         if (!IsGrounded())
         {
-            Anim.SetInteger("MovementState", (int)MovementState.Jumping);
+            MovementState = MovementState.Jumping;
             return;
         }
 
         if (!isMoving || !IsGrounded())
         {
-            Anim.SetInteger("MovementState", (int)MovementState.Idle);
+            MovementState = MovementState.Idle;
             return;
         }
-        if (isWalking)
-        {
-            Anim.SetInteger("MovementState", (int)MovementState.Walking);
-        }
-        else
-        {
-            Anim.SetInteger("MovementState", (int)MovementState.Running);
-        }
+
+        MovementState = MovementState.Running;
     }
 }
 

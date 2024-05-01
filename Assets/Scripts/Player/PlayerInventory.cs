@@ -7,8 +7,8 @@ public class PlayerInventory
 {
     GameObject handslot;
     BaseWeapon[] weapons;
-
     BaseWeapon _currentWeapon;
+
     float lastWeaponChangeTime = 0;
     public BaseWeapon CurrentWeapon
     {
