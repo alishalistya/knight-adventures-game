@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] MeleeWeapon meleeWeapon;
     [SerializeField] RangedWeapon thirdWeapon;
 
-    readonly float baseAttackSecond = 1f / 1.5f;
+    readonly float baseAttackSecond = 1.1f / 1.5f;
 
     float _attackSpeed = 1;
     float AttackSpeed
@@ -46,22 +46,16 @@ public class Player : MonoBehaviour
 
     PlayerInventory inventory;
 
-    private void Awake()
-    {
-        inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-
+        inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateIsAttacking();
-        inventory.Update();
+        inventory?.Update();
 
         // get mouse is down not currently clicked
         if (Input.GetMouseButton(0))
@@ -80,7 +74,7 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        if (IsAttacking)
+        if (IsAttacking || movement.MovementState == MovementState.Jumping)
         {
             return;
         }

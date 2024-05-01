@@ -75,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
                 dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * moveSpeed;
                 rb.MovePosition(transform.position + dir * Time.deltaTime);
             }
+            else
+            {
+                dir = Vector3.zero;
+            }
         }
         else
         {
