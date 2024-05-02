@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
     [SerializeField] PlayerMovement movement;
     [SerializeField] GameObject handslot;
@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
 
     PlayerInventory inventory;
 
+    protected override int MaxHealth => 100;
+    protected override int InitialHealth => 100;
+
     void Start()
     {
         inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
@@ -81,5 +84,16 @@ public class Player : MonoBehaviour
         IsAttacking = true;
         BaseWeapon weapon = inventory.CurrentWeapon;
         weapon.AnimateAttack(movement.Anim);
+    }
+    
+    protected override void OnDeath()
+    {
+        movement.enabled = false;
+        movement.Anim.SetTrigger("Death");
+    }
+
+    protected override void OnDamaged(int prevHealth, int currentHealth)
+    {
+        // insert code for play sound effect, update ui here
     }
 }
