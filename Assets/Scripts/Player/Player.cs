@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,6 +52,7 @@ public class Player : Entity
 
     void Start()
     {
+        base.Start();
         inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
     }
 
@@ -95,5 +97,6 @@ public class Player : Entity
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
         // insert code for play sound effect, update ui here
+        // print($"Damaged, current health {currentHealth}");
     }
 }

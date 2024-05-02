@@ -17,7 +17,7 @@ public abstract class Entity: MonoBehaviour
 
     public bool IsDead => Health.IsDead; 
 
-    private void Start()
+    protected void Start()
     {
         Health = new EntityHealth(MaxHealth, InitialHealth);
         Health.CurrentHealth.Observe((prevHealth, currentHealth) =>

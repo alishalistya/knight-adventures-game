@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class Mob : MonoBehaviour
+public abstract class Mob : Entity
 {
     [SerializeField] protected MobMovement movement;
     
     protected bool playerInRange;
-    protected float timeBetweenAttacks = 0.5f;
-    protected int attackDamage = 10;
     protected float attackTimer = 0f;
 
-    protected abstract string GetAttackAnimationMovement();
+    protected abstract string AttackAnimationMovement { get; }
+    protected abstract float TimeBetweenAttack { get; }
+    protected abstract int AttackDamage { get; }
     
     protected void OnTriggerEnter(Collider other)
     {
@@ -38,7 +38,7 @@ public abstract class Mob : MonoBehaviour
         attackTimer += Time.deltaTime;
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if(attackTimer >= timeBetweenAttacks && playerInRange)
+        if(attackTimer >= TimeBetweenAttack && playerInRange && !movement.playerEntity.IsDead)
         {
             // ... attack.
             Attack ();
@@ -50,13 +50,8 @@ public abstract class Mob : MonoBehaviour
         // Reset the timer.
         attackTimer = 0f;
         
-        movement.Anim.Play(GetAttackAnimationMovement());
-
-        // // If the player has health to lose...
-        // if(playerHealth.currentHealth > 0)
-        // {
-        //     // ... damage the player.
-        //     playerHealth.TakeDamage (attackDamage);
-        // }
+        movement.Anim.Play(AttackAnimationMovement);
+        // ... damage the player.
+        movement.playerEntity.TakeDamage(AttackDamage);
     }
 }

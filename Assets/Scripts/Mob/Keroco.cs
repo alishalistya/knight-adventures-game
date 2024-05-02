@@ -2,16 +2,28 @@ using UnityEngine;
 
 public class Keroco : Mob
 {
-    protected override string GetAttackAnimationMovement()
-    {
-        return "AttackMovement";
-    }
+    protected override string AttackAnimationMovement => "AttackMovement";
+
+    protected override int MaxHealth => 50;
+    protected override int InitialHealth => 50;
     
+    protected override int AttackDamage => 10;
+
+    protected override float TimeBetweenAttack => 0.5f;
+
+    protected override void OnDamaged(int prevHealth, int currentHealth)
+    {
+        // todo
+    }
+
+    protected override void OnDeath()
+    {
+        //
+    }
+
+
     void Update()
     {
-        if (playerInRange)
-        {
-            movement.Anim.Play("AttackMovement");
-        }
+        base.Update();
     }
 }
