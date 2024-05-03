@@ -25,7 +25,7 @@ public abstract class MobMeele : Mob
         attackTimer += Time.deltaTime;
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if(attackTimer >= TimeBetweenAttack && playerInRange && !movement.playerEntity.IsDead)
+        if(attackTimer >= TimeBetweenAttack && PlayerInRange && !movement.playerEntity.IsDead)
         {
             // ... attack.
             Attack ();
@@ -49,13 +49,13 @@ public abstract class MobMeele : Mob
         // Akbar
         
         // in the middle of a hit
-        Task.Delay(300).ContinueWith(t =>
+        Task.Delay(100).ContinueWith(t =>
         {
             weapon.IsActive = true;
         });
         
         // after hit
-        Task.Delay(650).ContinueWith(t =>
+        Task.Delay(500).ContinueWith(t =>
         {
             weapon.IsActive = false;
         });

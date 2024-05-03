@@ -17,6 +17,26 @@ public abstract class MobMovement : MonoBehaviour
 
     protected MobMovementState state = MobMovementState.Idle;
 
+    private bool _useDefaultRotation = true;
+
+    public bool UseDefaultRotation
+    {
+        get => _useDefaultRotation;
+        set
+        {
+            if (value)
+            {
+                nav.angularSpeed = 120;
+            }
+            else
+            {
+                nav.angularSpeed = 0;
+            }
+
+            _useDefaultRotation = value;
+        }
+    }
+
     protected void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,7 +50,19 @@ public abstract class MobMovement : MonoBehaviour
         if (!playerEntity.IsDead)
         {
             state = MobMovementState.Running;
-            nav.SetDestination(player.transform.position);
+
+            var destination = player.transform.position;
+            
+            if (!UseDefaultRotation)
+            {
+                Vector3 dir = destination - transform.position;
+                dir.y = 0; //This allows the object to only rotate on its y axis
+            
+                var rotation = Quaternion.LookRotation(dir);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
+            }
+            
+            nav.SetDestination(destination);
         }
         else
         {

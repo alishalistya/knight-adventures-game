@@ -5,7 +5,17 @@ public abstract class Mob : Entity
 {
     [SerializeField] protected MobMovement movement;
     
-    protected bool playerInRange;
+    protected bool _playerInRange;
+
+    protected bool PlayerInRange
+    {
+        get => _playerInRange;
+        set
+        {
+            movement.UseDefaultRotation = !value;
+            _playerInRange = value;
+        }
+    }
 
     protected abstract float TimeBetweenAttack { get; }
     protected abstract int AttackDamage { get; }
@@ -16,7 +26,7 @@ public abstract class Mob : Entity
         if (other.gameObject == movement.player)
         {
             // ... the player is in range.
-            playerInRange = true;
+            PlayerInRange = true;
         }
     }
 
@@ -26,7 +36,7 @@ public abstract class Mob : Entity
         if (other.gameObject == movement.player)
         {
             // ... the player is no longer in range.
-            playerInRange = false;
+            PlayerInRange = false;
         }
     }
     
