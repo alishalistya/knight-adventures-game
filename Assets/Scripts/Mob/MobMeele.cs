@@ -25,7 +25,7 @@ public abstract class MobMeele : Mob
         attackTimer += Time.deltaTime;
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if(attackTimer >= TimeBetweenAttack && PlayerInRange && !movement.playerEntity.IsDead)
+        if(attackTimer >= TimeBetweenAttack && PlayerInRange && !movement.playerEntity.IsDead && !IsDead)
         {
             // ... attack.
             Attack ();

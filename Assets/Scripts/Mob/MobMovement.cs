@@ -18,6 +18,12 @@ public abstract class MobMovement : MonoBehaviour
     protected MobMovementState state = MobMovementState.Idle;
 
     private bool _useDefaultRotation = true;
+    
+    private float _preciseUpdateOffset = 5f;
+
+    private float _lastUpdate = 0f;
+
+    private float _lastUpdateOffset = 1f;
 
     public bool UseDefaultRotation
     {
@@ -52,17 +58,40 @@ public abstract class MobMovement : MonoBehaviour
             state = MobMovementState.Running;
 
             var destination = player.transform.position;
+            Vector3 dir = destination - transform.position;
+
+            _lastUpdate += Time.deltaTime;
+
+            if (dir.magnitude > _preciseUpdateOffset && _lastUpdate <= _lastUpdateOffset)
+            {
+                Animating();
+                return;
+            }
             
             if (!UseDefaultRotation)
             {
-                Vector3 dir = destination - transform.position;
-                dir.y = 0; //This allows the object to only rotate on its y axis
+                
+                dir.y = 0; // This allows the object to only rotate on its y axis
             
                 var rotation = Quaternion.LookRotation(dir);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
             }
             
-            nav.SetDestination(destination);
+            _lastUpdate = 0f;
+
+            // movement depend on range
+            if (dir.magnitude < _preciseUpdateOffset)
+            {
+                // use normal navigation
+                nav.SetDestination(destination);
+            }
+            else
+            {
+                // add some randomness
+                var random = RandomNavSphere(transform.position, 10, -1);
+                var avg = (random + destination) / 2;
+                nav.SetDestination(avg);
+            }
         }
         else
         {
@@ -70,6 +99,19 @@ public abstract class MobMovement : MonoBehaviour
         }
         
         Animating();
+    }
+    
+    protected Vector3 RandomNavSphere(Vector3 origin, float dist,int layermask)
+    {
+        var randDirection = Random.insideUnitSphere * dist;
+   
+        randDirection += origin;
+
+        NavMeshHit navhit;
+   
+        NavMesh.SamplePosition(randDirection, out navhit, dist, layermask);
+   
+        return navhit.position;
     }
 
     protected void Animating()
