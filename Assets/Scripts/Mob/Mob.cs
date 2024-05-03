@@ -29,4 +29,12 @@ public abstract class Mob : Entity
             playerInRange = false;
         }
     }
+    
+    protected override void OnDeath()
+    {
+        movement.nav.enabled = false;
+        movement.enabled = false;
+        movement.Anim.SetTrigger("Death");
+        Destroy(gameObject, 2f);
+    }
 }

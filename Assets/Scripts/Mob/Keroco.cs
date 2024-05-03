@@ -13,11 +13,6 @@ public class Keroco : MobMeele
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
-        // todo
-    }
-
-    protected override void OnDeath()
-    {
-        //
+        
     }
 }

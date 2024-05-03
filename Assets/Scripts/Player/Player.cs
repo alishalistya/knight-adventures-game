@@ -39,6 +39,10 @@ public class Player : Entity
             {
                 lastAttackTime = Time.time;
             }
+            else
+            {
+                inventory.CurrentWeapon.IsActive = false;
+            }
             _isAttacking = value; movement.disableMove = value;
         }
     }

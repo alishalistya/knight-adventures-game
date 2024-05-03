@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -23,18 +24,6 @@ public abstract class MobMeele : Mob
         // Add the time since Update was last called to the timer.
         attackTimer += Time.deltaTime;
 
-        // we delay the hit after some time for sword because we don't want to register hit immediately 
-        // at the beginning of the animation
-        // instead, we want the sword to hit in the middle of animation
-        // this could be improved with better way, but let's just settle with this for now
-        // ttd.
-        // Akbar
-        if (attackTimer >= hitDelay && !hitActivated && weapon is not null)
-        {
-            weapon.IsActive = true;
-            hitActivated = true;
-        }
-
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if(attackTimer >= TimeBetweenAttack && playerInRange && !movement.playerEntity.IsDead)
         {
@@ -51,5 +40,24 @@ public abstract class MobMeele : Mob
         hitActivated = false;
         
         movement.Anim.Play(AttackAnimationMovement);
+        
+        // we delay the hit after some time for sword because we don't want to register hit immediately 
+        // at the beginning of the animation
+        // instead, we want the sword to hit in the middle of animation
+        // this could be improved with better way, but let's just settle with this for now
+        // ttd.
+        // Akbar
+        
+        // in the middle of a hit
+        Task.Delay(300).ContinueWith(t =>
+        {
+            weapon.IsActive = true;
+        });
+        
+        // after hit
+        Task.Delay(650).ContinueWith(t =>
+        {
+            weapon.IsActive = false;
+        });
     }
 }

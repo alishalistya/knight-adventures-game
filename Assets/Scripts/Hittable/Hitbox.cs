@@ -45,11 +45,11 @@ public class Hitbox: MonoBehaviour
         {
             return;
         }
-        
+
         _triggered.ForEach(trigger =>
         {
             var instanceId = trigger.GetInstanceID();
-            if (!damageable.IsHitRegistered(instanceId))
+            if (!damageable.IsHitRegistered(instanceId) && !trigger.entiy.IsDead)
             {
                 damageable.RegisterHit(instanceId);
                 var damage = (int)(entity.DamageMultiplier * damageable.Damage);
