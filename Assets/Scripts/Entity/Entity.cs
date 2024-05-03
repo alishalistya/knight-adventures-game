@@ -15,7 +15,11 @@ public abstract class Entity: MonoBehaviour
 
     protected EntityHealth Health;
 
-    public bool IsDead => Health.IsDead; 
+    public bool IsDead => Health.IsDead;
+
+    protected float _damageMultiplier = 1f;
+
+    public float DamageMultiplier => _damageMultiplier;
 
     protected void Start()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Keroco : Mob
+public class Keroco : MobMeele
 {
     protected override string AttackAnimationMovement => "AttackMovement";
 
@@ -9,7 +9,7 @@ public class Keroco : Mob
     
     protected override int AttackDamage => 10;
 
-    protected override float TimeBetweenAttack => 0.5f;
+    protected override float TimeBetweenAttack => 2f;
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
@@ -19,11 +19,5 @@ public class Keroco : Mob
     protected override void OnDeath()
     {
         //
-    }
-
-
-    void Update()
-    {
-        base.Update();
     }
 }

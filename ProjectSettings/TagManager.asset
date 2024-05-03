@@ -14,10 +14,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Hittable
-  - 
-  - 
-  - 
+  - HitboxPlayer
+  - HitboxEnemy
+  - HurtboxPlayer
+  - HurtboxEnemy
   - 
   - 
   - 

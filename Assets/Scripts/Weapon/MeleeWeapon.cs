@@ -8,4 +8,6 @@ public class MeleeWeapon : BaseWeapon
   {
     playerAnim.Play("AttackMelee", 0);
   }
+
+  public override int Damage => 20;
 }

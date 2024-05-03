@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-abstract public class BaseWeapon : MonoBehaviour
+public abstract class BaseWeapon : Damageable
 {
   public abstract void AnimateAttack(Animator playerAnim);
 }

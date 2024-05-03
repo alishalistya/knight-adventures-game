@@ -8,4 +8,6 @@ public class RangedWeapon : BaseWeapon
     {
         playerAnim.Play("AttackRanged");
     }
+    
+    public override int Damage => 0;
 }
