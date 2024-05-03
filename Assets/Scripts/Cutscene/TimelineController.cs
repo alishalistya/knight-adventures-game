@@ -19,7 +19,7 @@ public class TimelineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(director.state != PlayState.Playing)
         {
             director.Stop();
             cutscene.SetActive(false);
