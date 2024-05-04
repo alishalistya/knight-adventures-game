@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Entity
+public class Player : Entity, IShopCustomer
 {
     [SerializeField] PlayerMovement movement;
     [SerializeField] GameObject handslot;
@@ -102,5 +102,10 @@ public class Player : Entity
     {
         // insert code for play sound effect, update ui here
         // print($"Damaged, current health {currentHealth}");
+    }
+
+    public void BuyItem(ShopItem.ShopItemType item)
+    {
+        ShopItem.BuyItem(item);
     }
 }
