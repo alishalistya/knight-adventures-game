@@ -45796,21 +45796,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: StartAttack
+    functionName: OnStartAttackAnim
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.53333336
-    functionName: StartProjectile
+    functionName: OnStartAttackTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.0666667
-    functionName: EndAttack
+    functionName: OnEndAttackAnim
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
