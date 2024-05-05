@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour
         get;
     }
 
-    protected EntityHealth Health;
+    public EntityHealth Health;
 
     public bool IsDead => Health.IsDead;
 

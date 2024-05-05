@@ -79,6 +79,7 @@ public class Player : Entity, IShopCustomer
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
+        PlayerStatsEvents.PlayerStatsChanged(this);
         // insert code for play sound effect, update ui here
         // print($"Damaged, current health {currentHealth}");
     }
