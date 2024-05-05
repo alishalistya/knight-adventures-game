@@ -11,7 +11,7 @@ public class TimelineController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        director = GetComponent<PlayableDirector>();
+        director = GetComponentInChildren<PlayableDirector>();
         cutscene = GameObject.Find("Opening Cutscene");
         
     }
