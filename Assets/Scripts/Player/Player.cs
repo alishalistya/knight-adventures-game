@@ -11,73 +11,51 @@ public class Player : Entity, IShopCustomer
     [SerializeField] MeleeWeapon meleeWeapon;
     [SerializeField] RangedWeapon thirdWeapon;
 
-    readonly float baseAttackSecond = 1.1f / 1.5f;
-
     float _attackSpeed = 1;
     float AttackSpeed
     {
         get { return _attackSpeed; }
         set
         {
-
             _attackSpeed = value; movement.Anim.SetFloat("AttackSpeed", value);
         }
     }
 
-    float AttackTime
-    {
-        get { return baseAttackSecond / AttackSpeed; }
-    }
-
     bool _isAttacking = false;
-    bool IsAttacking
+    override protected bool IsAttacking
     {
         get { return _isAttacking; }
         set
         {
-            if (value)
+            if (!value)
             {
-                lastAttackTime = Time.time;
-            }
-            else
-            {
-                inventory.CurrentWeapon.IsActive = false;
+                Inventory.CurrentWeapon.IsActive = false;
             }
             _isAttacking = value; movement.disableMove = value;
+            Inventory.IsChangeEnabled = !value;
         }
     }
 
-    float lastAttackTime;
-
-    PlayerInventory inventory;
+    public PlayerInventory Inventory;
 
     protected override int MaxHealth => 100;
     protected override int InitialHealth => 100;
 
-    void Start()
+    new void Start()
     {
         base.Start();
-        inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
+        Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateIsAttacking();
-        inventory?.Update();
+        Inventory?.Update();
 
         // get mouse is down not currently clicked
         if (Input.GetMouseButton(0))
         {
             Attack();
-        }
-    }
-
-    void UpdateIsAttacking()
-    {
-        if (IsAttacking && Time.time - lastAttackTime > AttackTime)
-        {
-            IsAttacking = false;
         }
     }
 
@@ -87,11 +65,10 @@ public class Player : Entity, IShopCustomer
         {
             return;
         }
-        IsAttacking = true;
-        BaseWeapon weapon = inventory.CurrentWeapon;
+        BaseWeapon weapon = Inventory.CurrentWeapon;
         weapon.AnimateAttack(movement.Anim);
     }
-    
+
     protected override void OnDeath()
     {
         movement.enabled = false;

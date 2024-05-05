@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class Entity: MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
     protected abstract int MaxHealth
     {
         get;
     }
-    
+
     protected abstract int InitialHealth
     {
         get;
@@ -20,6 +20,7 @@ public abstract class Entity: MonoBehaviour
     protected float _damageMultiplier = 1f;
 
     public float DamageMultiplier => _damageMultiplier;
+    protected abstract bool IsAttacking { get; set; }
 
     protected void Start()
     {
@@ -27,7 +28,7 @@ public abstract class Entity: MonoBehaviour
         Health.CurrentHealth.Observe((prevHealth, currentHealth) =>
         {
             OnDamaged(prevHealth, currentHealth);
-            
+
             if (Health.IsDead)
             {
                 OnDeath();
@@ -48,4 +49,14 @@ public abstract class Entity: MonoBehaviour
     protected abstract void OnDeath();
 
     protected abstract void OnDamaged(int prevHealth, int currentHealth);
+
+    public virtual void OnStartAttackAnim()
+    {
+        IsAttacking = true;
+    }
+
+    public virtual void OnEndAttackAnim()
+    {
+        IsAttacking = false;
+    }
 }

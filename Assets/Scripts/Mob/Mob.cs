@@ -4,8 +4,9 @@ using UnityEngine.AI;
 public abstract class Mob : Entity
 {
     [SerializeField] protected MobMovement movement;
-    
+
     protected bool _playerInRange;
+    override protected bool IsAttacking { get; set; }
 
     protected bool PlayerInRange
     {
@@ -19,7 +20,7 @@ public abstract class Mob : Entity
 
     protected abstract float TimeBetweenAttack { get; }
     protected abstract int AttackDamage { get; }
-    
+
     protected void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
@@ -39,7 +40,7 @@ public abstract class Mob : Entity
             PlayerInRange = false;
         }
     }
-    
+
     protected override void OnDeath()
     {
         movement.nav.enabled = false;

@@ -4,4 +4,10 @@ using UnityEngine;
 
 public class Crossbow : RangedWeapon
 {
+  public override int Damage => 10;
+
+  public override void StartProjectile(Entity entity)
+  {
+
+  }
 }

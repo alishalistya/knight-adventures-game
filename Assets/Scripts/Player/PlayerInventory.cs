@@ -9,6 +9,8 @@ public class PlayerInventory
     BaseWeapon[] weapons;
     BaseWeapon _currentWeapon;
 
+    public bool IsChangeEnabled { get; set; } = true;
+
     float lastWeaponChangeTime = 0;
     public BaseWeapon CurrentWeapon
     {
@@ -50,6 +52,10 @@ public class PlayerInventory
 
     void CheckWeaponChange()
     {
+        if (!IsChangeEnabled)
+        {
+            return;
+        }
         if (Time.time - lastWeaponChangeTime < 0.1f)
         {
             return;
