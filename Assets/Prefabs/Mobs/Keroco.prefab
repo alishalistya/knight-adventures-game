@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e8ff715664f299d048d6e872f24e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entiy: {fileID: 7157641168490546133}
+  entity: {fileID: 7157641168490546133}
 --- !u!1001 &4511902362261148026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1134,7 +1134,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &3636063494600704296
 CapsuleCollider:
   m_ObjectHideFlags: 0

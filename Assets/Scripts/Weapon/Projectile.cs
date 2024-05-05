@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,9 @@ public class Projectile : Damageable
     void Start()
     {
         startPosition = transform.position;
-        gameObject.GetComponentInChildren<Hitbox>().damageable = this;
+        Hitbox hitbox = gameObject.GetComponentInChildren<Hitbox>();
+        hitbox.damageable = this;
+        hitbox.OnHitEvent += OnHit;
     }
 
     void Update()
@@ -32,5 +35,10 @@ public class Projectile : Damageable
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnHit(Hurtbox hurtbox)
+    {
+        Destroy(gameObject);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Hurtbox: MonoBehaviour
+public class Hurtbox : MonoBehaviour
 {
-    [SerializeField] public Entity entiy;
+    [SerializeField] public Entity entity;
 }

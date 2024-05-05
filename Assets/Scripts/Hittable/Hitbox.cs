@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hitbox: MonoBehaviour
+public class Hitbox : MonoBehaviour
 {
     [SerializeField] public Entity entity;
 
     [SerializeField] public Damageable damageable;
+    public delegate void OnHit(Hurtbox hurtbox);
+    public event OnHit OnHitEvent;
 
     private readonly List<Hurtbox> _triggered = new List<Hurtbox>();
 
     private void OnTriggerEnter(Collider other)
     {
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
-        
+
         if (hurtbox == null || !damageable.IsActive)
         {
             return;
         }
-        
+
         _triggered.Add(hurtbox);
 
         PerformDamage();
@@ -32,7 +34,7 @@ public class Hitbox: MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
-        
+
         if (hurtbox is not null)
         {
             _triggered.Remove(hurtbox);
@@ -49,11 +51,12 @@ public class Hitbox: MonoBehaviour
         _triggered.ForEach(trigger =>
         {
             var instanceId = trigger.GetInstanceID();
-            if (!damageable.IsHitRegistered(instanceId) && !trigger.entiy.IsDead)
+            if (!damageable.IsHitRegistered(instanceId) && !trigger.entity.IsDead)
             {
                 damageable.RegisterHit(instanceId);
                 var damage = (int)(entity.DamageMultiplier * damageable.Damage);
-                trigger.entiy.TakeDamage(damage);
+                trigger.entity.TakeDamage(damage);
+                OnHitEvent?.Invoke(trigger);
                 print($"Giving damage {damage}");
             }
         });
