@@ -18,6 +18,7 @@ public class Hitbox : MonoBehaviour
 
         if (hurtbox == null || !damageable.IsActive)
         {
+            OnHitEvent?.Invoke(hurtbox);
             return;
         }
 
