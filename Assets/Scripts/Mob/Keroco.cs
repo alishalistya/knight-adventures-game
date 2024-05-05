@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Keroco : MobMeele
 {
+    public override int ID => 0;
     protected override string AttackAnimationMovement => "AttackMovement";
 
     protected override int MaxHealth => 50;

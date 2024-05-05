@@ -1,4 +1,4 @@
-﻿%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &3627326834686007629
 GameObject:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e8ff715664f299d048d6e872f24e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entiy: {fileID: 6474289748913653619}
+  entity: {fileID: 0}
 --- !u!1001 &6978111080182916024
 PrefabInstance:
   m_ObjectHideFlags: 0

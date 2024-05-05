@@ -51,7 +51,6 @@ public class UI_Shop : MonoBehaviour
         Hide();
     }
 
-    // Update is called once per frame
     public void Show(IShopCustomer shopCustomer)
     {
         if (!isShopOpen) return;

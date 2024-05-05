@@ -1,5 +1,6 @@
 ﻿public class SuperKeroco: MobRanged
 {
+    public override int ID => 1;
     protected override string AttackAnimationMovement => "AttackMovement";
     
     protected override int MaxHealth => 75;

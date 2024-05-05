@@ -17,8 +17,9 @@ public class ShopTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
-        timerText.text = "";
+        startShopTimer();
+        // gameObject.SetActive(false);
+        // timerText.text = "";
     }
 
     public void startShopTimer()
