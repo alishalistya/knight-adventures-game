@@ -28,7 +28,6 @@ public abstract class Mob : Entity
     }
 
     protected abstract float TimeBetweenAttack { get; }
-    protected abstract int AttackDamage { get; }
 
     protected void OnTriggerEnter(Collider other)
     {

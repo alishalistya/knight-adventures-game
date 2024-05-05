@@ -25,6 +25,8 @@ public abstract class MobMovement : MonoBehaviour
 
     private float _lastUpdateOffset = 1f;
 
+    protected bool AlwaysPreciseMovement => false;
+
     public bool UseDefaultRotation
     {
         get => _useDefaultRotation;
@@ -53,16 +55,16 @@ public abstract class MobMovement : MonoBehaviour
 
     protected void Update()
     {
-        if (!playerEntity.IsDead)
+        var destination = player.transform.position;
+        Vector3 distance = destination - transform.position;
+        
+        if (!playerEntity.IsDead && distance.magnitude > nav.stoppingDistance)
         {
             state = MobMovementState.Running;
 
-            var destination = player.transform.position;
-            Vector3 dir = destination - transform.position;
-
             _lastUpdate += Time.deltaTime;
 
-            if (dir.magnitude > _preciseUpdateOffset && _lastUpdate <= _lastUpdateOffset)
+            if (distance.magnitude > _preciseUpdateOffset && _lastUpdate <= _lastUpdateOffset && !AlwaysPreciseMovement)
             {
                 Animating();
                 return;
@@ -71,16 +73,16 @@ public abstract class MobMovement : MonoBehaviour
             if (!UseDefaultRotation)
             {
                 
-                dir.y = 0; // This allows the object to only rotate on its y axis
+                distance.y = 0; // This allows the object to only rotate on its y axis
             
-                var rotation = Quaternion.LookRotation(dir);
+                var rotation = Quaternion.LookRotation(distance);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
             }
             
             _lastUpdate = 0f;
 
             // movement depend on range
-            if (dir.magnitude < _preciseUpdateOffset)
+            if (AlwaysPreciseMovement || distance.magnitude < _preciseUpdateOffset)
             {
                 // use normal navigation
                 nav.SetDestination(destination);
@@ -95,6 +97,10 @@ public abstract class MobMovement : MonoBehaviour
         }
         else
         {
+            distance.y = 0; // This allows the object to only rotate on its y axis
+            
+            var rotation = Quaternion.LookRotation(distance);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
             state = MobMovementState.Idle;
         }
         

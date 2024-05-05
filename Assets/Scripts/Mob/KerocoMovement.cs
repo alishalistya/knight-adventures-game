@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class KerocoMovement : MobMovement
 {
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
     }

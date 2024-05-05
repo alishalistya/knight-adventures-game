@@ -10,7 +10,7 @@ public abstract class MobMeele : Mob, IWeaponAnimationHandler
 
     protected abstract string AttackAnimationMovement { get; }
 
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
         // we just assume that mob only have one weapon
@@ -28,7 +28,6 @@ public abstract class MobMeele : Mob, IWeaponAnimationHandler
 
     void Attack()
     {
-
         movement.Anim.Play(AttackAnimationMovement);
     }
 
