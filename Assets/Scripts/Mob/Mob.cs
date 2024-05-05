@@ -1,12 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class Mob : Entity
 {
     [SerializeField] protected MobMovement movement;
+    [SerializeField] protected AudioClip audioAwake;
+    [SerializeField] protected AudioClip audioDeath;
+    [SerializeField] protected AudioSource audioSource;
 
     protected bool _playerInRange;
     override protected bool IsAttacking { get; set; }
+
+    protected void Awake()
+    {
+        audioSource.PlayOneShot(audioAwake);
+    }
 
     protected bool PlayerInRange
     {
@@ -46,6 +55,7 @@ public abstract class Mob : Entity
         movement.nav.enabled = false;
         movement.enabled = false;
         movement.Anim.SetTrigger("Death");
+        audioSource.PlayOneShot(audioDeath);
         Destroy(gameObject, 2f);
     }
 }

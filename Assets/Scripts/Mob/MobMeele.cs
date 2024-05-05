@@ -12,6 +12,7 @@ public abstract class MobMeele : Mob, IWeaponAnimationHandler
 
     protected void Awake()
     {
+        base.Awake();
         // we just assume that mob only have one weapon
         weapon = GetComponentInChildren<Damageable>();
     }
