@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Projectile : Damageable
+{
+    [SerializeField] private float speed = 10f;
+    [SerializeField] int damage = 10;
+    [SerializeField] float maxDistance = 200f;
+    public Entity Entity
+    {
+        set =>
+        // get hitbox child
+        gameObject.GetComponentInChildren<Hitbox>().entity = value;
+    }
+    public Vector3 direction;
+    public Vector3 startPosition;
+
+    public override int Damage => damage;
+
+    void Start()
+    {
+        startPosition = transform.position;
+        gameObject.GetComponentInChildren<Hitbox>().damageable = this;
+    }
+
+    void Update()
+    {
+        transform.position += speed * Time.deltaTime * direction;
+
+        if (Vector3.Distance(startPosition, transform.position) > maxDistance)
+        {
+            Destroy(gameObject);
+        }
+    }
+}

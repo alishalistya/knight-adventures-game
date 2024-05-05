@@ -57,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
 
     void GetDirectionAndMove()
     {
+        if (disableMove)
+        {
+            return;
+        }
         vInput = Input.GetAxisRaw("Vertical");
         hzInput = Input.GetAxisRaw("Horizontal");
 
@@ -70,20 +74,25 @@ public class PlayerMovement : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            if (!disableMove)
-            {
-                dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * moveSpeed;
-                rb.MovePosition(transform.position + dir * Time.deltaTime);
-            }
-            else
-            {
-                dir = Vector3.zero;
-            }
+            // if (!disableMove)
+            // {
+            dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * moveSpeed;
+            rb.MovePosition(transform.position + dir * Time.deltaTime);
+            // }
+            // else
+            // {
+            //     dir = Vector3.zero;
+            // }
         }
         else
         {
             dir = Vector3.zero;
         }
+    }
+
+    public void TurnToCamera()
+    {
+        transform.rotation = Quaternion.Euler(0f, cam.eulerAngles.y, 0f);
     }
 
     void CheckJump()

@@ -17,7 +17,7 @@ public class Player : Entity, IShopCustomer
         get { return _attackSpeed; }
         set
         {
-            _attackSpeed = value; movement.Anim.SetFloat("AttackSpeed", value);
+            _attackSpeed = value;
         }
     }
 
@@ -65,7 +65,9 @@ public class Player : Entity, IShopCustomer
         {
             return;
         }
+        movement.TurnToCamera();
         BaseWeapon weapon = Inventory.CurrentWeapon;
+        movement.Anim.SetFloat("AttackSpeed", AttackSpeed * weapon.AttackSpeedMultiplier);
         weapon.AnimateAttack(movement.Anim);
     }
 
