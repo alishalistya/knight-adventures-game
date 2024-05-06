@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class PetAttacker: BasePetPlayer, IWeaponAnimationHandler
+public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
 {
     // private PoolableObject Prefab;
     // [SerializeField]
@@ -38,12 +38,15 @@ public class PetAttacker: BasePetPlayer, IWeaponAnimationHandler
     // }
 
     public PetPlayerAttackMovement movement;
+    protected override bool IsAttacking { get; set; }
     
     protected override int MaxHealth => 30;
     protected override int InitialHealth => 30;
     
-    protected override int AbilityEffect => 100;
-    protected override float TimeBetweenAbility => 1f;
+    // protected override int AbilityEffect => 100;
+    // protected override float TimeBetweenAbility => 1f;
+    protected int AbilityEffect => 100;
+    protected float TimeBetweenAbility => 1f;
 
     protected bool _targetInRange;
     
@@ -114,6 +117,15 @@ public class PetAttacker: BasePetPlayer, IWeaponAnimationHandler
     {
         weapon.IsActive = false;
     }
+    
+    protected override void OnDeath()
+    {
+        movement.nav.enabled = false;
+        movement.enabled = false;
+        movement.Anim.SetTrigger("Death");
+        Destroy(gameObject, 2f);
+    }
+
     
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
