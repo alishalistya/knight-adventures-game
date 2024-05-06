@@ -10,7 +10,7 @@ public class Player : Entity, IShopCustomer
     [SerializeField] RangedWeapon defaultWeapon;
     [SerializeField] MeleeWeapon meleeWeapon;
     [SerializeField] RangedWeapon thirdWeapon;
-    
+
     [SerializeField] GameObject UIGameOver;
 
     float _attackSpeed = 1;
@@ -49,14 +49,13 @@ public class Player : Entity, IShopCustomer
         Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (IsDead)
         {
             return;
         }
-        
+
         Inventory?.Update();
 
         // get mouse is down not currently clicked

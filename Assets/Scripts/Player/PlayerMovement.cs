@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    float moveSpeed = 20f;
+    float moveSpeed = 10f;
     [HideInInspector] public Vector3 dir;
     float hzInput, vInput;
 
@@ -44,14 +44,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         PlayerMovementState = PlayerMovementState.Idle;
     }
-    void Start()
+
+    private void FixedUpdate()
     {
+        GetDirectionAndMove();
     }
 
     void Update()
     {
-        GetDirectionAndMove();
-        CheckJump();
+        // CheckJump();
         Animating();
     }
 
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (disableMove)
         {
+            rb.velocity = Vector3.zero;
             return;
         }
         vInput = Input.GetAxisRaw("Vertical");
@@ -77,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             // if (!disableMove)
             // {
             dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * moveSpeed;
-            rb.MovePosition(transform.position + dir * Time.deltaTime);
+            rb.velocity = new Vector3(dir.x, rb.velocity.y, dir.z);
             // }
             // else
             // {
@@ -87,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             dir = Vector3.zero;
+            rb.velocity = Vector3.zero;
         }
     }
 
@@ -113,11 +116,11 @@ public class PlayerMovement : MonoBehaviour
     void Animating()
     {
         bool isMoving = dir.magnitude > 0;
-        if (!IsGrounded())
-        {
-            PlayerMovementState = PlayerMovementState.Jumping;
-            return;
-        }
+        // if (!IsGrounded())
+        // {
+        //     PlayerMovementState = PlayerMovementState.Jumping;
+        //     return;
+        // }
 
         if (!isMoving || !IsGrounded())
         {
