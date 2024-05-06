@@ -1021,6 +1021,7 @@ MonoBehaviour:
   audioAwake: {fileID: 8300000, guid: e4f3177064f9ebe45a14436e7fb52005, type: 3}
   audioDeath: {fileID: 8300000, guid: 4accc06cb1d449c4a98b65a1206cc649, type: 3}
   audioSource: {fileID: 2469885321981224182}
+  kerocoPrefab: {fileID: 8859620264332704695, guid: 6c0380c9f3b52e540afddbfb4c056ab0, type: 3}
 --- !u!82 &2469885321981224182
 AudioSource:
   m_ObjectHideFlags: 0

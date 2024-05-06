@@ -14,7 +14,7 @@ public abstract class MobRanged: Mob, IWeaponAnimationHandler
                 weapon = GetComponentInChildren<RangedMobWeapon>();
         }
         
-        private void FixedUpdate()
+        protected void FixedUpdate()
         {
                 if (PlayerInRange && !movement.playerEntity.IsDead && !IsDead && isReadyToAttack)
                 {
