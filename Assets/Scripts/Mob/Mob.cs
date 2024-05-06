@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.AI;
 
 public abstract class Mob : Entity
 {
@@ -11,7 +9,7 @@ public abstract class Mob : Entity
     [SerializeField] protected AudioSource audioSource;
 
     protected bool _playerInRange;
-    override protected bool IsAttacking { get; set; }
+    protected override bool IsAttacking { get; set; }
 
     protected void Awake()
     {

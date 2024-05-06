@@ -7,6 +7,8 @@ TagManager:
   - Floor
   - Ground
   - Enemy
+  - Player's Pet
+  - Mob's Pet
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - HurtboxPlayer
   - HurtboxEnemy
   - Entity
-  - 
-  - 
+  - HitBoxPet
+  - HurtboxPet
   - 
   - 
   - 

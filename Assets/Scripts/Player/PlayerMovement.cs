@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum MovementState
+public enum PlayerMovementState
 {
     Idle,
     Running,
@@ -13,14 +13,14 @@ public enum MovementState
 
 public class PlayerMovement : MonoBehaviour
 {
-    MovementState _movementState;
-    public MovementState MovementState
+    PlayerMovementState _playerMovementState;
+    public PlayerMovementState PlayerMovementState
     {
-        get { return _movementState; }
+        get { return _playerMovementState; }
         set
         {
-            _movementState = value;
-            Anim.SetInteger("MovementState", (int)_movementState);
+            _playerMovementState = value;
+            Anim.SetInteger("MovementState", (int)_playerMovementState);
         }
     }
 
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        MovementState = MovementState.Idle;
+        PlayerMovementState = PlayerMovementState.Idle;
     }
     void Start()
     {
@@ -115,17 +115,17 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = dir.magnitude > 0;
         if (!IsGrounded())
         {
-            MovementState = MovementState.Jumping;
+            PlayerMovementState = PlayerMovementState.Jumping;
             return;
         }
 
         if (!isMoving || !IsGrounded())
         {
-            MovementState = MovementState.Idle;
+            PlayerMovementState = PlayerMovementState.Idle;
             return;
         }
 
-        MovementState = MovementState.Running;
+        PlayerMovementState = PlayerMovementState.Running;
     }
 }
 

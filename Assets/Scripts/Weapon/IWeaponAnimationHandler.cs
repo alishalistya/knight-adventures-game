@@ -1,10 +1,10 @@
 public interface IWeaponAnimationHandler
 {
-  public void OnStartAttackAnim();
+    public void OnStartAttackAnim();
 
-  public void OnEndAttackAnim();
+    public void OnEndAttackAnim();
 
-  public void OnStartAttackTrigger();
+    public void OnStartAttackTrigger();
 
-  public void OnEndAttackTrigger();
+    public void OnEndAttackTrigger();
 }

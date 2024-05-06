@@ -10,7 +10,7 @@ public class Player : Entity, IShopCustomer
     [SerializeField] RangedWeapon defaultWeapon;
     [SerializeField] MeleeWeapon meleeWeapon;
     [SerializeField] RangedWeapon thirdWeapon;
-
+    
     [SerializeField] GameObject UIGameOver;
 
     float _attackSpeed = 1;
@@ -63,7 +63,7 @@ public class Player : Entity, IShopCustomer
 
     void Attack()
     {
-        if (IsAttacking || movement.MovementState == MovementState.Jumping)
+        if (IsAttacking || movement.PlayerMovementState == PlayerMovementState.Jumping)
         {
             return;
         }
