@@ -11,6 +11,8 @@ public class Player : Entity, IShopCustomer
     [SerializeField] MeleeWeapon meleeWeapon;
     [SerializeField] RangedWeapon thirdWeapon;
 
+    [SerializeField] GameObject UIGameOver;
+
     float _attackSpeed = 1;
     float AttackSpeed
     {
@@ -75,6 +77,9 @@ public class Player : Entity, IShopCustomer
     {
         movement.enabled = false;
         movement.Anim.SetTrigger("Death");
+        UIGameOver.SetActive(true);
+
+
     }
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
