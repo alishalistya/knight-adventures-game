@@ -12,13 +12,25 @@ public class Hitbox : MonoBehaviour
 
     private readonly List<Hurtbox> _triggered = new List<Hurtbox>();
 
+    private int defaultLayer;
+
+    protected void Awake()
+    {
+        defaultLayer = LayerMask.NameToLayer("Default");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject != entity.gameObject && other.gameObject.layer == defaultLayer)
+        {
+            OnHitEvent?.Invoke(null);
+            return;
+        }
+        
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
 
-        if (hurtbox == null || !damageable.IsActive)
+        if (hurtbox is null)
         {
-            OnHitEvent?.Invoke(hurtbox);
             return;
         }
 

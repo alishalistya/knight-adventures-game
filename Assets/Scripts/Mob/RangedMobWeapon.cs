@@ -1,4 +1,11 @@
-﻿public class RangedMobWeapon: Damageable
+﻿using UnityEngine;
+
+public abstract class RangedMobWeapon: Damageable
 {
-    public override int Damage => 10;
+    [SerializeField] protected GameObject projectilePrefab;
+    
+    // this is damage for the crossbow, not the projectile
+    public override int Damage => 0;
+
+    public abstract void StartProjectile(Entity entity);
 }

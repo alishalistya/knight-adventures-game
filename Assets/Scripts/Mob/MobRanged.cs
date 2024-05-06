@@ -44,11 +44,11 @@ public abstract class MobRanged: Mob, IWeaponAnimationHandler
 
         public void OnStartAttackTrigger()
         {
-                weapon.IsActive = false;
+                weapon.StartProjectile(this);
         }
 
         public void OnEndAttackTrigger()
         {
-                weapon.IsActive = true;
+                
         }
 }
