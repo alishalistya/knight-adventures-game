@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using JetBrains.Annotations;
-using UnityEngine;
+﻿using System.Threading.Tasks;
 
 public abstract class MobMeele : Mob, IWeaponAnimationHandler
 {

@@ -1,4 +1,5 @@
 ﻿public class SuperKerocoMovement: MobMovement
 { 
-    protected new bool AlwaysPreciseMovement => true;
+    protected override bool AlwaysPreciseMovement => true;
+    protected override bool UseRandomMovement => true;
 }

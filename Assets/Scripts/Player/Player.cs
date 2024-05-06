@@ -52,6 +52,11 @@ public class Player : Entity, IShopCustomer
     // Update is called once per frame
     void Update()
     {
+        if (IsDead)
+        {
+            return;
+        }
+        
         Inventory?.Update();
 
         // get mouse is down not currently clicked

@@ -15,35 +15,30 @@ public abstract class MobMovement : MonoBehaviour
     public Player playerEntity;
     public NavMeshAgent nav;
 
-    protected MobMovementState state = MobMovementState.Idle;
+    private MobMovementState _state = MobMovementState.Idle;
+
+    protected MobMovementState state 
+    {
+        get => _state;
+        set  {
+            _state = value;
+            Animating();
+        }
+    }
 
     private bool _useDefaultRotation = true;
     
-    private float _preciseUpdateOffset = 5f;
+    private float _preciseUpdateOffset = 10f;
 
     private float _lastUpdate = 0f;
 
-    private float _lastUpdateOffset = 1f;
+    private float _lastUpdateOffset = 2f;
 
-    protected bool AlwaysPreciseMovement => false;
+    protected virtual bool AlwaysPreciseMovement => false;
 
-    public bool UseDefaultRotation
-    {
-        get => _useDefaultRotation;
-        set
-        {
-            if (value)
-            {
-                nav.angularSpeed = 120;
-            }
-            else
-            {
-                nav.angularSpeed = 0;
-            }
+    protected virtual bool UseRandomMovement => false;
 
-            _useDefaultRotation = value;
-        }
-    }
+    private float _randomMovementMinimalOffset;
 
     protected void Awake()
     {
@@ -51,36 +46,54 @@ public abstract class MobMovement : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
         playerEntity = player.GetComponent<Player>();
+
+        _randomMovementMinimalOffset = 0.5f * nav.stoppingDistance;
     }
 
     protected void Update()
     {
         var destination = player.transform.position;
         Vector3 distance = destination - transform.position;
-        
-        if (!playerEntity.IsDead && distance.magnitude > nav.stoppingDistance)
+
+        if (!playerEntity.IsDead && UseRandomMovement && distance.magnitude < _randomMovementMinimalOffset)
         {
             state = MobMovementState.Running;
 
             _lastUpdate += Time.deltaTime;
+            
 
-            if (distance.magnitude > _preciseUpdateOffset && _lastUpdate <= _lastUpdateOffset && !AlwaysPreciseMovement)
+            if (_lastUpdate <= _lastUpdateOffset)
             {
-                Animating();
                 return;
             }
             
-            if (!UseDefaultRotation)
-            {
-                
-                distance.y = 0; // This allows the object to only rotate on its y axis
+            _lastUpdate = 0f;
             
-                var rotation = Quaternion.LookRotation(distance);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
+            var random = RandomNavSphere(player.transform.position, nav.stoppingDistance*2f, -1);
+            
+            random.y = 0; // This allows the object to only rotate on its y axis
+            var rotation = Quaternion.LookRotation(random);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
+            
+            nav.SetDestination(random);
+        }
+        else if (!playerEntity.IsDead && distance.magnitude > nav.stoppingDistance)
+        {
+            state = MobMovementState.Running;
+
+            _lastUpdate += Time.deltaTime;
+            
+            distance.y = 0; // This allows the object to only rotate on its y axis
+            var rotation = Quaternion.LookRotation(distance);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
+
+            if (distance.magnitude > _preciseUpdateOffset && _lastUpdate <= _lastUpdateOffset && !AlwaysPreciseMovement)
+            {
+                return;
             }
             
             _lastUpdate = 0f;
-
+            
             // movement depend on range
             if (AlwaysPreciseMovement || distance.magnitude < _preciseUpdateOffset)
             {
@@ -90,7 +103,7 @@ public abstract class MobMovement : MonoBehaviour
             else
             {
                 // add some randomness
-                var random = RandomNavSphere(transform.position, 10, -1);
+                var random = RandomNavSphere(destination, 20, -1);
                 var avg = (random + destination) / 2;
                 nav.SetDestination(avg);
             }
@@ -98,13 +111,10 @@ public abstract class MobMovement : MonoBehaviour
         else
         {
             distance.y = 0; // This allows the object to only rotate on its y axis
-            
             var rotation = Quaternion.LookRotation(distance);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 120 * Time.deltaTime);
             state = MobMovementState.Idle;
         }
-        
-        Animating();
     }
     
     protected Vector3 RandomNavSphere(Vector3 origin, float dist,int layermask)

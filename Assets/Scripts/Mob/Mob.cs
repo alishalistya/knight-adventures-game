@@ -21,7 +21,6 @@ public abstract class Mob : Entity
         get => _playerInRange;
         set
         {
-            movement.UseDefaultRotation = !value;
             _playerInRange = value;
         }
     }

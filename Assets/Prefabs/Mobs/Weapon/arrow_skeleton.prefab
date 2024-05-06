@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7e9aa88be70774793027439a1e53c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   damage: 20
   maxDistance: 200
   direction: {x: 0, y: 0, z: 0}
