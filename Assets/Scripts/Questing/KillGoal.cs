@@ -1,3 +1,4 @@
+
 public class KillGoal : Goal 
 {
     public int MobID {get; set;}
@@ -16,8 +17,9 @@ public class KillGoal : Goal
         base.Init();
         CombatEvents.OnMobKilled += MobKilled;
     }
-    
-    void MobKilled(Mob mob) {
+
+    private void MobKilled(UnityEngine.Vector3 position, Mob mob)
+    {
         if (mob.ID == this.MobID)
         {
             this.CurrentAmount++;

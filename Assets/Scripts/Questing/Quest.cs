@@ -20,9 +20,4 @@ public class Quest : MonoBehaviour {
     {
         // Give reward
     }
-
-    public void Start() 
-    {
-
-    }
 }

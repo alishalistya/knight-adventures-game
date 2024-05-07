@@ -49,7 +49,7 @@ public abstract class Mob : Entity
 
     protected override void OnDeath()
     {
-        CombatEvents.MobKilled(this);
+        CombatEvents.MobKilled(transform.position, this);
         movement.nav.enabled = false;
         movement.enabled = false;
         movement.Anim.SetTrigger("Death");

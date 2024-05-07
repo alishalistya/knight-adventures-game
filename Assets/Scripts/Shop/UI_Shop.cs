@@ -22,6 +22,7 @@ public class UI_Shop : MonoBehaviour
 
     private void CreateItemButton(ShopItem.ShopItemType shopItemType, string itemName, int itemCost, int positionIndex)
     {
+        
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
         shopItemTransform.Find("nameText").GetComponent<TMPro.TextMeshProUGUI>().SetText(itemName);
         shopItemTransform.Find("priceText").GetComponent<TMPro.TextMeshProUGUI>().SetText(itemCost.ToString());

@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Survival Shooter.sln"
+    "dotnet.defaultSolution": "if3210-2024-unity-011.sln"
 }

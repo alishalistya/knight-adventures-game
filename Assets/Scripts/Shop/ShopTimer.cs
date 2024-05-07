@@ -13,10 +13,13 @@ public class ShopTimer : MonoBehaviour
     public float duration = 20f;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private UI_Shop uiShop;
+    // private UI_Shop uiShop;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("ShopTimer Start");
+        // uiShop = GetComponent<UI_Shop>();
         startShopTimer();
         // gameObject.SetActive(false);
         // timerText.text = "";
@@ -28,6 +31,7 @@ public class ShopTimer : MonoBehaviour
     }
     private IEnumerator Timer()
     {
+        Debug.Log("ShopTimer Timer");
         gameObject.SetActive(true);
         uiShop.SetShopOpen(true);
         uiShop.SetShopHadBeenOpened(true);

@@ -14,10 +14,11 @@ public class CollectGoal : Goal
     public override void Init()
     {
         base.Init();
+        QuestEvents.OnItemCollected += ItemCollected;
     }
     
     void ItemCollected(string itemName) {
-        if (itemName == this.ItemName)
+        if (itemName == this.ItemName && !this.Completed)
         {
             this.CurrentAmount++;
             Evaluate();

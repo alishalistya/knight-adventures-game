@@ -14,10 +14,12 @@ public class Goal
 
     public void Evaluate()
     {
+        
         if (CurrentAmount >= RequiredAmount)
         {
             Complete();
         }
+        QuestEvents.GoalProgressed(Quest);
     }
 
     public void Complete()
