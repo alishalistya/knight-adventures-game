@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    float moveSpeed = 10f;
+    float MoveSpeed { get => cheats.IsCheat(StatusCheats.TWO_TIMES_SPEED) ? 20 : 10; }
     [HideInInspector] public Vector3 dir;
     float hzInput, vInput;
 
@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Animator Anim;
 
     private Vector3 previousPosition;
+    private PlayerCheats cheats;
 
     private void Start()
     {
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cheats = GetComponent<PlayerCheats>();
         PlayerMovementState = PlayerMovementState.Idle;
     }
 
@@ -88,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
             // if (!disableMove)
             // {
-            dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * moveSpeed;
+            dir = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized * MoveSpeed;
             rb.velocity = new Vector3(dir.x, rb.velocity.y, dir.z);
             // }
             // else

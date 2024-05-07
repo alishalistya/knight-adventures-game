@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class Entity: MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
     protected abstract int MaxHealth
     {
         get;
     }
-    
+
     protected abstract int InitialHealth
     {
         get;
@@ -41,7 +41,7 @@ public abstract class Entity: MonoBehaviour
         Health.CurrentHealth.Observe((prevHealth, currentHealth) =>
         {
             OnDamaged(prevHealth, currentHealth);
-            
+
             if (Health.IsDead)
             {
                 OnDeath();
@@ -49,7 +49,7 @@ public abstract class Entity: MonoBehaviour
         });
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
     {
         Health.CurrentHealth.value -= amount;
     }
