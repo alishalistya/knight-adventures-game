@@ -6,6 +6,8 @@ public abstract class Mob : Entity
     [SerializeField] protected MobMovement movement;
     [SerializeField] protected AudioClip audioAwake;
     [SerializeField] protected AudioClip audioDeath;
+    [SerializeField] protected AudioClip audioHurt;
+    [SerializeField] protected AudioClip audioAttack;
     [SerializeField] protected AudioSource audioSource;
 
     protected bool _playerInRange;
@@ -55,5 +57,22 @@ public abstract class Mob : Entity
         movement.Anim.SetTrigger("Death");
         audioSource.PlayOneShot(audioDeath);
         Destroy(gameObject, 2f);
+    }
+
+    protected override void OnDamaged(int prevHealth, int currentHealth)
+    {
+        if (audioHurt is not null)
+        {
+            audioSource.PlayOneShot(audioHurt);
+        }
+    }
+
+    public override void OnStartAttackAnim()
+    {
+        base.OnStartAttackAnim();
+        if (audioAttack is not null)
+        {
+            audioSource.PlayOneShot(audioAttack);
+        }
     }
 }

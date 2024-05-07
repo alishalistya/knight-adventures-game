@@ -10,11 +10,6 @@ public class SuperKeroco: MobRanged
     protected override int InitialHealth => 75;
     
     protected override float TimeBetweenAttack => 2f;
-    
-    protected override void OnDamaged(int prevHealth, int currentHealth)
-    {
-
-    }
 
     protected float lastSpawnKeroco = 0f;
     protected float spawnKerocoInterval = 25f;

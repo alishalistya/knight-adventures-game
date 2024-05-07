@@ -8,9 +8,4 @@
         protected override int InitialHealth => 150;
 
         protected override float TimeBetweenAttack => 1f;
-
-        protected override void OnDamaged(int prevHealth, int currentHealth)
-        {
-
-        }
 }

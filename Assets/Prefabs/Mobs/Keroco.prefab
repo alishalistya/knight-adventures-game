@@ -2759,8 +2759,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 6990205916403568807}
-  audioAwake: {fileID: 8300000, guid: e4f3177064f9ebe45a14436e7fb52005, type: 3}
-  audioDeath: {fileID: 8300000, guid: 4accc06cb1d449c4a98b65a1206cc649, type: 3}
+  audioAwake: {fileID: 8300000, guid: 324c945fef5c54571b8c45070ad8ac7e, type: 3}
+  audioDeath: {fileID: 8300000, guid: c920eba22a44b4f1b8d9aa13573104cb, type: 3}
+  audioHurt: {fileID: 8300000, guid: d0c1f246cbe504a41b248d27f762dde6, type: 3}
   audioSource: {fileID: 1353991421121306089}
 --- !u!82 &1353991421121306089
 AudioSource:
