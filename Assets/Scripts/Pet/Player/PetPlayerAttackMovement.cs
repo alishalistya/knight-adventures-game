@@ -10,18 +10,24 @@ public class PetPlayerAttackMovement : PetPlayerMovement
     protected void Awake()
     {
         base.Awake();
-        target = GameObject.FindGameObjectWithTag("Enemy");
-        targetEntity = target.GetComponent<Entity>();
     }
     
     protected void Update()
     {
-        Debug.Log($"{target is null}");
-        if (!ownerEntity.IsDead 
-            && target is null
-            && Vector3.Distance(owner.transform.position, transform.position) > 2f)
+        if (target is null)
         {
-            state = PetMovementState.Running;
+            target = GameObject.FindGameObjectWithTag("Enemy");
+            targetEntity = target is not null ? target.GetComponent<Entity>() : null;
+        }
+        Debug.Log($"{target is null}");
+        if ((!ownerEntity.IsDead
+             && Vector3.Distance(owner.transform.position, transform.position) > _distanceToOwner)
+                ||
+                target is null
+            )
+        {
+            state = PetMovementState.Follow;
+            target = null;
 
             var _random = Random.Range(0, 2);
             var destination = owner.transform.position + new Vector3(_random % 2 == 0 ? 1 : -1, 0, _random % 2 == 1 ? 1 : -1);
@@ -70,7 +76,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
             else
             {
                 targetEntity = target.GetComponent<Entity>();
-                state = PetMovementState.Running;
+                state = PetMovementState.Follow;
                 var destination = target.transform.position;
                 Vector3 dir = destination - transform.position;
 

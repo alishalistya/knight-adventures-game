@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PetPlayerMovement : PetMovement<Player>
+public class PetMobMovement : PetMovement<Mob>
 {
     protected void Awake()
     {
-        owner = GameObject.FindGameObjectWithTag(typeof(Player).Name);
+        // base.Awake();
+        base.owner = transform.parent.gameObject;
         nav = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
         ownerEntity = owner.GetComponent<Entity>();
+        Debug.Log(owner.name);
     }
 }

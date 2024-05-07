@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8f8cc9baaf4d329dbbf56f5f2979cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 0}
+  movement: {fileID: 2503294786936451776}
 --- !u!4 &5559342127864587795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f69f723787471ad499fa72f1c264d164, type: 3}

@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 public enum PetMovementState
 {
     Idle = 0,
-    Running = 1,
+    Follow = 1,
 }
 
 public abstract class PetMovement<TEntity> : MonoBehaviour where TEntity : Entity
@@ -27,6 +27,8 @@ public abstract class PetMovement<TEntity> : MonoBehaviour where TEntity : Entit
     protected float _lastUpdate = 0f;
 
     protected float _lastUpdateOffset = 1f;
+    
+    protected float _distanceToOwner = 2f;
 
     public bool UseDefaultRotation
     {
@@ -46,20 +48,21 @@ public abstract class PetMovement<TEntity> : MonoBehaviour where TEntity : Entit
         }
     }
 
-    protected void Awake()
-    {
-        owner = GameObject.FindGameObjectWithTag(typeof(TEntity).Name);
-        nav = GetComponent<NavMeshAgent>();
-        Anim = GetComponent<Animator>();
-        ownerEntity = owner.GetComponent<TEntity>();
-    }
+    // protected void Awake()
+    // {
+    //     owner = GameObject.FindGameObjectWithTag(typeof(TEntity).Name);
+    //     nav = GetComponent<NavMeshAgent>();
+    //     Anim = GetComponent<Animator>();
+    //     // ownerEntity = owner.GetComponent<TEntity>();
+    //     ownerEntity = owner.GetComponent<Entity>();
+    // }
     
     protected void Update()
     {
-        if (!ownerEntity.IsDead &&  Vector3.Distance(owner.transform.position, transform.position) > 2f)
+        if (!ownerEntity.IsDead && (Vector3.Distance(owner.transform.position, transform.position) > _distanceToOwner))
         {
             // state = PetMovementState.Running;
-            state = PetMovementState.Running;
+            state = PetMovementState.Follow;
 
             var destination = owner.transform.position;
             Vector3 dir = destination - transform.position;
