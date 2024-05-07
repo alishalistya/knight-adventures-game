@@ -1542,6 +1542,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7772f3d93f2eb0f4cb19043a132d202d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7772f3d93f2eb0f4cb19043a132d202d, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -2622,8 +2626,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2164417042516041628}
-  audioAwake: {fileID: 8300000, guid: e4f3177064f9ebe45a14436e7fb52005, type: 3}
-  audioDeath: {fileID: 8300000, guid: 4accc06cb1d449c4a98b65a1206cc649, type: 3}
+  audioAwake: {fileID: 8300000, guid: b150c79fe9e7446ffa42d8f10a990893, type: 3}
+  audioDeath: {fileID: 8300000, guid: ecd98dd11c2144910a2886d0a43e898f, type: 3}
+  audioHurt: {fileID: 8300000, guid: 242d944eb661348c7a65969eaf11c8ef, type: 3}
+  audioAttack: {fileID: 8300000, guid: 462092553fde4c14c9c17b68bf883752, type: 3}
   audioSource: {fileID: 2469885321981224182}
   kerocoPrefab: {fileID: 8859620264332704695, guid: 6c0380c9f3b52e540afddbfb4c056ab0, type: 3}
 --- !u!82 &2469885321981224182

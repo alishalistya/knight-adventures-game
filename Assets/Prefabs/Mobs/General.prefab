@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 953541815168861174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4851,6 +4851,89 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &3464838726718141251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8233579103453114277}
+  - component: {fileID: 2867801871699198474}
+  - component: {fileID: 5052454521570736191}
+  - component: {fileID: 1033166301597326357}
+  m_Layer: 7
+  m_Name: CircleOfDeath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8233579103453114277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464838726718141251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2528909738202629718}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2867801871699198474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464838726718141251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bc52b11be94badbf57047c7ca1d253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 3609659418384156181}
+  damageable: {fileID: 1033166301597326357}
+--- !u!136 &5052454521570736191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464838726718141251}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1033166301597326357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464838726718141251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c9a22f494a47759e639d2e28088ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3866403005548494902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,8 +4978,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9607843, g: 0.08627448, b: 0.34524074, a: 1}
-  m_Intensity: 2.5
-  m_Range: 5
+  m_Intensity: 1
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4934,7 +5017,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5883,6 +5966,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
       insertIndex: -1
       addedObject: {fileID: 964382875432702240}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8233579103453114277}
     - targetCorrespondingSourceObject: {fileID: 7997947301047521070, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3581377241484985809}
@@ -6148,8 +6234,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 6629064975343007582}
-  audioAwake: {fileID: 8300000, guid: e4f3177064f9ebe45a14436e7fb52005, type: 3}
-  audioDeath: {fileID: 8300000, guid: 4accc06cb1d449c4a98b65a1206cc649, type: 3}
+  audioAwake: {fileID: 8300000, guid: 324c945fef5c54571b8c45070ad8ac7e, type: 3}
+  audioDeath: {fileID: 8300000, guid: ce130644b119842688ff9c4d27a00507, type: 3}
+  audioHurt: {fileID: 8300000, guid: 242d944eb661348c7a65969eaf11c8ef, type: 3}
+  audioAttack: {fileID: 8300000, guid: fce7444126450db4696085b1873fe543, type: 3}
   audioSource: {fileID: 8869649638598416921}
 --- !u!114 &6629064975343007582
 MonoBehaviour:

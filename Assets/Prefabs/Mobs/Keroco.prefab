@@ -2762,6 +2762,7 @@ MonoBehaviour:
   audioAwake: {fileID: 8300000, guid: 324c945fef5c54571b8c45070ad8ac7e, type: 3}
   audioDeath: {fileID: 8300000, guid: c920eba22a44b4f1b8d9aa13573104cb, type: 3}
   audioHurt: {fileID: 8300000, guid: d0c1f246cbe504a41b248d27f762dde6, type: 3}
+  audioAttack: {fileID: 8300000, guid: 62fe1ae146558475b8a6c0deffb83970, type: 3}
   audioSource: {fileID: 1353991421121306089}
 --- !u!82 &1353991421121306089
 AudioSource:
