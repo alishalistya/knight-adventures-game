@@ -5997,9 +5997,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6629064975343007582}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7026939072616499635}
   m_SourcePrefab: {fileID: 100100000, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
 --- !u!4 &2528909738202629718 stripped
 Transform:
@@ -6255,18 +6252,6 @@ MonoBehaviour:
   player: {fileID: 0}
   playerEntity: {fileID: 0}
   nav: {fileID: 0}
---- !u!122 &7026939072616499635
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905858249283099884}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4286611584
-  m_Size: 5
 --- !u!4 &5362852354068459155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7997947301047521070, guid: 44c5404da32685c44a5c78f816b96296, type: 3}
