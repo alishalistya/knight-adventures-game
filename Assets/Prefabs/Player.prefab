@@ -247,6 +247,9 @@ MonoBehaviour:
   meleeWeapon: {fileID: 5002073564022692148}
   thirdWeapon: {fileID: 5569639944396242012}
   UIGameOver: {fileID: 0}
+  PetPrefabs:
+  - {fileID: 5074730606421343401, guid: d121bcd6e88446c428a1f00ad99dfd31, type: 3}
+  - {fileID: 2483390447194164642, guid: 845b85794b77a1045b0c1ac608328fa6, type: 3}
 --- !u!114 &6206430951374841446
 MonoBehaviour:
   m_ObjectHideFlags: 0

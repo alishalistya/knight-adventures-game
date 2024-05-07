@@ -13,6 +13,8 @@ public class Player : Entity, IShopCustomer
 
     [SerializeField] GameObject UIGameOver;
 
+    [SerializeField] private GameObject[] PetPrefabs;
+
     float _attackSpeed = 1;
     float AttackSpeed
     {
@@ -105,5 +107,6 @@ public class Player : Entity, IShopCustomer
     public void BuyItem(ShopItem.ShopItemType item)
     {
         ShopItem.BuyItem(item);
+        Instantiate(PetPrefabs[(int)item], transform.position, Quaternion.identity);
     }
 }
