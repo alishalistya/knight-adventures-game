@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -15,6 +16,14 @@ public enum StatusCheats
   TWO_TIMES_SPEED = 8,
   FULL_HP_PET = 16
 }
+
+[Serializable]
+public class CheatEventEntry
+{
+  public string cheatCode;
+  public UnityEvent<string> @event;
+}
+
 
 public class PlayerCheats : MonoBehaviour
 {
@@ -37,6 +46,9 @@ public class PlayerCheats : MonoBehaviour
     {"akbargece", StatusCheats.TWO_TIMES_SPEED},
     {"yonikebal", StatusCheats.FULL_HP_PET},
   };
+
+  [SerializeField]
+  List<CheatEventEntry> cheatEvents = new();
 
   public static bool IsCheat(StatusCheats statusCheats)
   {
@@ -96,6 +108,16 @@ public class PlayerCheats : MonoBehaviour
       {
         print("Cheat activated: " + code.Value);
         SetCheat(code.Value);
+        compositeString = string.Empty;
+      }
+    }
+
+    foreach (var cheatEvent in cheatEvents)
+    {
+      if (compositeString.EndsWith(cheatEvent.cheatCode))
+      {
+        print("Cheat activated: " + cheatEvent.cheatCode);
+        cheatEvent.@event?.Invoke(cheatEvent.cheatCode);
         compositeString = string.Empty;
       }
     }

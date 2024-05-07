@@ -354,6 +354,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toastText: {fileID: 3375434829288379740}
+  cheatEvents:
+  - cheatCode: bunuhyoni
+    event:
+      m_PersistentCalls:
+        m_Calls: []
+  - cheatCode: orbwangy
+    event:
+      m_PersistentCalls:
+        m_Calls: []
+  - cheatCode: lanjutbang
+    event:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1533391598691756001
 GameObject:
   m_ObjectHideFlags: 0
