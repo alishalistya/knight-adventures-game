@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    float MoveSpeed { get => cheats.IsCheat(StatusCheats.TWO_TIMES_SPEED) ? 20 : 10; }
+    float MoveSpeed { get => PlayerCheats.IsCheat(StatusCheats.TWO_TIMES_SPEED) ? 20 : 10; }
     [HideInInspector] public Vector3 dir;
     float hzInput, vInput;
 
@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Animator Anim;
 
     private Vector3 previousPosition;
-    private PlayerCheats cheats;
 
     private void Start()
     {
@@ -50,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        cheats = GetComponent<PlayerCheats>();
         PlayerMovementState = PlayerMovementState.Idle;
     }
 

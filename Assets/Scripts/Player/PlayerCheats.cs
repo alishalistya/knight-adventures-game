@@ -18,6 +18,8 @@ public enum StatusCheats
 
 public class PlayerCheats : MonoBehaviour
 {
+  private static PlayerCheats _instance;
+
   private StatusCheats _statusCheats = 0;
   private string compositeString = "";
 
@@ -36,9 +38,13 @@ public class PlayerCheats : MonoBehaviour
     {"yonikebal", StatusCheats.FULL_HP_PET},
   };
 
-  public bool IsCheat(StatusCheats statusCheats)
+  public static bool IsCheat(StatusCheats statusCheats)
   {
-    return (_statusCheats & statusCheats) != 0;
+    if (_instance == null)
+    {
+      return false;
+    }
+    return (_instance._statusCheats & statusCheats) != 0;
   }
 
   public void SetCheat(StatusCheats statusCheats, bool value = true)
@@ -59,6 +65,12 @@ public class PlayerCheats : MonoBehaviour
 
   private void OnEnable()
   {
+    var prevInstance = _instance;
+    _instance = this;
+    if (prevInstance != null)
+    {
+      _statusCheats = prevInstance._statusCheats;
+    }
     Keyboard.current.onTextInput += InputKey;
     _clearTimer = StartCoroutine(ClearTimer());
   }

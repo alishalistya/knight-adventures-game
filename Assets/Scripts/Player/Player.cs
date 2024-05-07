@@ -12,7 +12,6 @@ public class Player : Entity, IShopCustomer
     [SerializeField] RangedWeapon thirdWeapon;
 
     [SerializeField] GameObject UIGameOver;
-    PlayerCheats cheats;
 
     [SerializeField] private GameObject[] PetPrefabs;
 
@@ -49,7 +48,6 @@ public class Player : Entity, IShopCustomer
     private void Awake()
     {
         PersistanceManager.Instance.AssertInit();
-        cheats = GetComponent<PlayerCheats>();
     }
 
     new void Start()
@@ -114,7 +112,7 @@ public class Player : Entity, IShopCustomer
 
     public override void TakeDamage(int amount)
     {
-        if (cheats.IsCheat(StatusCheats.NO_DAMAGE))
+        if (PlayerCheats.IsCheat(StatusCheats.NO_DAMAGE))
         {
             return;
         }
