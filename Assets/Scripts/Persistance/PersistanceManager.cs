@@ -8,7 +8,7 @@ public class PersistanceManager
     const string GAME_SAVES_DESCRIPTION_FILE_NAME = "saves.json";
     const string GAME_SAVES_FOLDER = "saves/";
     private static PersistanceManager _instance;
-    private SaveDescriptions saveDescriptions;
+    public SaveDescriptions SaveDescriptions;
     public GameStatistics Statistics = new();
     public static PersistanceManager Instance
     {
@@ -53,11 +53,11 @@ public class PersistanceManager
     {
         if (FileManager.LoadFromFile(GAME_SAVES_DESCRIPTION_FILE_NAME, out string jsonString))
         {
-            saveDescriptions = JsonUtility.FromJson<SaveDescriptions>(jsonString);
+            SaveDescriptions = JsonUtility.FromJson<SaveDescriptions>(jsonString);
         }
         else
         {
-            saveDescriptions = new SaveDescriptions();
+            SaveDescriptions = new SaveDescriptions();
         }
     }
 }
