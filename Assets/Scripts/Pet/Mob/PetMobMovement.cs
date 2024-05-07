@@ -6,7 +6,7 @@ public class PetMobMovement : PetMovement<Mob>
     protected void Awake()
     {
         // base.Awake();
-        base.owner = transform.parent.gameObject;
+        owner = transform.parent.gameObject;
         nav = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
         ownerEntity = owner.GetComponent<Entity>();

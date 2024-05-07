@@ -9,10 +9,26 @@ public class PetBuffer: BasePetMob
     {
     }
 
+    protected AttackMultiplierBuff buff;
+
+    protected void Awake()
+    {
+        // convert to percent
+        buff = new AttackMultiplierBuff("pet", AbilityEffect / 100f);
+        movement.ownerEntity.AttackMultiplierBuffs.Add(buff);   
+    }
+
+    protected override void OnDeath()
+    {
+        movement.ownerEntity.AttackMultiplierBuffs.Remove(buff);   
+        base.OnDeath();
+    }
+
     protected override float TimeBetweenAbility => 10f;
     protected override int AbilityEffect => 20;
     
     bool isReadyToBuff = true;
+    
     protected string BuffAnimationMovement => "Buff";
 
     private void FixedUpdate()
@@ -26,8 +42,6 @@ public class PetBuffer: BasePetMob
     void Buff()
     {
         movement.Anim.Play(BuffAnimationMovement);
-        // TODO: Implement the buff effect
-        // movement.ownerEntity.DamageMultiplier += AbilityEffect * 0.01f;
         isReadyToBuff = false;
         
         Task.Delay((int)(TimeBetweenAbility * 1000)).ContinueWith(t =>

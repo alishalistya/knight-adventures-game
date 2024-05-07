@@ -40,7 +40,7 @@ public abstract class Mob : Entity
     protected void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == movement.player)
+        if (other is not null && other.gameObject == movement.player)
         {
             // ... the player is no longer in range.
             PlayerInRange = false;

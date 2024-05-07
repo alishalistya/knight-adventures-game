@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Entity: MonoBehaviour
@@ -15,11 +17,22 @@ public abstract class Entity: MonoBehaviour
 
     public EntityHealth Health;
 
+    protected HashSet<AttackMultiplierBuff> _attackMultiplierBuffs = new();
+
+    public HashSet<AttackMultiplierBuff> AttackMultiplierBuffs => _attackMultiplierBuffs;
+
     public bool IsDead => Health.IsDead;
 
     protected float _damageMultiplier = 1f;
 
-    public float DamageMultiplier => _damageMultiplier;
+    public float DamageMultiplier
+    {
+        get
+        {
+            return _damageMultiplier + _attackMultiplierBuffs.Sum(mul => mul.Value);
+        }
+    }
+
     protected abstract bool IsAttacking { get; set; }
 
     protected void Start()
