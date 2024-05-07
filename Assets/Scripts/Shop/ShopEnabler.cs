@@ -15,13 +15,14 @@ public class ShopEnabler : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         IShopCustomer customer = other.gameObject.GetComponent<IShopCustomer>();
+
         if (!isShopOpen && Input.GetKeyDown(KeyCode.B) && customer != null)
         {
             uiShop.Show(customer);
-            isShopOpen = true;
+            isShopOpen = true;  
             return;
         }
-        if (isShopOpen && Input.GetKeyDown(KeyCode.B) && customer != null)
+        else if (isShopOpen && Input.GetKeyDown(KeyCode.B) && customer != null)
         {
             uiShop.Hide();
             isShopOpen = false;
@@ -34,6 +35,8 @@ public class ShopEnabler : MonoBehaviour
         if (customer != null)
         {
             uiShop.Hide();
+            isShopOpen = false;
+            return;
         }
     }
 }
