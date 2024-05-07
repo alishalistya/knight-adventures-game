@@ -55,7 +55,6 @@ public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
         get => _targetInRange;
         set
         {
-            movement.UseDefaultRotation = !value;
             _targetInRange = value;
         }
     }
@@ -92,6 +91,15 @@ public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
             TargetInRange = true;
         }
     }
+    
+    protected void OnTriggerExit(Collider other)
+    {
+        if (other is not null && other.gameObject == movement.target)
+        {
+            TargetInRange = false;
+        }
+    }
+
     
     public override void OnStartAttackAnim()
     {

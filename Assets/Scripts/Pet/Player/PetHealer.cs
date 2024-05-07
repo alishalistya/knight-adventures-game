@@ -1,6 +1,7 @@
 
 using System;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public class PetHealer: BasePetPlayer
 {
@@ -15,7 +16,11 @@ public class PetHealer: BasePetPlayer
 
     private void FixedUpdate()
     {
-        if (!movement.ownerEntity.IsDead && !IsDead && isReadyToHeal)
+        if (!movement.ownerEntity.IsDead 
+            && !IsDead 
+            && isReadyToHeal
+            && Vector3.Distance(movement.owner.transform.position, transform.position) < movement._distanceToOwner
+            )
         {
             Heal();
         }
