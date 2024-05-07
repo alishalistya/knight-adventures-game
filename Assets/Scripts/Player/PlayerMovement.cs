@@ -39,6 +39,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public Animator Anim;
 
+    private Vector3 previousPosition;
+
+    private void Start()
+    {
+        previousPosition = transform.position;
+    }
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -52,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        float distance = Vector3.Distance(transform.position, previousPosition);
+        PersistanceManager.Instance.Statistics.AddDistance(distance);
+        previousPosition = transform.position;
         // CheckJump();
         Animating();
     }

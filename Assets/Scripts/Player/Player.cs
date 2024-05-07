@@ -43,6 +43,11 @@ public class Player : Entity, IShopCustomer
     protected override int MaxHealth => 100;
     protected override int InitialHealth => 100;
 
+    private void Awake()
+    {
+        PersistanceManager.Instance.AssertInit();
+    }
+
     new void Start()
     {
         base.Start();
@@ -75,6 +80,10 @@ public class Player : Entity, IShopCustomer
         BaseWeapon weapon = Inventory.CurrentWeapon;
         movement.Anim.SetFloat("AttackSpeed", AttackSpeed * weapon.AttackSpeedMultiplier);
         weapon.AnimateAttack(movement.Anim);
+        if (weapon is RangedWeapon)
+        {
+            PersistanceManager.Instance.Statistics.AddTotalShot();
+        }
     }
 
     protected override void OnDeath()
