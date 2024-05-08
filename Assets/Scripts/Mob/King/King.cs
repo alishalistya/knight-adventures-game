@@ -83,7 +83,7 @@ public class King: Mob, IWeaponAnimationHandler
         }
         else
         {
-            rangedWeapon.StartProjectile(this);
+            // rangedWeapon.StartProjectile(this);
         }
     }
 
