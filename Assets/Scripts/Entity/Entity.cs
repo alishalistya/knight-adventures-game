@@ -51,7 +51,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void TakeDamage(int amount)
     {
-        Health.CurrentHealth.value -= amount;
+        Health.CurrentHealth.value = Math.Max(Health.CurrentHealth.value - amount, 0);
     }
 
     public void Heal(int amount)

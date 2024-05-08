@@ -11,13 +11,26 @@ public class PetPlayerAttackMovement : PetPlayerMovement
     {
         base.Awake();
     }
+
+    private void setTarget(bool IsNull)
+    {
+        if (!IsNull)
+        {
+            target = GameObject.FindGameObjectWithTag("Enemy");
+            targetEntity = target is not null ? target.GetComponent<Entity>() : null;
+        }
+        else
+        {
+            target = null;
+            targetEntity = null;
+        }
+    }
     
     protected void FixedUpdate()
     {
         if (target is null)
         {
-            target = GameObject.FindGameObjectWithTag("Enemy");
-            targetEntity = target is not null ? target.GetComponent<Entity>() : null;
+            setTarget(false);
         }
         if ((!ownerEntity.IsDead
              && Vector3.Distance(owner.transform.position, transform.position) > _distanceToOwner)
@@ -25,7 +38,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
             )
         {
             state = PetMovementState.Follow;
-            target = null;
+            setTarget(true);
 
             var _random = Random.Range(0, 2);
             var destination = owner.transform.position + new Vector3(_random % 2 == 0 ? 1 : -1, 0, _random % 2 == 1 ? 1 : -1);
@@ -41,8 +54,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
             targetEntity = target.GetComponent<Entity>();
             if (targetEntity.IsDead)
             {
-                target = null;
-                targetEntity = null;
+                setTarget(true);
             }
             else
             {
@@ -58,7 +70,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
         }
         else
         {
-            target = null;
+            setTarget(true);
             state = PetMovementState.Idle;
             transform.rotation = owner.transform.rotation;
         }
