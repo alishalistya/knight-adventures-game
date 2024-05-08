@@ -18,10 +18,10 @@ public class PetMobMovement : PetMovement<Mob>
     
     protected void Update()
     {
-        if (Vector3.Distance(target.transform.position, transform.position) < 5f)
+        if (Vector3.Distance(target.transform.position, transform.position) < 5f &&  Vector3.Distance(owner.transform.position, transform.position) < 3f)
         {
             state = PetMovementState.Follow;
-            var destination = IsLeft ? new Vector3(2, 0, 0) : new Vector3(-2, 0, 0);
+            var destination = transform.position + new Vector3(IsLeft ? 1 : -1, 0, IsLeft ? 1 : -1);
             
             _lastUpdate += Time.deltaTime;
             
@@ -34,7 +34,7 @@ public class PetMobMovement : PetMovement<Mob>
             // state = PetMovementState.Running;
             state = PetMovementState.Follow;
 
-            var destination = owner.transform.position;
+            var destination = owner.transform.position + new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
 
             _lastUpdate += Time.deltaTime;
             
