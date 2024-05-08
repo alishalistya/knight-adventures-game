@@ -7,11 +7,17 @@ using UnityEngine.UI;
 
 public class GameManager
 {
-  public static GameManager Instance { get; private set; }
-  public GameStatistics Statistics;
+  public static GameManager Instance { get; private set; } = new GameManager();
+  public GameStatistics Statistics = new();
   public int QuestNumber = 1;
   public bool FromLoad = false;
   public int PlayerGold = 0;
+  public bool isAyamAlive1 = false;
+public bool isAyamAlive2 = false;
+    public bool isAyamAlive3 = false;
+    public bool isAyamAlive4 = false;
+    public bool isAyamAlive5 = false;
+  
 
   private GameManager()
   {
