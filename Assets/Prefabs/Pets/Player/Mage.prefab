@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128075804489202240}
   - component: {fileID: 4998551281192344967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -259,6 +259,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   ownerEntity: {fileID: 0}
   nav: {fileID: 8536408776150990878}
+  _distanceToOwner: 2
 --- !u!114 &5893240075888314004
 MonoBehaviour:
   m_ObjectHideFlags: 0

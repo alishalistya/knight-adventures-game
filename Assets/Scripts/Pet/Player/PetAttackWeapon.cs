@@ -1,4 +1,4 @@
 public class PetAttackWeapon : Damageable
 {
-    public override int Damage  => 100;
+    public override int Damage  => 15;
 }

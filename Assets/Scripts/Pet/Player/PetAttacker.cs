@@ -40,8 +40,8 @@ public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
     public PetPlayerAttackMovement movement;
     protected override bool IsAttacking { get; set; }
     
-    protected override int MaxHealth => 30;
-    protected override int InitialHealth => 30;
+    protected override int MaxHealth => 3000;
+    protected override int InitialHealth => 3000;
     
     // protected override int AbilityEffect => 100;
     // protected override float TimeBetweenAbility => 1f;
