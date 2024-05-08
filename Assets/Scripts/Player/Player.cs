@@ -26,6 +26,8 @@ public class Player : Entity, IShopCustomer
     }
 
     bool _isAttacking = false;
+
+    public PlayerMovement Movement => movement;
     override protected bool IsAttacking
     {
         get { return _isAttacking; }

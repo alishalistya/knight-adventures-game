@@ -1,15 +1,7 @@
-﻿public class AttackMultiplierBuff
+﻿public class AttackMultiplierBuff: MultiplierBuff
 {
-    private float _value;
-    private string _name;
-
-    public float Value => _value;
-    
-    public string Name => _name;
-
-    public AttackMultiplierBuff(string name, float value)
+    public AttackMultiplierBuff(string name, float value) : base(name, value)
     {
-        _value = value;
-        _name = name;
+        
     }
 }

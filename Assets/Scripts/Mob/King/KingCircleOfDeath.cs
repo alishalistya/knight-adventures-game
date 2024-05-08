@@ -5,7 +5,7 @@ public class KingCircleOfDeath: Damageable
     public override int Damage => 5;
 
     private float activeTime = 0f;
-    private float hitInterval = 3f; // every 3 seconds
+    private float hitInterval = 1f; // every 1 seconds
 
     private void Awake()
     {

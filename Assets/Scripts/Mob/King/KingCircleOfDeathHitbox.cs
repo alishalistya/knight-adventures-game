@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hitbox : MonoBehaviour
+
+public class KingCircleOfDeathHitbox : MonoBehaviour
 {
     [SerializeField] public Entity entity;
-
-    [SerializeField] public Damageable damageable;
+    [SerializeField] public KingCircleOfDeath damageable;
+    
+    private AttackMultiplierBuff attackDebuff;
+    private MovementSpeedMultiplierBuff movementDebuff;
+    
     public delegate void OnHit(Hurtbox hurtbox);
+    
     public event OnHit OnHitEvent;
 
     private readonly List<Hurtbox> _triggered = new List<Hurtbox>();
 
     private int defaultLayer;
+
+    private float AttackDebuffValue => -0.1f;
+    private float MovementSpeedDebuffValue => -0.2f;
 
     protected void Awake()
     {
@@ -34,6 +42,16 @@ public class Hitbox : MonoBehaviour
             return;
         }
 
+        var player = (Player)hurtbox.entity;
+
+        if (player is not null)
+        {
+            attackDebuff = new AttackMultiplierBuff("kingatkdebuff", AttackDebuffValue);
+            player.AttackMultiplierBuffs.Add(attackDebuff);
+            movementDebuff = new MovementSpeedMultiplierBuff("kingmovdebuff", MovementSpeedDebuffValue);
+            player.Movement.MovementSpeedMultiplierBuffs.Add(movementDebuff);
+        }
+        
         _triggered.Add(hurtbox);
 
         PerformDamage();
@@ -51,6 +69,18 @@ public class Hitbox : MonoBehaviour
         if (hurtbox is not null)
         {
             _triggered.Remove(hurtbox);
+            
+            var player = (Player)hurtbox.entity;
+
+            if (player is not null)
+            {
+                attackDebuff.IsActive = false;
+                player.AttackMultiplierBuffs.Remove(attackDebuff);
+                attackDebuff = null;
+                movementDebuff.IsActive = false;
+                player.Movement.MovementSpeedMultiplierBuffs.Remove(movementDebuff);
+                movementDebuff = null;
+            }
         }
     }
 
@@ -67,7 +97,6 @@ public class Hitbox : MonoBehaviour
             if (!damageable.IsHitRegistered(instanceId) && !trigger.entity.IsDead)
             {
                 damageable.RegisterHit(instanceId);
-                print($"multiplier {entity.DamageMultiplier}");
                 var damage = (int)(entity.DamageMultiplier * damageable.Damage);
                 trigger.entity.TakeDamage(damage);
                 OnHitEvent?.Invoke(trigger);
