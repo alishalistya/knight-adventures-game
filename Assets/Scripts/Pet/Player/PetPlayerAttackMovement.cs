@@ -12,7 +12,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
         base.Awake();
     }
     
-    protected void Update()
+    protected void FixedUpdate()
     {
         if (target is null)
         {
@@ -21,8 +21,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
         }
         if ((!ownerEntity.IsDead
              && Vector3.Distance(owner.transform.position, transform.position) > _distanceToOwner)
-                ||
-                target is null
+             || target is null
             )
         {
             state = PetMovementState.Follow;
@@ -37,8 +36,9 @@ public class PetPlayerAttackMovement : PetPlayerMovement
 
             nav.SetDestination(destination);
         }
-        else if (target is not null)
+        else if (target is not null) /* chase target */
         {
+            targetEntity = target.GetComponent<Entity>();
             if (targetEntity.IsDead)
             {
                 target = null;
@@ -46,7 +46,6 @@ public class PetPlayerAttackMovement : PetPlayerMovement
             }
             else
             {
-                targetEntity = target.GetComponent<Entity>();
                 state = PetMovementState.Follow;
                 var destination = target.transform.position;
 
