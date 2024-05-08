@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class TimelineController : MonoBehaviour
+public class Q2CutSceneController : MonoBehaviour
 {
     PlayableDirector director;
-    [SerializeField] GameObject cutscene;
+    GameObject cutscene;
     [SerializeField] GameObject healthUI;
 
     // Start is called before the first frame update
     void Start()
     {
         director = GetComponentInChildren<PlayableDirector>();
+        cutscene = GameObject.Find("Opening Cutscene 2");
         
     }
 
