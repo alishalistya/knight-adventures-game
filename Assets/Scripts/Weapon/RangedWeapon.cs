@@ -7,6 +7,7 @@ abstract public class RangedWeapon : BaseWeapon
     [SerializeField] protected GameObject projectilePrefab;
     public override void AnimateAttack(Animator playerAnim)
     {
+        base.AnimateAttack(playerAnim);
         playerAnim.Play("AttackRanged");
     }
 

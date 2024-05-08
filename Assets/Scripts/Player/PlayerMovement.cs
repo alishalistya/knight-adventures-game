@@ -20,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
         set
         {
             _playerMovementState = value;
+            if (value == PlayerMovementState.Running && !footstepSound.isPlaying)
+            {
+                footstepSound.Play();
+            }
+            else if (value != PlayerMovementState.Running && footstepSound.isPlaying)
+            {
+                footstepSound.Stop();
+            }
             Anim.SetInteger("MovementState", (int)_playerMovementState);
         }
     }
@@ -30,9 +38,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool disableMove = false;
     [SerializeField] float groundYOffset;
-    [SerializeField] LayerMask groundMask;
     Rigidbody rb;
     [SerializeField] Transform cam;
+    [SerializeField] AudioSource footstepSound;
 
     float turnSmoothVelocity;
     float turnSmoothTime = 0.1f;
