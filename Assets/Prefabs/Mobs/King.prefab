@@ -19805,6 +19805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5834130309342866005}
   - component: {fileID: 249332634204554457}
+  - component: {fileID: 6901897191600514211}
   m_Layer: 9
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -19850,6 +19851,19 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &6901897191600514211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581749196665738342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5e8ff715664f299d048d6e872f24e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 510020628554801068}
 --- !u!1 &3803309061654530411
 GameObject:
   m_ObjectHideFlags: 0
@@ -55402,8 +55416,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
-  m_Acceleration: 0.5
+  m_Speed: 2
+  m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 0
   m_StoppingDistance: 4
@@ -55449,6 +55463,8 @@ MonoBehaviour:
   player: {fileID: 0}
   playerEntity: {fileID: 0}
   nav: {fileID: 0}
+  triggerRange: 0
+  isTriggered: 0
 --- !u!114 &8951088962587732157
 MonoBehaviour:
   m_ObjectHideFlags: 0

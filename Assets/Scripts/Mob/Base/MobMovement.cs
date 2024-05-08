@@ -16,6 +16,10 @@ public abstract class MobMovement : MonoBehaviour
     public NavMeshAgent nav;
 
     private MobMovementState _state = MobMovementState.Idle;
+    
+    [SerializeField] float triggerRange = 0f;
+
+    public bool isTriggered = false;
 
     protected MobMovementState state 
     {
@@ -46,7 +50,7 @@ public abstract class MobMovement : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
         playerEntity = player.GetComponent<Player>();
-
+        nav.isStopped = true;
         _randomMovementMinimalOffset = 0.5f * nav.stoppingDistance;
     }
 
@@ -54,6 +58,17 @@ public abstract class MobMovement : MonoBehaviour
     {
         var destination = player.transform.position;
         Vector3 distance = destination - transform.position;
+
+        if (distance.magnitude <= triggerRange || triggerRange == 0f)
+        {
+            nav.isStopped = false;
+            isTriggered = true;
+        }
+
+        if (!isTriggered)
+        {
+            return;
+        }
 
         if (!playerEntity.IsDead && UseRandomMovement && distance.magnitude < _randomMovementMinimalOffset)
         {

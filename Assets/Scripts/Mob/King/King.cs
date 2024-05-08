@@ -51,7 +51,7 @@ public class King: Mob, IWeaponAnimationHandler
             spawned.SetActive(true);
         }
         
-        if (!movement.playerEntity.IsDead && !IsDead && isReadyToAttack)
+        if (!movement.playerEntity.IsDead && !IsDead && isReadyToAttack && movement.isTriggered)
         {
             if (PlayerInRange)
             {

@@ -17,7 +17,7 @@ public abstract class MobMeele : Mob, IWeaponAnimationHandler
 
     private void FixedUpdate()
     {
-        if (PlayerInRange && !movement.playerEntity.IsDead && !IsDead && isReadyToAttack)
+        if (PlayerInRange && !movement.playerEntity.IsDead && !IsDead && isReadyToAttack && movement.isTriggered)
         {
             Attack();
         }

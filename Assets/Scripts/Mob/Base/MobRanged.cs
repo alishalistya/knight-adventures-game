@@ -16,7 +16,7 @@ public abstract class MobRanged: Mob, IWeaponAnimationHandler
         
         protected void FixedUpdate()
         {
-                if (PlayerInRange && !movement.playerEntity.IsDead && !IsDead && isReadyToAttack)
+                if (PlayerInRange && !movement.playerEntity.IsDead && !IsDead && isReadyToAttack && movement.isTriggered)
                 {
                         Attack();
                 }
