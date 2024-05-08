@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public enum KingAttackState
 {
@@ -26,6 +27,10 @@ public class King: Mob, IWeaponAnimationHandler
     protected override int InitialHealth => 300;
     
     public override int ID => 3;
+    
+    [SerializeField] protected GameObject kerocoPrefab;
+    protected float lastSpawnKeroco = 0f;
+    protected float spawnKerocoInterval = 15f;
 
     protected new void Awake()
     {
@@ -36,6 +41,16 @@ public class King: Mob, IWeaponAnimationHandler
 
     private void FixedUpdate()
     {
+        lastSpawnKeroco += Time.deltaTime;
+
+        if (lastSpawnKeroco >= spawnKerocoInterval)
+        {
+            lastSpawnKeroco = 0f;
+            var pos = transform.position + new Vector3(-2, 0, -2);
+            var spawned = Instantiate(kerocoPrefab, pos, Quaternion.identity);
+            spawned.SetActive(true);
+        }
+        
         if (!movement.playerEntity.IsDead && !IsDead && isReadyToAttack)
         {
             if (PlayerInRange)

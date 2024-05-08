@@ -55432,6 +55432,7 @@ MonoBehaviour:
   audioHurt: {fileID: 8300000, guid: 85caf8c060b95471c9e8d85a8495525c, type: 3}
   audioAttack: {fileID: 8300000, guid: 6d3d003582ca700499a1fb2b25987233, type: 3}
   audioSource: {fileID: 4528760288359943683}
+  kerocoPrefab: {fileID: 8859620264332704695, guid: 6c0380c9f3b52e540afddbfb4c056ab0, type: 3}
 --- !u!114 &4180195720116784099
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,6 +28,8 @@ public abstract class Mob : Entity
     }
 
     protected abstract float TimeBetweenAttack { get; }
+    
+    
 
     protected void OnTriggerEnter(Collider other)
     {
@@ -74,5 +76,12 @@ public abstract class Mob : Entity
         {
             audioSource.PlayOneShot(audioAttack);
         }
+
+        movement.nav.isStopped = true;
+    }
+
+    public override void OnEndAttackAnim()
+    {
+        movement.nav.isStopped = false;
     }
 }
