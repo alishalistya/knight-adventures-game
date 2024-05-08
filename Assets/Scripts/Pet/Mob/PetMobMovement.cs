@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class PetMobMovement : PetMovement<Mob>
 {
+    [SerializeField] private bool IsLeft = true;
     public GameObject target;
     
     protected void Awake()
@@ -20,7 +21,7 @@ public class PetMobMovement : PetMovement<Mob>
         if (Vector3.Distance(target.transform.position, transform.position) < 5f)
         {
             state = PetMovementState.Follow;
-            var destination = new Vector3(-1, 0, -1);
+            var destination = IsLeft ? new Vector3(2, 0, 0) : new Vector3(-2, 0, 0);
             
             _lastUpdate += Time.deltaTime;
             
