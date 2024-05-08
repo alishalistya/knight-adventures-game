@@ -67,6 +67,7 @@ public class Hitbox : MonoBehaviour
             if (!damageable.IsHitRegistered(instanceId) && !trigger.entity.IsDead)
             {
                 damageable.RegisterHit(instanceId);
+                print($"multiplier {entity.DamageMultiplier}");
                 var damage = (int)(entity.DamageMultiplier * damageable.Damage);
                 trigger.entity.TakeDamage(damage);
                 OnHitEvent?.Invoke(trigger);

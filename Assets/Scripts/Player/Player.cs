@@ -26,6 +26,8 @@ public class Player : Entity, IShopCustomer
     }
 
     bool _isAttacking = false;
+
+    public PlayerMovement Movement => movement;
     override protected bool IsAttacking
     {
         get { return _isAttacking; }
@@ -41,7 +43,7 @@ public class Player : Entity, IShopCustomer
     }
 
     public PlayerInventory Inventory;
-
+    protected int Gold { get; set;} = 0;
     protected override int MaxHealth => 100;
     protected override int InitialHealth => 100;
 
@@ -117,5 +119,23 @@ public class Player : Entity, IShopCustomer
             return;
         }
         base.TakeDamage(amount);
+        
+    }
+
+    public void AddGold(int amount)
+    {
+        Gold += amount;
+        PlayerStatsEvents.PlayerStatsChanged(this);
+    }
+
+    public void RemoveGold(int amount)
+    {
+        Gold -= amount;
+        PlayerStatsEvents.PlayerStatsChanged(this);
+    }
+
+    public bool CheckGold(int cost)
+    {
+        return Gold >= cost;
     }
 }

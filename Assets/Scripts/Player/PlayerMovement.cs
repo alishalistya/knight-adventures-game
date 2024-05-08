@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -32,7 +33,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    float MoveSpeed { get => PlayerCheats.IsCheat(StatusCheats.TWO_TIMES_SPEED) ? 20 : 10; }
+    protected HashSet<MovementSpeedMultiplierBuff> _movementSpeedMultiplierBuffs = new();
+    public HashSet<MovementSpeedMultiplierBuff> MovementSpeedMultiplierBuffs => _movementSpeedMultiplierBuffs;
+
+    float MoveSpeed
+    {
+        get
+        {
+            var baseSpeed = PlayerCheats.IsCheat(StatusCheats.TWO_TIMES_SPEED) ? 20 : 10;
+
+            return (1f + _movementSpeedMultiplierBuffs.Sum(mul => mul.Value)) * baseSpeed;
+        }
+    }
+
     [HideInInspector] public Vector3 dir;
     float hzInput, vInput;
 

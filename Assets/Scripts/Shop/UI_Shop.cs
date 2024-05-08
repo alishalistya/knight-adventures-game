@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,10 +21,10 @@ public class UI_Shop : MonoBehaviour
         shopItemTemplate.gameObject.SetActive(false);
     }
 
-    private void CreateItemButton(ShopItem.ShopItemType shopItemType, string itemName, int itemCost, int positionIndex)
+    private void CreateItemButton(ShopItem.ShopItemType shopItemType, string itemName, int itemCost, int positionIndex, string clonedObjectName)
     {
-        
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
+        shopItemTransform.gameObject.name = clonedObjectName;
         shopItemTransform.Find("nameText").GetComponent<TMPro.TextMeshProUGUI>().SetText(itemName);
         shopItemTransform.Find("priceText").GetComponent<TMPro.TextMeshProUGUI>().SetText(itemCost.ToString());
 
@@ -31,6 +32,8 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
 
         shopItemTransform.gameObject.SetActive(true);
+
+        var button = shopItemTransform.GetComponent<Button>();
 
         shopItemTransform.GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -45,9 +48,8 @@ public class UI_Shop : MonoBehaviour
     }
     void Start()
     {
-        CreateItemButton(ShopItem.ShopItemType.Pet_1, "Pet 1", ShopItem.GetCost(ShopItem.ShopItemType.Pet_1), 0);
-        CreateItemButton(ShopItem.ShopItemType.Pet_2, "Pet 2", ShopItem.GetCost(ShopItem.ShopItemType.Pet_2), 1);
-        CreateItemButton(ShopItem.ShopItemType.Pet_3, "Pet 3", ShopItem.GetCost(ShopItem.ShopItemType.Pet_3), 2);
+        CreateItemButton(ShopItem.ShopItemType.Pet_1, "Pet 1", ShopItem.GetCost(ShopItem.ShopItemType.Pet_1), 0, "item1");
+        CreateItemButton(ShopItem.ShopItemType.Pet_2, "Pet 2", ShopItem.GetCost(ShopItem.ShopItemType.Pet_2), 1, "item2");
 
         Hide();
     }
@@ -55,6 +57,27 @@ public class UI_Shop : MonoBehaviour
     public void Show(IShopCustomer shopCustomer)
     {
         if (!isShopOpen) return;
+        
+        var item1 = container.Find("item1");
+        var item2 = container.Find("item2");
+
+        if (shopCustomer.CheckGold(ShopItem.GetCost(ShopItem.ShopItemType.Pet_1)))
+        {
+            setHintForButton(item1, true);
+        }
+        else
+        {
+            setHintForButton(item1, false);
+        }
+
+        if (shopCustomer.CheckGold(ShopItem.GetCost(ShopItem.ShopItemType.Pet_2)))
+        {
+            setHintForButton(item2, true);
+        }
+        else
+        {
+            setHintForButton(item2, false);
+        }
         this.shopCustomer = shopCustomer;
         gameObject.SetActive(true);
     }
@@ -72,5 +95,11 @@ public class UI_Shop : MonoBehaviour
     public void SetShopHadBeenOpened(bool isShopHadBeenOpened)
     {
         this.isShopHadBeenOpened = isShopHadBeenOpened;
+    }
+    private void setHintForButton(Transform item, bool isActive)
+    {
+        item.GetComponent<Button>().interactable = isActive;
+        item.Find("disableOverlay").gameObject.SetActive(!isActive);
+        item.Find("warningText").gameObject.SetActive(!isActive);
     }
 }
