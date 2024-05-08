@@ -6,7 +6,11 @@ using UnityEngine;
 [System.Serializable]
 public class SaveDescriptions
 {
-  public List<Description> Descriptions = new();
+  public List<Description> Descriptions = new() {
+    null,
+    null,
+    null,
+  };
 
   [System.Serializable]
   public class Description

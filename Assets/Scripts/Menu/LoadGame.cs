@@ -23,14 +23,18 @@ public class LoadGame : MonoBehaviour
         for (int i = 0; i < PersistanceManager.Instance.SaveDescriptions.Descriptions.Count && i < 3; i++)
         {
             var description = PersistanceManager.Instance.SaveDescriptions.Descriptions[i];
+            if (description is null)
+            {
+                continue;
+            }
             buttons[i].SetActive(true);
             buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = description.ToString();
             var button = buttons[i].GetComponent<Button>();
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() =>
             {
-                // TODO: Load game
-                print("Load game: ");
+                SaveData saveData = PersistanceManager.Instance.LoadGame(i);
+                GameManager.LoadGame(saveData);
             });
         }
     }

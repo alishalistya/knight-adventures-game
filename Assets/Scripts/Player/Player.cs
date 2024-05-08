@@ -43,7 +43,7 @@ public class Player : Entity, IShopCustomer
     }
 
     public PlayerInventory Inventory;
-    protected int Gold { get; set;} = 0;
+    protected int Gold { get; set; } = 0;
     protected override int MaxHealth => 100;
     protected override int InitialHealth => 100;
 
@@ -87,7 +87,8 @@ public class Player : Entity, IShopCustomer
         weapon.AnimateAttack(movement.Anim);
         if (weapon is RangedWeapon)
         {
-            PersistanceManager.Instance.Statistics.AddTotalShot();
+            PersistanceManager.Instance.GlobalStat.AddTotalShot();
+            GameManager.Instance.Statistics.AddTotalShot();
         }
     }
 
@@ -118,7 +119,8 @@ public class Player : Entity, IShopCustomer
             return;
         }
         base.TakeDamage(amount);
-        
+        PersistanceManager.Instance.GlobalStat.AddDamageTaken(amount);
+        GameManager.Instance.Statistics.AddDamageTaken(amount);
     }
 
     public void AddGold(int amount)

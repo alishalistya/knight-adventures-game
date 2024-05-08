@@ -9,7 +9,7 @@ public class PersistanceManager
     const string GAME_SAVES_FOLDER = "saves/";
     private static PersistanceManager _instance;
     public SaveDescriptions SaveDescriptions;
-    public GameStatistics Statistics = new();
+    public GameStatistics GlobalStat = new();
     public static PersistanceManager Instance
     {
         get
@@ -33,18 +33,18 @@ public class PersistanceManager
     {
         if (FileManager.LoadFromFile(STATISTICS_FILE_NAME, out string jsonString))
         {
-            Statistics = JsonUtility.FromJson<GameStatistics>(jsonString);
+            GlobalStat = JsonUtility.FromJson<GameStatistics>(jsonString);
         }
         else
         {
-            Statistics = new GameStatistics();
+            GlobalStat = new GameStatistics();
             SaveStatistics();
         };
     }
 
     public void SaveStatistics()
     {
-        var jsonString = JsonUtility.ToJson(Statistics);
+        var jsonString = JsonUtility.ToJson(GlobalStat);
         FileManager.WriteToFile(STATISTICS_FILE_NAME, jsonString);
 
     }
@@ -59,5 +59,25 @@ public class PersistanceManager
         {
             SaveDescriptions = new SaveDescriptions();
         }
+    }
+
+    public void SaveSaveDescriptions()
+    {
+        var jsonString = JsonUtility.ToJson(SaveDescriptions);
+        FileManager.WriteToFile(STATISTICS_FILE_NAME, jsonString);
+    }
+
+    public void SaveGame(SaveData saveData, SaveDescriptions.Description description, int saveIndex)
+    {
+        SaveDescriptions.Descriptions[saveIndex] = description;
+        SaveSaveDescriptions();
+        var jsonString = JsonUtility.ToJson(saveData);
+        FileManager.WriteToFile(GAME_SAVES_FOLDER + saveIndex.ToString() + ".json", jsonString);
+    }
+
+    public SaveData LoadGame(int saveIndex)
+    {
+        FileManager.LoadFromFile(GAME_SAVES_FOLDER + saveIndex.ToString() + ".json", out string jsonString);
+        return JsonUtility.FromJson<SaveData>(jsonString);
     }
 }

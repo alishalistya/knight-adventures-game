@@ -7,6 +7,6 @@ public class StatisticsMenu : MonoBehaviour
     private void OnEnable()
     {
         PersistanceManager.Instance.LoadStatistics();
-        gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(PersistanceManager.Instance.Statistics);
+        gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(PersistanceManager.Instance.GlobalStat);
     }
 }

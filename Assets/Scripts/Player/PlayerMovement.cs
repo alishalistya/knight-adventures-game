@@ -81,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, previousPosition);
-        PersistanceManager.Instance.Statistics.AddDistance(distance);
+        PersistanceManager.Instance.GlobalStat.AddDistance(distance);
+        GameManager.Instance.Statistics.AddDistance(distance);
         previousPosition = transform.position;
         // CheckJump();
         Animating();
