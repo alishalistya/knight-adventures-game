@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  damageable: {fileID: 0}
+  damageable: {fileID: 7261010634968937646}
 --- !u!1001 &4685485495379357705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e936373f34a721a4482f79105d1133eb, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

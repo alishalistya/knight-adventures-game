@@ -20,6 +20,7 @@ public class King: Mob, IWeaponAnimationHandler
     protected string RangedAttackAnimationMovement => "ThrowMovement";
     
     protected override float TimeBetweenAttack => 2f;
+    protected float TimeBetweenRangedAttack => 5f;
     
     protected override int MaxHealth => 300;
     protected override int InitialHealth => 300;
@@ -69,10 +70,21 @@ public class King: Mob, IWeaponAnimationHandler
     public override void OnEndAttackAnim()
     {
         base.OnEndAttackAnim();
-        Task.Delay((int)(TimeBetweenAttack * 1000)).ContinueWith(t =>
+
+        if (attackState is KingAttackState.Meele)
         {
-            isReadyToAttack = true;
-        });
+            Task.Delay((int)(TimeBetweenAttack * 1000)).ContinueWith(t =>
+            {
+                isReadyToAttack = true;
+            });
+        }
+        else
+        {
+            Task.Delay((int)(TimeBetweenRangedAttack * 1000)).ContinueWith(t =>
+            {
+                isReadyToAttack = true;
+            });
+        }
     }
 
     public void OnStartAttackTrigger()
@@ -83,7 +95,7 @@ public class King: Mob, IWeaponAnimationHandler
         }
         else
         {
-            // rangedWeapon.StartProjectile(this);
+            rangedWeapon.StartProjectile(this);
         }
     }
 
