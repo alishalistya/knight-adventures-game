@@ -55,6 +55,7 @@ public class Player : Entity, IShopCustomer
     new void Start()
     {
         base.Start();
+        QuestEvents.OnQuestCompleted += AddGoldFromQuest;
         Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
     }
 
@@ -95,8 +96,6 @@ public class Player : Entity, IShopCustomer
         movement.enabled = false;
         movement.Anim.SetTrigger("Death");
         UIGameOver.SetActive(true);
-
-
     }
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
@@ -125,6 +124,13 @@ public class Player : Entity, IShopCustomer
     public void AddGold(int amount)
     {
         Gold += amount;
+        PlayerStatsEvents.PlayerStatsChanged(this);
+    }
+
+    public void AddGoldFromQuest(Quest quest)
+    {
+        Gold += quest.GoldReward;
+        Debug.Log($"Quest completed, gold reward: {quest.GoldReward}");
         PlayerStatsEvents.PlayerStatsChanged(this);
     }
 
