@@ -43,12 +43,25 @@ public class QuestUI : MonoBehaviour
 
     public void UpdateQuestUI(Quest quest)
     {
+
         foreach (Transform child in container)
         {
             if (child == goalItemTemplate) continue;
             Destroy(child.gameObject);
         }
-        Debug.Log("Updating Quest UI");
-        LoadQuest(quest);
+        if (quest.Completed)
+        {
+            gameObject.SetActive(false);
+        } else
+        {
+            LoadQuest(quest);
+        }
+    }
+    public void UpdateQuestCompletion(Quest quest)
+    {
+        if (quest.Completed)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

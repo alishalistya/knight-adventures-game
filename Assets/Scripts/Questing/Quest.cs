@@ -12,12 +12,13 @@ public class Quest : MonoBehaviour {
         Completed = Goals.TrueForAll(g => g.Completed);
         if (Completed) 
         {
+            QuestEvents.QuestCompleted(this);
             GiveReward();
         }
     }
 
-    void GiveReward() 
+    protected virtual void GiveReward()
     {
-        // Give reward
+        Debug.Log("Quest Completed");
     }
 }

@@ -17,10 +17,10 @@ public class CollectGoal : Goal
         QuestEvents.OnItemCollected += ItemCollected;
     }
     
-    void ItemCollected(string itemName) {
+    void ItemCollected(string itemName, int amount) {
         if (itemName == this.ItemName && !this.Completed)
         {
-            this.CurrentAmount++;
+            this.CurrentAmount += amount;
             Evaluate();
         }
     }

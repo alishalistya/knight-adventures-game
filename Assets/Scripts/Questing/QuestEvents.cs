@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class QuestEvents : MonoBehaviour
 {
-    public delegate void CollectEventHandler(string orbName);
+    public delegate void CollectEventHandler(string orbName, int amount);
     public static event CollectEventHandler OnItemCollected;
 
-    public static void OrbCollected(string orbName)
+    public static void OrbCollected(string orbName, int amount = 1)
     {
-        OnItemCollected?.Invoke(orbName);
+        OnItemCollected?.Invoke(orbName, amount);
     }
 
     public delegate void GoalEventHandler(Quest quest);
