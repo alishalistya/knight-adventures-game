@@ -43,7 +43,7 @@ public class Player : Entity, IShopCustomer
     }
 
     public PlayerInventory Inventory;
-    protected int Gold { get; set; } = 0;
+    public int Gold { get; set; } = 0;
     protected override int MaxHealth => 100;
     protected override int InitialHealth => 100;
 
