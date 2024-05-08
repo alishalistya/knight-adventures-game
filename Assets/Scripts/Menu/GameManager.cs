@@ -10,7 +10,7 @@ public class GameManager
   public static GameManager Instance { get; private set; }
   public GameStatistics Statistics;
   public int QuestNumber = 1;
-  public bool PlayerNeedToBeLocated = false;
+  public bool FromLoad = false;
   public int PlayerGold = 0;
 
   private GameManager()
@@ -36,7 +36,7 @@ public class GameManager
       Statistics = saveData.Statistics,
       QuestNumber = saveData.QuestNumber,
       PlayerGold = saveData.PlayerGold,
-      PlayerNeedToBeLocated = true,
+      FromLoad = true,
     };
     SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
   }
@@ -50,7 +50,7 @@ public class GameManager
   public static void NextQuest()
   {
     Instance.QuestNumber++;
-    Instance.PlayerNeedToBeLocated = false;
+    Instance.FromLoad = false;
     SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
   }
 }
