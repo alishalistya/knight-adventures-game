@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum PlayerMovementState
 {
@@ -60,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public Animator Anim;
 
+    private PlayerInput playerInput;
+
     private Vector3 previousPosition;
 
     private void Start()
@@ -71,11 +74,20 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         PlayerMovementState = PlayerMovementState.Idle;
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void FixedUpdate()
     {
-        GetDirectionAndMove();
+
+        vInput = Input.GetAxisRaw("Vertical");
+        hzInput = Input.GetAxisRaw("Horizontal");
+        var keyboardMove = GetDirectionAndMove(hzInput, vInput);
+        if (!keyboardMove)
+        {
+            var input = playerInput.actions["Move"].ReadValue<Vector2>();
+            GetDirectionAndMove(input.x, input.y);
+        }
     }
 
     void Update()
@@ -88,15 +100,14 @@ public class PlayerMovement : MonoBehaviour
         Animating();
     }
 
-    void GetDirectionAndMove()
+    bool GetDirectionAndMove(float hzInput, float vInput)
     {
         if (disableMove)
         {
             rb.velocity = Vector3.zero;
-            return;
+            return false;
         }
-        vInput = Input.GetAxisRaw("Vertical");
-        hzInput = Input.GetAxisRaw("Horizontal");
+
 
         dir = new Vector3(hzInput, 0f, vInput);
         dir.Normalize();
@@ -117,11 +128,13 @@ public class PlayerMovement : MonoBehaviour
             // {
             //     dir = Vector3.zero;
             // }
+            return true;
         }
         else
         {
             dir = Vector3.zero;
             rb.velocity = Vector3.zero;
+            return false;
         }
     }
 
