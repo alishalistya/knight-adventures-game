@@ -31,7 +31,9 @@ public class UIGameOver : MonoBehaviour
 
     public void Retry()
     {
+        Debug.Log("Retry");
         SceneManager.LoadScene(sceneName);
+        
     }
 
     public void startGameOverTimer()

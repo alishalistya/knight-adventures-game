@@ -13,6 +13,7 @@ public class UIGold : MonoBehaviour
     {
         Debug.Log("UIGold Start");
         PlayerStatsEvents.OnPlayerStatsChanged += PlayerStatsChanged;
+        Debug.Log(goldValue.text);
         
     }
 
@@ -20,5 +21,6 @@ public class UIGold : MonoBehaviour
     {
         int value = player.Gold;
         goldValue.text = value.ToString();
+        Debug.Log(value);
     }
 }

@@ -13,7 +13,7 @@ public class TimelineController : MonoBehaviour
     void Start()
     {
         director = GetComponentInChildren<PlayableDirector>();
-        
+        UI.SetActive(false);
     }
 
     // Update is called once per frame
