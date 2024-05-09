@@ -59,14 +59,17 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
             return;
         }
 
-        var player = (Player)hurtbox.entity;
-
-        if (player is not null)
+        if (hurtbox.entity is Player)
         {
-            attackDebuff = new AttackMultiplierBuff("kingatkdebuff", AttackDebuffValue);
-            player.AttackMultiplierBuffs.Add(attackDebuff);
-            movementDebuff = new MovementSpeedMultiplierBuff("kingmovdebuff", MovementSpeedDebuffValue);
-            player.Movement.MovementSpeedMultiplierBuffs.Add(movementDebuff);
+            var player = (Player)hurtbox.entity;
+
+            if (player is not null)
+            {
+                attackDebuff = new AttackMultiplierBuff("kingatkdebuff", AttackDebuffValue);
+                player.AttackMultiplierBuffs.Add(attackDebuff);
+                movementDebuff = new MovementSpeedMultiplierBuff("kingmovdebuff", MovementSpeedDebuffValue);
+                player.Movement.MovementSpeedMultiplierBuffs.Add(movementDebuff);
+            }
         }
         
         _triggered.Add(hurtbox);
@@ -86,17 +89,20 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
         if (hurtbox is not null)
         {
             _triggered.Remove(hurtbox);
-            
-            var player = (Player)hurtbox.entity;
 
-            if (player is not null)
+            if (hurtbox.entity is Player)
             {
-                attackDebuff.IsActive = false;
-                player.AttackMultiplierBuffs.Remove(attackDebuff);
-                attackDebuff = null;
-                movementDebuff.IsActive = false;
-                player.Movement.MovementSpeedMultiplierBuffs.Remove(movementDebuff);
-                movementDebuff = null;
+                var player = (Player)hurtbox.entity;
+
+                if (player is not null)
+                {
+                    attackDebuff.IsActive = false;
+                    player.AttackMultiplierBuffs.Remove(attackDebuff);
+                    attackDebuff = null;
+                    movementDebuff.IsActive = false;
+                    player.Movement.MovementSpeedMultiplierBuffs.Remove(movementDebuff);
+                    movementDebuff = null;
+                }
             }
         }
     }
