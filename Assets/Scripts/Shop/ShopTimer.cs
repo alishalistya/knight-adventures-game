@@ -18,21 +18,18 @@ public class ShopTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("ShopTimer Start");
-        // uiShop = GetComponent<UI_Shop>();
-        startShopTimer();
-        // gameObject.SetActive(false);
-        // timerText.text = "";
+        ShopEvents.OnTimerStarted += OnShopTimerStarted;
     }
 
-    public void startShopTimer()
+    private void OnShopTimerStarted()
     {
+        Debug.Log("ShopTimer onShopTimerStarted");
         StartCoroutine(Timer());
     }
     private IEnumerator Timer()
     {
         Debug.Log("ShopTimer Timer");
-        gameObject.SetActive(true);
+        timerText.gameObject.SetActive(true);
         uiShop.SetShopOpen(true);
         uiShop.SetShopHadBeenOpened(true);
         float timeLeft = duration;
@@ -46,6 +43,8 @@ public class ShopTimer : MonoBehaviour
         uiShop.SetShopOpen(false);
         timerText.text = "Shop is closed";
         yield return new WaitForSeconds(5f);
+        timerText.text = "";
+        timerText.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
     

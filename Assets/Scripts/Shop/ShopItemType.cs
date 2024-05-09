@@ -16,7 +16,7 @@ public class ShopItem
         switch (shopItemType)
         {
             default:
-            case ShopItemType.Pet_1: return 10;
+            case ShopItemType.Pet_1: return 20;
             case ShopItemType.Pet_2: return 20;
             case ShopItemType.Pet_3: return 30;
         }

@@ -21,6 +21,7 @@ public class TimelineController : MonoBehaviour
     {
         if(director.state != PlayState.Playing)
         {
+            ShopEvents.ShopTimerStarted();
             director.Stop();
             UI.SetActive(true);
             cutscene.SetActive(false);

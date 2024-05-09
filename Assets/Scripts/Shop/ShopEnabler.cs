@@ -28,6 +28,17 @@ public class ShopEnabler : MonoBehaviour
             isShopOpen = false;
             return;
         }
+
+        else if (isShopOpen && Input.GetKeyDown(KeyCode.Alpha1) && customer != null)
+        {
+            uiShop.TryBuyItem(ShopItem.ShopItemType.Pet_1);
+            return;
+        }
+        else if (isShopOpen && Input.GetKeyDown(KeyCode.Alpha2) && customer != null)
+        {
+            uiShop.TryBuyItem(ShopItem.ShopItemType.Pet_2);
+            return;
+        }
     }
 
     private void OnTriggerExit(Collider other) {

@@ -35,16 +35,24 @@ public class UI_Shop : MonoBehaviour
 
         var button = shopItemTransform.GetComponent<Button>();
 
-        shopItemTransform.GetComponent<Button>().onClick.AddListener(() =>
-        {
-            TryBuyItem(shopItemType);
-        });
+        // shopItemTransform.GetComponent<Button>().onClick.AddListener(() =>
+        // {
+        //     TryBuyItem(shopItemType);
+        // });
 
     }
 
-    private void TryBuyItem(ShopItem.ShopItemType itemName)
+    public void TryBuyItem(ShopItem.ShopItemType itemName)
     {
-        shopCustomer.BuyItem(itemName);
+        if (shopCustomer.CheckGold(ShopItem.GetCost(itemName)))
+        {
+            shopCustomer.BuyItem(itemName);
+            shopCustomer.RemoveGold(ShopItem.GetCost(itemName));
+        }
+        else
+        {
+            Debug.Log("Not enough gold");
+        }
     }
     void Start()
     {
@@ -63,20 +71,20 @@ public class UI_Shop : MonoBehaviour
 
         if (shopCustomer.CheckGold(ShopItem.GetCost(ShopItem.ShopItemType.Pet_1)))
         {
-            setHintForButton(item1, true);
+            SetHintForButton(item1, true, 1);
         }
         else
         {
-            setHintForButton(item1, false);
+            SetHintForButton(item1, false, 1);
         }
 
         if (shopCustomer.CheckGold(ShopItem.GetCost(ShopItem.ShopItemType.Pet_2)))
         {
-            setHintForButton(item2, true);
+            SetHintForButton(item2, true, 2);
         }
         else
         {
-            setHintForButton(item2, false);
+            SetHintForButton(item2, false, 2);
         }
         this.shopCustomer = shopCustomer;
         gameObject.SetActive(true);
@@ -96,10 +104,19 @@ public class UI_Shop : MonoBehaviour
     {
         this.isShopHadBeenOpened = isShopHadBeenOpened;
     }
-    private void setHintForButton(Transform item, bool isActive)
+    private void SetHintForButton(Transform item, bool isActive, int itemNumber)
     {
         item.GetComponent<Button>().interactable = isActive;
         item.Find("disableOverlay").gameObject.SetActive(!isActive);
-        item.Find("warningText").gameObject.SetActive(!isActive);
+        if (isActive)
+        {
+            item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().SetText("Press " + itemNumber + " to buy");
+            item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().color = Color.white;
+            return;
+        } else
+        {
+            item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().SetText("Not enough gold");
+            item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
+        }
     }
 }
