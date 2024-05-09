@@ -213,11 +213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 978465816233043318, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000018629624
+      value: 0.000000018629626
       objectReference: {fileID: 0}
     - target: {fileID: 978465816233043318, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000047970157
+      value: -0.0000000047970166
       objectReference: {fileID: 0}
     - target: {fileID: 3318894297071311536, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_Follow
@@ -264,16 +264,20 @@ PrefabInstance:
       value: Third Person Camera
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98817766
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09853762
+      value: 0.15331319
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000004280661
+      value: 0.000000008501481
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.238689e-10
+      value: -0.0000000013189826
       objectReference: {fileID: 0}
     - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -314,6 +318,22 @@ PrefabInstance:
     - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131450076327202993, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1098777374046762319}
+    - target: {fileID: 8131450076327202993, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030536076742207165, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1098777374046762319}
+    - target: {fileID: 9030536076742207165, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14828,8 +14848,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337351853}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.018667193, y: 0.3344556, z: -0.006626679, w: -0.94220334}
-  m_LocalPosition: {x: -29.444786, y: 1.2853912, z: 73.84375}
+  m_LocalRotation: {x: 0.15331322, y: 0.000000008501482, z: -0.000000001318983, w: 0.9881777}
+  m_LocalPosition: {x: -27.51, y: 3, z: 61.589996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23842,6 +23862,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1312c0b35574bde4283b7afaa66e98b8, type: 3}
+--- !u!114 &1098777374046762319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5978028035859250056, guid: 1312c0b35574bde4283b7afaa66e98b8, type: 3}
+  m_PrefabInstance: {fileID: 1098777374046762318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044d7362cc0f4e84f9bc1328a6980123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2328917259762505705
 Transform:
   m_ObjectHideFlags: 0
