@@ -29,8 +29,6 @@ public abstract class MobMovement : MonoBehaviour
             Animating();
         }
     }
-
-    private bool _useDefaultRotation = true;
     
     private float _preciseUpdateOffset = 10f;
 

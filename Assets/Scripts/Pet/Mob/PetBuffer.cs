@@ -3,19 +3,24 @@ using System.Threading.Tasks;
 
 public class PetBuffer: BasePetMob
 {
-    protected override int MaxHealth => 50;
-    protected override int InitialHealth => 50;
+    protected int baseHealth = 40;
+    protected int initialHealth;
+    
+    protected override int MaxHealth => initialHealth;
+    protected override int InitialHealth => initialHealth;
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
     }
 
     protected AttackMultiplierBuff buff;
 
-    protected void Awake()
+    protected new void Awake()
     {
+        base.Awake();
         // convert to percent
         buff = new AttackMultiplierBuff("pet", AbilityEffect / 100f);
-        movement.ownerEntity.AttackMultiplierBuffs.Add(buff);   
+        movement.ownerEntity.AttackMultiplierBuffs.Add(buff);
+        initialHealth = (int)(_enemyDifficultyMultiplier * baseHealth);
     }
 
     protected override void OnDeath()

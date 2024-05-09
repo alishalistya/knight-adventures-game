@@ -5,48 +5,18 @@ using UnityEngine;
 
 public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
 {
-    // private PoolableObject Prefab;
-    // [SerializeField]
-    // private float AttackDelay = 0.33f;
-    // [SerializeField]
-    // private float AttackMoveSpeed = 1f;
-    // [SerializeField] private Player Player;
-    // private Coroutine AttackCoroutine;
-    // private List<Attackable> AttackableObjects = new List<Attackable>();
-    //
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.TryGetComponent<Attackable>(out Attackable attackable))
-    //     {
-    //         AttackableObjects.Add(attackable);
-    //
-    //         if (AttackCoroutine != null)
-    //         {
-    //             StopCoroutine(AttackCoroutine);
-    //         }
-    //
-    //         AttackCoroutine = StopCoroutine(Attack());
-    //     }
-    // }
-    //
-    // private void OnTriggerExit(Collider other)
-    // {
-    //     if (other TryGetComponent<Attackable>(out Attackable attackable))
-    //     {
-    //         
-    //     }
-    // }
-
     public PetPlayerAttackMovement movement;
     protected override bool IsAttacking { get; set; }
     
-    protected override int MaxHealth => 3000;
-    protected override int InitialHealth => 3000;
+    protected int baseHealth = 150;
     
-    // protected override int AbilityEffect => 100;
-    // protected override float TimeBetweenAbility => 1f;
+    protected int initialHealth;
+    
+    protected override int MaxHealth => initialHealth;
+    protected override int InitialHealth => initialHealth;
+    
     protected int AbilityEffect => 100;
-    protected float TimeBetweenAbility => 1f;
+    protected float TimeBetweenAbility => 2f;
 
     protected bool _targetInRange;
     
@@ -59,6 +29,8 @@ public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
         }
     }
     
+    protected float _playerDifficultyMultiplier;
+    
     protected Damageable weapon;
     bool isReadyToAttack = true;
     
@@ -67,6 +39,14 @@ public class PetAttacker: /* BasePetPlayer */ Entity, IWeaponAnimationHandler
     protected void Awake()
     {
         weapon = GetComponentInChildren<Damageable>();
+        _playerDifficultyMultiplier = GameManager.Instance.Difficulty switch
+        {
+            Difficulty.Easy => 1f,
+            Difficulty.Medium => 0.8f,
+            Difficulty.Hard => 0.6f,
+            _ => 1f
+        };
+        initialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
     }
 
     private void FixedUpdate()

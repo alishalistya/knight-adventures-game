@@ -5,14 +5,30 @@ using UnityEngine;
 
 public class PetHealer: BasePetPlayer
 {
-    protected override int MaxHealth => 30;
-    protected override int InitialHealth => 30;
+    protected int baseHealth = 150;
+    
+    protected int initialHealth;
+    
+    protected override int MaxHealth => initialHealth;
+    protected override int InitialHealth => initialHealth;
 
-    protected override float TimeBetweenAbility => 5f;
-    protected override int AbilityEffect => 10;
+    protected override float TimeBetweenAbility => 2f;
+
+    protected int baseHeal = 10;
+    protected int heal;
+    
+    protected override int AbilityEffect => heal;
     
     bool isReadyToHeal = true;
+    
     protected string HealAnimationMovement => "Heal";
+
+    protected new void Awake()
+    {
+        base.Awake();
+        initialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
+        heal = (int)(_playerDifficultyMultiplier * baseHeal);
+    }
 
     private void FixedUpdate()
     {

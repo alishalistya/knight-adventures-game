@@ -6,11 +6,7 @@ public class PetPlayerAttackMovement : PetPlayerMovement
     // target and targetEntity is same as in PetPlayerAttackMovement
     public GameObject target;
     public Entity targetEntity;
-
-    protected void Awake()
-    {
-        base.Awake();
-    }
+    
 
     private void setTarget(bool IsNull)
     {

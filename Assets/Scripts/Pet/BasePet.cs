@@ -5,51 +5,27 @@ using UnityEngine.XR;
 
 public abstract class BasePet<TEntity> : Entity where TEntity : Entity
 {
-    // public PetMovement movement;
-    //
-    // protected bool _enemyInRange;
-    // override protected bool IsAttacking { get; set; }
-    //
-    // protected bool EnemyInRange
-    // {
-    //     get => _enemyInRange;
-    //     set
-    //     {
-    //         movement.UseDefaultRotation = !value;
-    //         _enemyInRange = value;
-    //     }
-    // }
-    //
-    // protected abstract float TimeBetweenAbility { get; }
-    // protected abstract int Ability { get; }
+    protected float _enemyDifficultyMultiplier;
+    
+    protected float _playerDifficultyMultiplier;
 
-    // protected void OnTriggerEnter(Collider other)
-    // {
-    //     // If the entering collider is the player...
-    //     if (other.gameObject == movement.target)
-    //     {
-    //         // ... the player is in range.
-    //         EnemyInRange = true;
-    //     }
-    // }
-    //
-    // protected void OnTriggerExit(Collider other)
-    // {
-    //     // If the exiting collider is the player...
-    //     if (other.gameObject == movement.target)
-    //     {
-    //         // ... the player is no longer in range.
-    //         EnemyInRange = false;
-    //     }
-    // }
-    //
-    // protected override void OnDeath()
-    // {
-    //     movement.nav.enabled = false;
-    //     movement.enabled = false;
-    //     movement.Anim.SetTrigger("Death");
-    //     Destroy(gameObject, 2f);
-    // }
+    protected void Awake()
+    {
+        _enemyDifficultyMultiplier = GameManager.Instance.Difficulty switch
+        {
+            Difficulty.Easy => 1f,
+            Difficulty.Medium => 1.5f,
+            Difficulty.Hard => 2f,
+            _ => 1f
+        };
+        _playerDifficultyMultiplier = GameManager.Instance.Difficulty switch
+        {
+            Difficulty.Easy => 1f,
+            Difficulty.Medium => 0.8f,
+            Difficulty.Hard => 0.6f,
+            _ => 1f
+        };
+    }
     
     public PetMovement<TEntity> movement;
     
