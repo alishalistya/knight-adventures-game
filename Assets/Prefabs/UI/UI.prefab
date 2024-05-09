@@ -281,12 +281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8429c97953db24b4294cd1b804bbd898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 60
   timerText: {fileID: 9052011347424343784}
-  sceneName: Quest-1
-  healthUI: {fileID: 0}
-  goldUI: {fileID: 0}
-  questUI: {fileID: 0}
+  sceneName: Quest-3
+  healthUI: {fileID: 2763699367031269867}
+  goldUI: {fileID: 1090979772331194685}
+  questUI: {fileID: 5188781261175266438}
 --- !u!114 &9052011347424343784 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8921942376844692490, guid: 98a0a3b72e92a4c50949e1c3aa14f39b, type: 3}
@@ -363,6 +363,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1713785122ba45288e53ae1ade7bb8e, type: 3}
+--- !u!1 &2763699367031269867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4350636865696495512, guid: e1713785122ba45288e53ae1ade7bb8e, type: 3}
+  m_PrefabInstance: {fileID: 1889876610988908147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3100885326300507370 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3545104788197536409, guid: e1713785122ba45288e53ae1ade7bb8e, type: 3}
@@ -815,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5934366761698880819, guid: ef0a1e6f62c16fe45b012669de641b0a, type: 3}
       propertyPath: questType
-      value: Quest1
+      value: Quest3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -825,5 +830,10 @@ PrefabInstance:
 --- !u!224 &5028144502232194283 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4206570967929113218, guid: ef0a1e6f62c16fe45b012669de641b0a, type: 3}
+  m_PrefabInstance: {fileID: 9198374411810428521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5188781261175266438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4009736224604343023, guid: ef0a1e6f62c16fe45b012669de641b0a, type: 3}
   m_PrefabInstance: {fileID: 9198374411810428521}
   m_PrefabAsset: {fileID: 0}
