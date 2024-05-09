@@ -24,37 +24,37 @@ public class UIGameOver : MonoBehaviour
         goldUI.SetActive(false);
         questUI.SetActive(false);
 
-        // Set Listener Retry
-        GameObject buttonRetry = GameObject.Find("btnRetry");
+        // // Set Listener Retry
+        // GameObject buttonRetry = GameObject.Find("btnRetry");
 
-        // Ensure the buttonObject is not null and has a Button component
-        if (buttonRetry != null)
-        {
-            Button button = buttonRetry.GetComponent<Button>();
-            if (button != null)
-            {
-                Debug.Log("Theres retry!");
-                button.onClick.AddListener(() =>
-                {
-                    Debug.Log("Retry");
-                    Retry();
-                });
-        }}
+        // // Ensure the buttonObject is not null and has a Button component
+        // if (buttonRetry != null)
+        // {
+        //     Button button = buttonRetry.GetComponent<Button>();
+        //     if (button != null)
+        //     {
+        //         Debug.Log("Theres retry!");
+        //         button.onClick.AddListener(() =>
+        //         {
+        //             Debug.Log("Retry");
+        //             Retry();
+        //         });
+        // }}
         
-        // Set Listener
-        GameObject buttonMenu = GameObject.Find("btnMainMenu");
+        // // Set Listener
+        // GameObject buttonMenu = GameObject.Find("btnMainMenu");
 
-        // Ensure the buttonObject is not null and has a Button component
-        if (buttonMenu != null)
-        {
-            Button button = buttonMenu.GetComponent<Button>();
-            if (button != null)
-            {
-                button.onClick.AddListener(() =>
-                {
-                    MainMenu();
-                });
-            }}
+        // // Ensure the buttonObject is not null and has a Button component
+        // if (buttonMenu != null)
+        // {
+        //     Button button = buttonMenu.GetComponent<Button>();
+        //     if (button != null)
+        //     {
+        //         button.onClick.AddListener(() =>
+        //         {
+        //             MainMenu();
+        //         });
+        //     }}
         
         startGameOverTimer();
     }
