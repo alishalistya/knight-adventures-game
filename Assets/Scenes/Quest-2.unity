@@ -177,15 +177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.26693356
+      value: 0.2669336
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000028720944
+      value: -3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000000795524
+      value: 1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 6281725811369552821, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_Name
@@ -10335,6 +10335,14 @@ PrefabInstance:
       propertyPath: questType
       value: Quest2
       objectReference: {fileID: 0}
+    - target: {fileID: 3482038932828296977, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4357243454549517544, guid: 98a0a3b72e92a4c50949e1c3aa14f39b, type: 3}
+    - target: {fileID: 3482038932828296977, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3573764719213162408, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -10598,6 +10606,14 @@ PrefabInstance:
     - target: {fileID: 7172608633273400080, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468486226888751880, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4357243454549517544, guid: 98a0a3b72e92a4c50949e1c3aa14f39b, type: 3}
+    - target: {fileID: 7468486226888751880, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
       objectReference: {fileID: 0}
     - target: {fileID: 7786425565092172644, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
       propertyPath: m_AnchorMax.y
