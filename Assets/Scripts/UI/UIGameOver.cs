@@ -18,45 +18,26 @@ public class UIGameOver : MonoBehaviour
     void Start()
     {
 
-        // gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(GameManager.Instance.Statistics);
+        gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(GameManager.Instance.Statistics);
 
         healthUI.SetActive(false);
         goldUI.SetActive(false);
         questUI.SetActive(false);
-
-        // // Set Listener Retry
-        // GameObject buttonRetry = GameObject.Find("btnRetry");
-
-        // // Ensure the buttonObject is not null and has a Button component
-        // if (buttonRetry != null)
-        // {
-        //     Button button = buttonRetry.GetComponent<Button>();
-        //     if (button != null)
-        //     {
-        //         Debug.Log("Theres retry!");
-        //         button.onClick.AddListener(() =>
-        //         {
-        //             Debug.Log("Retry");
-        //             Retry();
-        //         });
-        // }}
-        
-        // // Set Listener
-        // GameObject buttonMenu = GameObject.Find("btnMainMenu");
-
-        // // Ensure the buttonObject is not null and has a Button component
-        // if (buttonMenu != null)
-        // {
-        //     Button button = buttonMenu.GetComponent<Button>();
-        //     if (button != null)
-        //     {
-        //         button.onClick.AddListener(() =>
-        //         {
-        //             MainMenu();
-        //         });
-        //     }}
         
         startGameOverTimer();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MainMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Retry();
+        }
     }
 
     public void MainMenu()
