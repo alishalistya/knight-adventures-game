@@ -83,11 +83,17 @@ public abstract class Mob : Entity
             audioSource.PlayOneShot(audioAttack);
         }
 
-        movement.nav.isStopped = true;
+        if (movement.nav.isOnNavMesh)
+        {
+            movement.nav.isStopped = true;
+        }
     }
 
     public override void OnEndAttackAnim()
     {
-        movement.nav.isStopped = false;
+        if (movement.nav.isOnNavMesh)
+        {
+            movement.nav.isStopped = false;
+        }
     }
 }
