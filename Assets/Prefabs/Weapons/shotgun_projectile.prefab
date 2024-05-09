@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  damageable: {fileID: -2618201751719345469}
+  damageable: {fileID: 0}
 --- !u!1001 &7825768735214216929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b48a4b3a821a72e49a8584ebc438b743, type: 3}
       propertyPath: m_Name
-      value: arrow
+      value: shotgun_projectile
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b48a4b3a821a72e49a8584ebc438b743, type: 3}
       propertyPath: m_Layer
@@ -145,14 +145,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b48a4b3a821a72e49a8584ebc438b743, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2618201751719345469}
+      addedObject: {fileID: 3340227172457796590}
   m_SourcePrefab: {fileID: 100100000, guid: b48a4b3a821a72e49a8584ebc438b743, type: 3}
 --- !u!1 &6943388314120494000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b48a4b3a821a72e49a8584ebc438b743, type: 3}
   m_PrefabInstance: {fileID: 7825768735214216929}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2618201751719345469
+--- !u!114 &3340227172457796590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,12 +161,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6943388314120494000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7e9aa88be70774793027439a1e53c6, type: 3}
+  m_Script: {fileID: 11500000, guid: a9d7f5fc9db84447b3ae9b034ce1607e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  damage: 25
-  maxDistance: 50
+  speed: 40
+  damage: 40
+  maxDistance: 20
   direction: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &7714681893252251914 stripped

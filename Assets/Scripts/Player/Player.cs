@@ -44,12 +44,29 @@ public class Player : Entity, IShopCustomer
 
     public PlayerInventory Inventory;
     public int Gold { get; set; } = 0;
-    protected override int MaxHealth => 100;
-    protected override int InitialHealth => 100;
+
+    protected int baseHealth = 200;
+    protected int initialMaxHealth;
+    protected int initialInitialHealth;
+    
+    protected override int MaxHealth => initialMaxHealth;
+    protected override int InitialHealth => initialInitialHealth;
+    
+    protected float _playerDifficultyMultiplier;
 
     private void Awake()
     {
         PersistanceManager.Instance.AssertInit();
+        _playerDifficultyMultiplier = GameManager.Instance.Difficulty switch
+        {
+            Difficulty.Easy => 1f,
+            Difficulty.Medium => 0.8f,
+            Difficulty.Hard => 0.6f,
+            _ => 1f
+        };
+        initialMaxHealth = (int)(_playerDifficultyMultiplier * baseHealth);
+        // todo update here to update initial health (examnple: case to load health from save game)
+        initialInitialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
     }
 
     new void Start()

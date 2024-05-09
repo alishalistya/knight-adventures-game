@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Sword : MeleeWeapon
 {
-    public override int Damage => 30;
+    public override int Damage => 40;
 }

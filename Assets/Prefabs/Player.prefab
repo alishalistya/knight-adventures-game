@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackSound: {fileID: 2611527834544224817}
-  projectilePrefab: {fileID: 6943388314120494000, guid: cf2c39d5540d20348b31e0fa0831054d, type: 3}
+  projectilePrefab: {fileID: 6943388314120494000, guid: 869262055401dba49bbd6ab1b80462f3, type: 3}
 --- !u!82 &2611527834544224817
 AudioSource:
   m_ObjectHideFlags: 0

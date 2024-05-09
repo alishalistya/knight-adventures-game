@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shotgun : RangedWeapon
 {
-  public override int Damage => 5;
+  public override int Damage => 0;
   public override float AttackSpeedMultiplier => 2f;
   Vector3 startRelativePosition = new(0.1f, 1.25f, 1.75f);
 
