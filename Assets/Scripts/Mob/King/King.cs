@@ -20,11 +20,14 @@ public class King: Mob, IWeaponAnimationHandler
     protected string MeeleAttackAnimationMovement => "AttackMovement";
     protected string RangedAttackAnimationMovement => "ThrowMovement";
     
-    protected override float TimeBetweenAttack => 2f;
-    protected float TimeBetweenRangedAttack => 5f;
+    protected override float TimeBetweenAttack => 4f;
+    protected float TimeBetweenRangedAttack => 6f;
+
+    protected int baseHealth = 400;
+    protected int initialHealth;
     
-    protected override int MaxHealth => 300;
-    protected override int InitialHealth => 300;
+    protected override int MaxHealth => initialHealth;
+    protected override int InitialHealth => initialHealth;
     
     public override int ID => 3;
     
@@ -37,6 +40,7 @@ public class King: Mob, IWeaponAnimationHandler
         base.Awake();
         maceWeapon = GetComponentInChildren<KingMaceWeapon>();
         rangedWeapon = GetComponent<KingThrowableWeapon>();
+        initialHealth = (int)(_difficultyMultiplier * baseHealth);
     }
 
     private void FixedUpdate()

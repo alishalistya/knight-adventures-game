@@ -5,8 +5,17 @@ public class Keroco : MobMeele
     public override int ID => 0;
     protected override string AttackAnimationMovement => "AttackMovement";
 
-    protected override int MaxHealth => 50;
-    protected override int InitialHealth => 50;
+    private int baseHealth = 50;
+    private int initialHealth;
 
-    protected override float TimeBetweenAttack => 1.5f;
+    protected new void Awake()
+    {
+        base.Awake();
+        initialHealth = (int)(baseHealth * _difficultyMultiplier);
+    }
+
+    protected override int MaxHealth => initialHealth;
+    protected override int InitialHealth => initialHealth;
+
+    protected override float TimeBetweenAttack => 2f;
 }

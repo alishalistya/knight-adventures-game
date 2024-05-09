@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Projectile : Damageable
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] int damage = 10;
-    [SerializeField] float maxDistance = 200f;
+    [SerializeField] protected float speed = 10f;
+    [SerializeField] protected int damage = 10;
+    [SerializeField] protected float maxDistance = 200f;
     public Entity Entity
     {
         set =>

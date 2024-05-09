@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Mob : Entity
 {
-    public abstract int ID {get;}
+    public abstract int ID { get; }
     [SerializeField] protected MobMovement movement;
     [SerializeField] protected AudioClip audioAwake;
     [SerializeField] protected AudioClip audioDeath;
@@ -10,26 +10,32 @@ public abstract class Mob : Entity
     [SerializeField] protected AudioClip audioAttack;
     [SerializeField] protected AudioSource audioSource;
 
+    protected float _difficultyMultiplier;
+
     protected bool _playerInRange;
     protected override bool IsAttacking { get; set; }
 
     protected void Awake()
     {
         audioSource.PlayOneShot(audioAwake);
+
+        _difficultyMultiplier = GameManager.Instance.Difficulty switch
+        {
+            Difficulty.Easy => 1f,
+            Difficulty.Medium => 1.5f,
+            Difficulty.Hard => 2f,
+            _ => 1f
+        };
     }
 
     protected bool PlayerInRange
     {
         get => _playerInRange;
-        set
-        {
-            _playerInRange = value;
-        }
+        set { _playerInRange = value; }
     }
 
     protected abstract float TimeBetweenAttack { get; }
-    
-    
+
 
     protected void OnTriggerEnter(Collider other)
     {

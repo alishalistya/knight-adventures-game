@@ -19,12 +19,29 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
 
     private int defaultLayer;
 
-    private float AttackDebuffValue => -0.1f;
-    private float MovementSpeedDebuffValue => -0.2f;
+    private float baseAttackDebuff = -0.1f;
+    private float baseSpeedDebuff = -0.1f;
+
+    private float attackDebuffValue;
+    private float baseSpeedDebuffValue;
+
+    private float AttackDebuffValue => attackDebuffValue;
+    private float MovementSpeedDebuffValue => baseSpeedDebuffValue;
+    
+    protected float _difficultyMultiplier;
 
     protected void Awake()
     {
         defaultLayer = LayerMask.NameToLayer("Default");
+        _difficultyMultiplier = GameManager.Instance.Difficulty switch
+        {
+            Difficulty.Easy => 1f,
+            Difficulty.Medium => 1.5f,
+            Difficulty.Hard => 2f,
+            _ => 1f
+        };
+        attackDebuffValue = (int)(baseAttackDebuff * _difficultyMultiplier);
+        baseSpeedDebuffValue = (int)(baseSpeedDebuff * _difficultyMultiplier);
     }
 
     private void OnTriggerEnter(Collider other)

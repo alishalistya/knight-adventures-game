@@ -4,8 +4,17 @@
         
         protected override string AttackAnimationMovement => "AttackMovement";
 
-        protected override int MaxHealth => 150;
-        protected override int InitialHealth => 150;
+        protected int baseHealth = 120;
+        protected int initialHealth;
 
-        protected override float TimeBetweenAttack => 1f;
+        protected override int MaxHealth => initialHealth;
+        protected override int InitialHealth => initialHealth;
+
+        protected override float TimeBetweenAttack => 3f;
+
+        protected new void Awake()
+        {
+                base.Awake();
+                initialHealth = (int)(baseHealth * _difficultyMultiplier);
+        }
 }

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  damageable: {fileID: 7261010634968937646}
+  damageable: {fileID: 0}
 --- !u!1001 &4685485495379357705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e936373f34a721a4482f79105d1133eb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7261010634968937646}
+      addedObject: {fileID: 4316575306919191206}
   m_SourcePrefab: {fileID: 100100000, guid: e936373f34a721a4482f79105d1133eb, type: 3}
 --- !u!4 &5083589016472360930 stripped
 Transform:
@@ -145,7 +145,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e936373f34a721a4482f79105d1133eb, type: 3}
   m_PrefabInstance: {fileID: 4685485495379357705}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7261010634968937646
+--- !u!114 &4316575306919191206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,11 +154,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5604547124392480088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7e9aa88be70774793027439a1e53c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 761e4312ed3c419990d54b0e37b2c2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 20
-  maxDistance: 200
+  speed: 30
+  damage: 16
+  maxDistance: 50
   direction: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}

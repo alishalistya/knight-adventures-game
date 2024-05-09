@@ -1,19 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-public class SuperKeroco: MobRanged
+public class SuperKeroco : MobRanged
 {
     public override int ID => 1;
     protected override string AttackAnimationMovement => "AttackMovement";
-    
-    protected override int MaxHealth => 75;
-    protected override int InitialHealth => 75;
-    
-    protected override float TimeBetweenAttack => 2f;
+
+    protected int baseHealth = 80;
+    protected int initialHealth;
+
+    protected override int MaxHealth => initialHealth;
+    protected override int InitialHealth => initialHealth;
+
+    protected override float TimeBetweenAttack => 3f;
 
     protected float lastSpawnKeroco = 0f;
     protected float spawnKerocoInterval = 25f;
-    
+
+    protected new void Awake()
+    {
+        base.Awake();
+        initialHealth = (int)(_difficultyMultiplier * baseHealth);
+    }
+
     [SerializeField] protected GameObject kerocoPrefab;
 
     protected new void FixedUpdate()

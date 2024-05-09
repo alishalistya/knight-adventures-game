@@ -1,4 +1,13 @@
 ﻿public class GeneralWeapon: Damageable
 {
-    public override int Damage => 30;
+    protected int baseDamage = 20;
+    protected int damage;
+    
+    public override int Damage => damage;
+
+    protected new void Awake()
+    {
+        base.Awake();
+        damage = (int)(_enemyDifficultyMultiplier * baseDamage);
+    }
 }

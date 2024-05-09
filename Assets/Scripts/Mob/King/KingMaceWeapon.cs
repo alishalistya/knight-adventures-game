@@ -1,4 +1,13 @@
 ﻿public class KingMaceWeapon: Damageable
 {
-    public override int Damage => 40;
+    protected int baseDamage = 30;
+    protected int damage;
+
+    protected new void Awake()
+    {
+        base.Awake();
+        damage = (int)(_enemyDifficultyMultiplier * baseDamage);
+    }
+    
+    public override int Damage => damage;
 }

@@ -1,4 +1,13 @@
-public class KerocoWeapon: Damageable 
+public class KerocoWeapon: Damageable
 {
-    public override int Damage => 20;
+    protected int baseDamage = 10;
+    protected int _damage;
+    
+    public override int Damage => _damage;
+
+    protected new void Awake()
+    {
+        base.Awake();
+        _damage = (int)(_enemyDifficultyMultiplier * baseDamage);
+    }
 }

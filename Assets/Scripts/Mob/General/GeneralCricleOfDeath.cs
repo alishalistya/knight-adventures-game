@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class GeneralCricleOfDeath: Damageable
 {
-    public override int Damage => 5;
+    protected int baseDamage = 2;
+    protected int damage;
+    
+    public override int Damage => damage;
 
     private float activeTime = 0f;
-    private float hitInterval = 3f; // every 3 seconds
+    private float hitInterval = 1f; // every 1 seconds
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
+        damage = (int)(_enemyDifficultyMultiplier * baseDamage);
         IsActive = true;
     }
 
