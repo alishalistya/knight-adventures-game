@@ -261,11 +261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.4238033e-15
+      value: -3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.836517e-15
+      value: 1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 6281725811369552821, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_Name
@@ -277,15 +277,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.098537624
+      value: 0.2317505
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042806607
+      value: 0.000000025399654
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.238689e-10
+      value: -0.0000000060511227
       objectReference: {fileID: 0}
     - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6292,7 +6292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6717666446451175617, guid: 98a0a3b72e92a4c50949e1c3aa14f39b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6794588384954193254, guid: 98a0a3b72e92a4c50949e1c3aa14f39b, type: 3}
       propertyPath: m_Type
@@ -15035,7 +15035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337351853}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.098537624, y: -0.000000008561321, z: 8.477379e-10, w: 0.99513334}
+  m_LocalRotation: {x: 0.23175052, y: 0.000000029244855, z: -0.00000000696719, w: 0.97277534}
   m_LocalPosition: {x: -72.05533, y: 3, z: -68.15431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25053,3 +25053,4 @@ SceneRoots:
   - {fileID: 202041196}
   - {fileID: 2138101030}
   - {fileID: 468143072}
+  - {fileID: 1072401917}
