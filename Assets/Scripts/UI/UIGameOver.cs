@@ -2,26 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Unity.VisualScripting;
 using TMPro;
 
 public class UIGameOver : MonoBehaviour
 {
-    public float duration = 5f;
+    public float duration = 10f;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] string sceneName;
+    [SerializeField] GameObject healthUI;
+    [SerializeField] GameObject goldUI;
+    [SerializeField] GameObject questUI;
 
-    // Start is called before the first frame update
     void Start()
     {
-        startGameOverTimer();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // gameObject.SetActive(false);
+        gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(GameManager.Instance.Statistics);
+
+        healthUI.SetActive(false);
+        goldUI.SetActive(false);
+        questUI.SetActive(false);
+
+        // Set Listener Retry
+        GameObject buttonRetry = GameObject.Find("btnRetry");
+
+        // Ensure the buttonObject is not null and has a Button component
+        if (buttonRetry != null)
+        {
+            Button button = buttonRetry.GetComponent<Button>();
+            if (button != null)
+            {
+                button.onClick.AddListener(() =>
+                {
+                    Retry();
+                });
+        }}
         
+        // Set Listener
+        GameObject buttonMenu = GameObject.Find("btnMainMenu");
+
+        // Ensure the buttonObject is not null and has a Button component
+        if (buttonMenu != null)
+        {
+            Button button = buttonMenu.GetComponent<Button>();
+            if (button != null)
+            {
+                button.onClick.AddListener(() =>
+                {
+                    MainMenu();
+                });
+            }}
+        
+        startGameOverTimer();
     }
 
     public void MainMenu()
@@ -59,4 +92,5 @@ public class UIGameOver : MonoBehaviour
             yield return null;
         }
     }
+
 }
