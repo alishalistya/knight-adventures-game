@@ -18,7 +18,7 @@ public class UIGameOver : MonoBehaviour
     void Start()
     {
 
-        gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(GameManager.Instance.Statistics);
+        // gameObject.GetComponentInChildren<StatisticsTable>().UpdateStatistics(GameManager.Instance.Statistics);
 
         healthUI.SetActive(false);
         goldUI.SetActive(false);
@@ -33,8 +33,10 @@ public class UIGameOver : MonoBehaviour
             Button button = buttonRetry.GetComponent<Button>();
             if (button != null)
             {
+                Debug.Log("Theres retry!");
                 button.onClick.AddListener(() =>
                 {
+                    Debug.Log("Retry");
                     Retry();
                 });
         }}
