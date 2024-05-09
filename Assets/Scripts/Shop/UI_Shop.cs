@@ -35,10 +35,10 @@ public class UI_Shop : MonoBehaviour
 
         var button = shopItemTransform.GetComponent<Button>();
 
-        // shopItemTransform.GetComponent<Button>().onClick.AddListener(() =>
-        // {
-        //     TryBuyItem(shopItemType);
-        // });
+        shopItemTransform.GetComponent<Button>().onClick.AddListener(() =>
+        {
+            TryBuyItem(shopItemType);
+        });
 
     }
 
@@ -110,7 +110,7 @@ public class UI_Shop : MonoBehaviour
         item.Find("disableOverlay").gameObject.SetActive(!isActive);
         if (isActive)
         {
-            item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().SetText("Press " + itemNumber + " to buy");
+            item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().SetText("Click or Press " + itemNumber + " to buy");
             item.Find("warningText").GetComponent<TMPro.TextMeshProUGUI>().color = Color.white;
             return;
         } else
