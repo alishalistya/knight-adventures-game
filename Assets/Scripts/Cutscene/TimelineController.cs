@@ -7,7 +7,7 @@ public class TimelineController : MonoBehaviour
 {
     PlayableDirector director;
     [SerializeField] GameObject cutscene;
-    [SerializeField] GameObject healthUI;
+    [SerializeField] GameObject UI;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class TimelineController : MonoBehaviour
         if(director.state != PlayState.Playing)
         {
             director.Stop();
-            healthUI.SetActive(true);
+            UI.SetActive(true);
             cutscene.SetActive(false);
             
         }
