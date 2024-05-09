@@ -15,7 +15,8 @@ public class Quest3 : Quest
 
         Goals.Add(new KillGoal(this, 2, "Kill 1 Jendral", false, 0, 1));
 
-        Goals.Add(new CollectGoal(this, "QuestChicken", "Collect chicken", false, 0, 5));
+        Goals.Add(new AreaGoal(this, "LocationArea", "Find the Mage!", false, 0, 1));
+
 
         Goals.ForEach(g => g.Init());
     }
