@@ -19,6 +19,10 @@ public class Goal
         {
             Complete();
         }
+        else 
+        {
+            Completed = false;
+        }
         QuestEvents.GoalProgressed(Quest);
     }
 
