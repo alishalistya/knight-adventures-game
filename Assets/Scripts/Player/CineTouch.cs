@@ -13,7 +13,7 @@ public class CineTouch : MonoBehaviour
     private void Awake()
     {
         cineCam = GetComponent<CinemachineFreeLook>();
-        if (touchField != null)
+        if (Application.isMobilePlatform)
         {
             cineCam.m_XAxis.m_InputAxisName = "";
         }

@@ -26,7 +26,7 @@ public class Player : Entity, IShopCustomer
             {
                 return 10000f; // multiply damage by 10000
             }
-            
+
             return 1f + gameManager.buffDamageTaken * 0.1f;
         }
     }
@@ -64,10 +64,10 @@ public class Player : Entity, IShopCustomer
     protected int baseHealth = 200;
     protected int initialMaxHealth;
     protected int initialInitialHealth;
-    
+
     protected override int MaxHealth => initialMaxHealth;
     protected override int InitialHealth => initialInitialHealth;
-    
+
     protected float _playerDifficultyMultiplier;
 
     private void Awake()
@@ -93,6 +93,11 @@ public class Player : Entity, IShopCustomer
         Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
     }
 
+    public void ChangeWeapon()
+    {
+        Inventory.ChangeNextWeapon();
+    }
+
     void Update()
     {
         if (IsDead)
@@ -109,7 +114,7 @@ public class Player : Entity, IShopCustomer
         }
     }
 
-    void Attack()
+    public void Attack()
     {
         if (IsAttacking || movement.PlayerMovementState == PlayerMovementState.Jumping)
         {

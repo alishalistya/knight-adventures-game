@@ -50,6 +50,11 @@ public class PlayerInventory
         this.handslot = handslot;
     }
 
+    public void ChangeNextWeapon()
+    {
+        CurrentWeaponIndex++;
+    }
+
     void CheckWeaponChange()
     {
         if (!IsChangeEnabled)
