@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : Entity, IShopCustomer
@@ -14,6 +15,10 @@ public class Player : Entity, IShopCustomer
     [SerializeField] GameObject UIGameOver;
 
     [SerializeField] private GameObject[] PetPrefabs;
+
+    public GameManager gameManager;
+
+    protected override float _damageMultiplier => 1f + gameManager.buffDamageTaken * 0.1f;
 
     float _attackSpeed = 1;
     float AttackSpeed
@@ -57,7 +62,8 @@ public class Player : Entity, IShopCustomer
     private void Awake()
     {
         PersistanceManager.Instance.AssertInit();
-        _playerDifficultyMultiplier = GameManager.Instance.Difficulty switch
+        gameManager = GameManager.Instance;
+        _playerDifficultyMultiplier = gameManager.Difficulty switch
         {
             Difficulty.Easy => 1f,
             Difficulty.Medium => 0.8f,

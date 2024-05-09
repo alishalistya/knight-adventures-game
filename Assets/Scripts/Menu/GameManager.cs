@@ -18,6 +18,7 @@ public class GameManager
     public bool isAyamAlive4 = false;
     public bool isAyamAlive5 = false;
     public Difficulty Difficulty = Difficulty.Easy;
+    public int buffDamageTaken = 0;
 
     private GameManager()
     {
@@ -44,7 +45,8 @@ public class GameManager
             QuestNumber = saveData.QuestNumber,
             PlayerGold = saveData.PlayerGold,
             FromLoad = true,
-            Difficulty = saveData.Difficulty
+            Difficulty = saveData.Difficulty,
+            buffDamageTaken = saveData.BuffDamageTaken,
         };
         SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
     }

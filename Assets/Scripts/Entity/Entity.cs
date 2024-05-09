@@ -23,7 +23,7 @@ public abstract class Entity : MonoBehaviour
 
     public bool IsDead => Health.IsDead;
 
-    protected float _damageMultiplier = 1f;
+    protected virtual float _damageMultiplier => 1f;
 
     public float DamageMultiplier
     {

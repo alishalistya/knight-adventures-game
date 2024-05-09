@@ -22,6 +22,8 @@ public class SaveData
 
     public Difficulty Difficulty;
 
+    public int BuffDamageTaken;
+
     public SaveData(GameStatistics statistics,
         int playerHealth,
         int playerGold, 
@@ -30,7 +32,8 @@ public class SaveData
         Vector3 rotation, 
         int weaponIndex, 
         StatusCheats cheats,
-        Difficulty difficulty)
+        Difficulty difficulty,
+        int buffDamageTaken)
     {
         Statistics = statistics;
         PlayerHealth = playerHealth;
@@ -41,5 +44,6 @@ public class SaveData
         WeaponIndex = weaponIndex;
         Cheats = cheats;
         Difficulty = difficulty;
+        BuffDamageTaken = buffDamageTaken;
     }
 }
