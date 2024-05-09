@@ -245,15 +245,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.26693356
+      value: 0.2669336
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000028720944
+      value: -3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000000795524
+      value: 1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 6281725811369552821, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_Name
@@ -16572,26 +16572,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1288985133068838863, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-      propertyPath: goldUI
-      value: 
-      objectReference: {fileID: 1506689403}
-    - target: {fileID: 1288985133068838863, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-      propertyPath: questUI
-      value: 
-      objectReference: {fileID: 1506689402}
-    - target: {fileID: 1288985133068838863, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-      propertyPath: duration
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288985133068838863, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-      propertyPath: healthUI
-      value: 
-      objectReference: {fileID: 1506689404}
-    - target: {fileID: 1288985133068838863, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-      propertyPath: sceneName
-      value: Quest-3
-      objectReference: {fileID: 0}
     - target: {fileID: 1532719387057273663, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -16599,10 +16579,6 @@ PrefabInstance:
     - target: {fileID: 1532719387057273663, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3313571710178081626, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-      propertyPath: questType
-      value: Quest3
       objectReference: {fileID: 0}
     - target: {fileID: 4269507551185443542, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
       propertyPath: m_Name
@@ -16613,21 +16589,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
---- !u!1 &1506689402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5188781261175266438, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-  m_PrefabInstance: {fileID: 1506689401}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1506689403 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1090979772331194685, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-  m_PrefabInstance: {fileID: 1506689401}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1506689404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2763699367031269867, guid: 4053659e1ffe2514291e2572d1feda7a, type: 3}
-  m_PrefabInstance: {fileID: 1506689401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1509021426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 27c79306745ea4fed8ade990229c5923, type: 3}
