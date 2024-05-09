@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questUI: {fileID: 1573235961036548130}
   quests: {fileID: 2342869551196419758}
-  questType: GetEmAll
+  questType: Quest1
 --- !u!1 &4605330126068283517
 GameObject:
   m_ObjectHideFlags: 0

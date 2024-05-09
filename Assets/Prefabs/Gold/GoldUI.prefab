@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1690785294312037113}
   - component: {fileID: 6705425405227733590}
+  - component: {fileID: 3605435689946587194}
   m_Layer: 5
   m_Name: GoldUI
   m_TagString: Untagged
@@ -39,6 +40,19 @@ RectTransform:
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &6705425405227733590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4301675528534061167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5925ed31c35495281888038bcba00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldValue: {fileID: 6129298340942640933}
+--- !u!114 &3605435689946587194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
