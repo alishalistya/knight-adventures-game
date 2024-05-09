@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Quest-2.unity
     guid: 13c4bafc660524ddcac3cd55a98c2065
+  - enabled: 1
+    path: Assets/Scenes/Quest-3.unity
+    guid: 3a563235da4ef4d3cbd410a9586b1d9f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5a35c972e687deb48809ad726a7145c8, type: 2}
