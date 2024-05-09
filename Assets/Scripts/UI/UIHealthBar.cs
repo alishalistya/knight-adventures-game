@@ -27,7 +27,10 @@ public class UIHealthBar : MonoBehaviour
         Debug.Log($"Current Health: {currentHealth} Max Health: {maxHealth}");
 
         healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth / maxHealth * 100;
+        healthSlider.value = currentHealth;
         healthValue.text = $"{currentHealth} / {maxHealth}";
+
+        Debug.Log($"Current Slider: {healthSlider.value}");
     }
+
 }
