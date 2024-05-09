@@ -5,19 +5,21 @@ using UnityEngine.UI;
 
 public enum Difficulty
 {
-    Easy,
-    Medium,
-    Hard
+    Easy = 0,
+    Medium = 1,
+    Hard = 2
 }
 
 public class DifficultyOptionSystem : MonoBehaviour
 {
     ToggleGroup toggleGroup;
     Difficulty difficulty;
-    
-    public DifficultyOptionSystem(Difficulty difficulty = Difficulty.Easy)
+
+    public const string DIFFICULTY_PREFS_KEY = "difficulty";
+
+    private void Awake()
     {
-        this.difficulty = difficulty;
+        difficulty = (Difficulty)PlayerPrefs.GetInt(DIFFICULTY_PREFS_KEY, (int)Difficulty.Easy);
     }
 
     void Start()
@@ -28,6 +30,9 @@ public class DifficultyOptionSystem : MonoBehaviour
     
     public void SetGameDifficulty()
     {
+        // todo yoni set game difficulty to prefs?
+        // PlayerPrefs.SetInt(DIFFICULTY_PREFS_KEY, difficulty);
+        // PlayerPrefs.Save();
         Toggle toggle = toggleGroup.ActiveToggles().FirstOrDefault();
         difficulty = GetGameDifficulty(toggle.name);
     }
@@ -44,6 +49,9 @@ public class DifficultyOptionSystem : MonoBehaviour
     
     public void SetCurrentDifficulty()
     {
+        // todo yoni set game difficulty to prefs?
+        // PlayerPrefs.SetInt(DIFFICULTY_PREFS_KEY, difficulty);
+        // PlayerPrefs.Save();
         Toggle toggle = toggleGroup.transform.Find(GetGameDifficulty(difficulty)).GetComponent<Toggle>();
         toggle.isOn = true;
     }
