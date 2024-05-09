@@ -18,7 +18,18 @@ public class Player : Entity, IShopCustomer
 
     public GameManager gameManager;
 
-    protected override float _damageMultiplier => 1f + gameManager.buffDamageTaken * 0.1f;
+    protected override float _damageMultiplier
+    {
+        get
+        {
+            if (PlayerCheats.IsCheat(StatusCheats.ONE_HIT_KILL))
+            {
+                return 10000f; // multiply damage by 10000
+            }
+            
+            return 1f + gameManager.buffDamageTaken * 0.1f;
+        }
+    }
 
     float _attackSpeed = 1;
     float AttackSpeed
