@@ -8,6 +8,9 @@ public class Projectile : Damageable
     [SerializeField] protected float speed = 10f;
     [SerializeField] protected int damage = 10;
     [SerializeField] protected float maxDistance = 200f;
+    public delegate void OnHitEnemy();
+    public event OnHitEnemy OnHitEnemyEvent;
+    private Hitbox hitbox;
     public Entity Entity
     {
         set =>
@@ -22,7 +25,7 @@ public class Projectile : Damageable
     void Start()
     {
         startPosition = transform.position;
-        Hitbox hitbox = gameObject.GetComponentInChildren<Hitbox>();
+        hitbox = gameObject.GetComponentInChildren<Hitbox>();
         hitbox.damageable = this;
         hitbox.OnHitEvent += OnHit;
     }
@@ -37,8 +40,13 @@ public class Projectile : Damageable
         }
     }
 
-    void OnHit(Hurtbox hurtbox)
+    protected virtual void OnHit(Hurtbox hurtbox, bool isToEnemy)
     {
+        if (isToEnemy)
+        {
+            OnHitEnemyEvent?.Invoke();
+        }
+        hitbox.OnHitEvent -= OnHit;
         Destroy(gameObject);
     }
 }

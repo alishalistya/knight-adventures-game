@@ -13,6 +13,11 @@ public class Crossbow : RangedWeapon
     Quaternion rotation = entity.transform.rotation * Quaternion.Euler(0, 270, 90);
     GameObject projectile = Instantiate(projectilePrefab, entity.transform.position + (entity.transform.rotation * startRelativePosition), rotation);
     Projectile projectileScript = projectile.GetComponent<Projectile>();
+    projectileScript.OnHitEnemyEvent += () =>
+    {
+      PersistanceManager.Instance.GlobalStat.AddTotalHit();
+      GameManager.Instance.Statistics.AddTotalHit();
+    };
     projectileScript.direction = entity.transform.forward;
     projectileScript.Entity = entity;
     projectileScript.IsActive = true;

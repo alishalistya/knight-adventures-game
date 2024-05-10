@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   damage: 20
-  maxDistance: 20
+  maxDistance: 15
   direction: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &7714681893252251914 stripped

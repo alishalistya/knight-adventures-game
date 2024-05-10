@@ -1,8 +1,9 @@
 ﻿using System.Numerics;
 
-public class ShotgunProjectile: Projectile
+public class ShotgunProjectile : Projectile
 {
     protected int baseDamage;
+
     public override int Damage
     {
         get
@@ -12,8 +13,8 @@ public class ShotgunProjectile: Projectile
             if (dist < 5f)
             {
                 return baseDamage;
-            } 
-            
+            }
+
             if (dist < 10f)
             {
                 return (int)(0.5 * baseDamage);

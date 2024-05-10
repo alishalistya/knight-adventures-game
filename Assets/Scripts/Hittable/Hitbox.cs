@@ -6,7 +6,7 @@ public class Hitbox : MonoBehaviour
     [SerializeField] public Entity entity;
 
     [SerializeField] public Damageable damageable;
-    public delegate void OnHit(Hurtbox hurtbox);
+    public delegate void OnHit(Hurtbox hurtbox, bool isToEnemy);
     public event OnHit OnHitEvent;
 
     private readonly List<Hurtbox> _triggered = new List<Hurtbox>();
@@ -22,7 +22,7 @@ public class Hitbox : MonoBehaviour
     {
         if (other.gameObject != entity.gameObject && other.gameObject.layer == defaultLayer)
         {
-            OnHitEvent?.Invoke(null);
+            OnHitEvent?.Invoke(null, false);
             return;
         }
 
@@ -68,7 +68,7 @@ public class Hitbox : MonoBehaviour
                 damageable.RegisterHit(instanceId);
                 var damage = (int)(entity.DamageMultiplier * damageable.Damage);
                 trigger.entity.TakeDamage(damage);
-                OnHitEvent?.Invoke(trigger);
+                OnHitEvent?.Invoke(trigger, true);
                 print($"Giving damage {damage}");
             }
         });
