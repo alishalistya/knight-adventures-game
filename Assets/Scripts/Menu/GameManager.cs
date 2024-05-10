@@ -54,6 +54,7 @@ public class GameManager
     public static void SaveGame(SaveData saveData, SaveDescriptions.Description description, int saveIndex)
     {
         PersistanceManager.Instance.SaveGame(saveData, description, saveIndex);
+        PersistanceManager.Instance.SaveStatistics();
     }
 
 
