@@ -129,4 +129,8 @@ public class SafeHouse : MonoBehaviour
         GameManager.SaveGame(saveData, SaveDescription, saveIndex - 1);
         SceneManager.LoadScene("Main Menu");
     }
+
+    private void OnDestroy() {
+        QuestEvents.OnQuestCompleted -= OnQuestCompleted;
+    }
 }

@@ -23,7 +23,6 @@ public class Quest3 : Quest
 
     protected override void GiveReward()
     {
-        Debug.Log("Quest1 Completed");
-        SceneManager.LoadScene("Quest-2");
+        SceneManager.LoadScene("Quest-4");
     }
 }
