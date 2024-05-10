@@ -84,14 +84,20 @@ public class Player : Entity, IShopCustomer
         };
         initialMaxHealth = (int)(_playerDifficultyMultiplier * baseHealth);
 
+        if (gameManager.FromLoad)
+        {
+            Debug.Log("Saved Health: " + GameManager.Instance.PlayerHealth);
+            initialInitialHealth = GameManager.Instance.PlayerHealth;
+        }
+        else
+        {
+            initialInitialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
+        }
+
         // todo update here to update initial health (examnple: case to load health from save game)
-        initialInitialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
-
-        Debug.Log("Saved Health: " + GameManager.Instance.PlayerHealth);
-
+        
         Gold = GameManager.Instance.PlayerGold;
-        initialInitialHealth = GameManager.Instance.PlayerHealth;
-
+        
         Debug.Log("Initial Player Health: " + initialInitialHealth);
     }
 
