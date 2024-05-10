@@ -14,7 +14,8 @@ public enum StatusCheats
   ONE_HIT_KILL = 2,
   MOTHERLODE = 4,
   TWO_TIMES_SPEED = 8,
-  FULL_HP_PET = 16
+  FULL_HP_PET = 16,
+  SKILL_KILL = 32,
 }
 
 [Serializable]
