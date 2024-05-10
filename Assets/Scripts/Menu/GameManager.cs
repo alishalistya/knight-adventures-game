@@ -5,6 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    CUTSCENE,
+    PLAYING,
+    MENU
+}
+
 public class GameManager
 {
     public static GameManager Instance { get; private set; } = new GameManager();
@@ -17,9 +24,22 @@ public class GameManager
     public Difficulty Difficulty = Difficulty.Easy;
     public int buffDamageTaken = 0;
     public Quest CurrentQuest = null;
+    private GameState _gameState;
+    public GameState GameState
+    {
+        get => _gameState; set
+        {
+            _gameState = value;
+            OnGameStateChange?.Invoke(value);
+        }
+    }
+    public delegate void GameStateChange(GameState state);
+    public event GameStateChange OnGameStateChange;
+
     private GameManager()
     {
         PersistanceManager.Instance.AssertInit();
+        GameState = GameState.CUTSCENE;
     }
 
     public static void NewGame()

@@ -14,18 +14,22 @@ public class TimelineController : MonoBehaviour
     {
         director = GetComponentInChildren<PlayableDirector>();
         UI.SetActive(false);
+        GameManager.Instance.GameState = GameState.CUTSCENE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(director.state != PlayState.Playing)
+        if (director.state != PlayState.Playing)
         {
             ShopEvents.ShopTimerStarted();
             director.Stop();
             UI.SetActive(true);
             cutscene.SetActive(false);
-            
+            if (GameManager.Instance.GameState == GameState.CUTSCENE)
+            {
+                GameManager.Instance.GameState = GameState.PLAYING;
+            }
         }
     }
 }

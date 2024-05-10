@@ -12,18 +12,52 @@ public class MobileOnly : MonoBehaviour
     if (!Application.isMobilePlatform)
     {
       Input.simulateMouseWithTouches = true;
-      foreach (Transform child in transform)
-      {
-        child.gameObject.SetActive(false);
-      }
+
+      Disable();
     }
     else
     {
       Input.simulateMouseWithTouches = false;
-      foreach (Transform child in transform)
-      {
-        child.gameObject.SetActive(true);
-      }
+      Enable();
+    }
+  }
+
+  private void OnEnable()
+  {
+    GameManager.Instance.OnGameStateChange += OnGameStateChange;
+  }
+
+  private void OnDisable()
+  {
+    GameManager.Instance.OnGameStateChange -= OnGameStateChange;
+  }
+
+  private void OnGameStateChange(GameState state)
+  {
+    if (!Application.isMobilePlatform) return;
+    if (state == GameState.CUTSCENE)
+    {
+      Disable();
+    }
+    else
+    {
+      Enable();
+    }
+  }
+
+  private void Disable()
+  {
+    foreach (Transform child in transform)
+    {
+      child.gameObject.SetActive(false);
+    }
+  }
+
+  private void Enable()
+  {
+    foreach (Transform child in transform)
+    {
+      child.gameObject.SetActive(true);
     }
   }
 }

@@ -70,6 +70,11 @@ public class Player : Entity, IShopCustomer
     protected override int InitialHealth => initialInitialHealth;
 
     protected float _playerDifficultyMultiplier;
+    private bool _disableAction = true;
+    private bool DisableAction
+    {
+        get => _disableAction; set { _disableAction = value; movement.disableMove = value; Inventory.IsChangeEnabled = !value; }
+    }
 
     private void Awake()
     {
@@ -95,9 +100,9 @@ public class Player : Entity, IShopCustomer
         }
 
         // todo update here to update initial health (examnple: case to load health from save game)
-        
+
         Gold = GameManager.Instance.PlayerGold;
-        
+
         Debug.Log("Initial Player Health: " + initialInitialHealth);
     }
 
@@ -106,6 +111,7 @@ public class Player : Entity, IShopCustomer
         base.Start();
         QuestEvents.OnQuestCompleted += AddGoldFromQuest;
         Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
+        OnGameStateChange(GameManager.Instance.GameState);
 
         initialInitialHealth = GameManager.Instance.PlayerHealth;
 
@@ -119,6 +125,8 @@ public class Player : Entity, IShopCustomer
 
     void Update()
     {
+        PersistanceManager.Instance.GlobalStat.AddPlayTime(Time.deltaTime);
+        GameManager.Instance.Statistics.AddPlayTime(Time.deltaTime);
         if (IsDead)
         {
             return;
@@ -131,13 +139,11 @@ public class Player : Entity, IShopCustomer
         {
             Attack();
         }
-        PersistanceManager.Instance.GlobalStat.AddPlayTime(Time.deltaTime);
-        GameManager.Instance.Statistics.AddPlayTime(Time.deltaTime);
     }
 
     public void Attack()
     {
-        if (IsAttacking || movement.PlayerMovementState == PlayerMovementState.Jumping)
+        if (DisableAction || IsAttacking || movement.PlayerMovementState == PlayerMovementState.Jumping)
         {
             return;
         }
@@ -242,20 +248,46 @@ public class Player : Entity, IShopCustomer
         Instantiate(PowerOrbPrefabs, positionInFront, Quaternion.identity);
     }
 
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         QuestEvents.OnQuestCompleted -= AddGoldFromQuest;
 
         if (Health.CurrentHealth.value <= 0)
         {
             gameManager.PlayerHealth = initialMaxHealth;
-        } else {
+        }
+        else
+        {
             gameManager.PlayerHealth = Health.CurrentHealth.value;
         }
 
         gameManager.PlayerGold = Gold;
 
         PlayerStatsEvents.PlayerStatsChanged(this);
-        
+    }
 
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGameStateChange += OnGameStateChange;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameStateChange -= OnGameStateChange;
+    }
+
+    private void OnGameStateChange(GameState state)
+    {
+        Debug.Log("STATE CHANGE: " + state);
+        if (state != GameState.PLAYING)
+        {
+            DisableAction = true;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.visible = false;
+            DisableAction = false;
+        }
     }
 }

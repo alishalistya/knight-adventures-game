@@ -62,8 +62,6 @@ public class PersistanceManager
         else
         {
             SaveDescriptions = new SaveDescriptions();
-            Debug.Log("SaveDescriptions is null");
-            Debug.Log(JsonUtility.ToJson(SaveDescriptions));
         }
     }
 

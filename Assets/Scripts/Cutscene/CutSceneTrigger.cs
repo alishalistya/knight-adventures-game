@@ -9,7 +9,7 @@ public class CutSceneTrigger : MonoBehaviour
     GameObject cutscene;
 
     // Start is called before the first frame update
-     void Start()
+    void Start()
     {
         director = GetComponentInChildren<PlayableDirector>();
         cutscene = GameObject.Find("Ending Cutscene");
@@ -53,4 +53,4 @@ public class CutSceneTrigger : MonoBehaviour
         }
     }
 
-    }
+}
