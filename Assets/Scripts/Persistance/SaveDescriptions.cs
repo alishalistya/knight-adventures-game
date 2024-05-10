@@ -7,14 +7,15 @@ using UnityEngine;
 public class SaveDescriptions
 {
   public List<Description> Descriptions = new() {
-    null,
-    null,
-    null,
+    new Description("", false),
+    new Description("", false),
+    new Description("", false),
   };
 
   [System.Serializable]
   public class Description
   {
+    public bool IsUsed = true;
     public string Name;
     // in seconds
     public long Time;
@@ -24,13 +25,12 @@ public class SaveDescriptions
       DateTime dateTime = DateTime.UnixEpoch.AddSeconds(Time);
       return $"{Name}\n{dateTime:dd/MM/yyyy HH:mm}";
     }
-  }
 
-  public void SetDummyData()
-  {
-    Descriptions.Clear();
-    Descriptions.Add(new Description { Name = "Save 1", Time = 1715078854L });
-    Descriptions.Add(new Description { Name = "Save 2", Time = 1715078851L });
-    Descriptions.Add(new Description { Name = "Save 3", Time = 1715038342L });
+    public Description(string name, bool isUsed = true)
+    {
+      Name = name;
+      IsUsed = isUsed;
+      Time = DateTimeOffset.Now.ToUnixTimeSeconds();
+    }
   }
 }

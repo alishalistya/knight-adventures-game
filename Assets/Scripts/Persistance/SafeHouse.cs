@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class SafeHouse : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SafeHouse : MonoBehaviour
 
     private bool IsQuestCompleted = true;
     private bool IsSaveButtonSet = false;
-    private void Awake() 
+    private void Awake()
     {
         QuestEvents.OnQuestCompleted += OnQuestCompleted;
         TextMeshProUGUI informationText = SafeHouseUI.transform.Find("informationText").GetComponent<TextMeshProUGUI>();
@@ -30,11 +31,11 @@ public class SafeHouse : MonoBehaviour
         SaveDescriptions.Description Description3 = PersistanceManager.Instance.SaveDescriptions.Descriptions[2];
         Button saveButton1 = safeHouseUITransform.Find("button1").GetComponent<Button>();
         TextMeshProUGUI descText1 = saveButton1.transform.Find("descText").GetComponent<TextMeshProUGUI>();
-        if (Description1 != null) 
+        if (Description1 != null && Description1.IsUsed)
         {
-            descText1.SetText(Description1.Name + " " + Description1.Time);
+            descText1.SetText(Description1.ToString());
         }
-        else 
+        else
         {
             descText1.SetText("Save 1 is empty");
         }
@@ -42,21 +43,21 @@ public class SafeHouse : MonoBehaviour
         Debug.Log(saveButton1.transform.Find("descText").GetComponent<TextMeshProUGUI>());
         Button saveButton2 = safeHouseUITransform.Find("button2").GetComponent<Button>();
         TextMeshProUGUI descText2 = saveButton2.transform.Find("descText").GetComponent<TextMeshProUGUI>();
-        if (Description2 != null) 
+        if (Description2 != null && Description2.IsUsed)
         {
-            descText2.SetText(Description2.Name + " " + Description2.Time);
+            descText2.SetText(Description2.ToString());
         }
-        else 
+        else
         {
             descText2.SetText("Save 2 is empty");
         }
         Button saveButton3 = safeHouseUITransform.Find("button3").GetComponent<Button>();
         TextMeshProUGUI descText3 = saveButton3.transform.Find("descText").GetComponent<TextMeshProUGUI>();
-        if (Description3 != null) 
+        if (Description3 != null && Description3.IsUsed)
         {
-            descText3.SetText(Description3.Name + " " + Description3.Time);
+            descText3.SetText(Description3.ToString());
         }
-        else 
+        else
         {
             descText3.SetText("Save 3 is empty");
         }
@@ -117,14 +118,8 @@ public class SafeHouse : MonoBehaviour
             GameManager.Instance.IsAyamAlive,
             GameManager.Instance.CurrentQuest
         );
-        DateTime now = DateTime.Now;
-        DateTime utcNow = now.ToUniversalTime();
-        long unixTimestamp = (long)(utcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-        var SaveDescription = new SaveDescriptions.Description
-        {
-            Name = "Save " + saveIndex,
-            Time = unixTimestamp,
-        };
-        GameManager.SaveGame(saveData, SaveDescription, saveIndex-1);
+        var SaveDescription = new SaveDescriptions.Description("Save " + saveIndex);
+        GameManager.SaveGame(saveData, SaveDescription, saveIndex - 1);
+        SceneManager.LoadScene("Main Menu");
     }
 }

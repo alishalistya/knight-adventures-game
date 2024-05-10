@@ -112,6 +112,8 @@ public class Player : Entity, IShopCustomer
         {
             Attack();
         }
+        PersistanceManager.Instance.GlobalStat.AddPlayTime(Time.deltaTime);
+        GameManager.Instance.Statistics.AddPlayTime(Time.deltaTime);
     }
 
     public void Attack()
@@ -136,6 +138,8 @@ public class Player : Entity, IShopCustomer
         movement.enabled = false;
         movement.Anim.SetTrigger("Death");
         UIGameOver.SetActive(true);
+        PersistanceManager.Instance.GlobalStat.AddDeath();
+        GameManager.Instance.Statistics.AddDeath();
     }
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
