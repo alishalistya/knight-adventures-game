@@ -82,8 +82,16 @@ public class Player : Entity, IShopCustomer
             _ => 1f
         };
         initialMaxHealth = (int)(_playerDifficultyMultiplier * baseHealth);
+
         // todo update here to update initial health (examnple: case to load health from save game)
         initialInitialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
+
+        Debug.Log("Saved Health: " + GameManager.Instance.PlayerHealth);
+
+        Gold = GameManager.Instance.PlayerGold;
+        initialInitialHealth = GameManager.Instance.PlayerHealth;
+
+        Debug.Log("Initial Player Health: " + initialInitialHealth);
     }
 
     new void Start()
@@ -91,6 +99,8 @@ public class Player : Entity, IShopCustomer
         base.Start();
         QuestEvents.OnQuestCompleted += AddGoldFromQuest;
         Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
+
+        PlayerStatsEvents.PlayerStatsChanged(this);
     }
 
     public void ChangeWeapon()
@@ -145,7 +155,6 @@ public class Player : Entity, IShopCustomer
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
         PlayerStatsEvents.PlayerStatsChanged(this);
-        // insert code for play sound effect, update ui here
         // print($"Damaged, current health {currentHealth}");
     }
 
@@ -214,5 +223,12 @@ public class Player : Entity, IShopCustomer
     }
     private void OnDestroy() {
         QuestEvents.OnQuestCompleted -= AddGoldFromQuest;
+
+        gameManager.PlayerHealth = Health.CurrentHealth.value;
+        gameManager.PlayerGold = Gold;
+
+        PlayerStatsEvents.PlayerStatsChanged(this);
+        
+
     }
 }

@@ -15,6 +15,7 @@ public class UIGold : MonoBehaviour
         PlayerStatsEvents.OnPlayerStatsChanged += PlayerStatsChanged;
         Debug.Log(goldValue.text);
         
+        
     }
 
     void PlayerStatsChanged(Player player)

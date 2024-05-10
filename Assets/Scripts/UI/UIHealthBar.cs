@@ -18,6 +18,7 @@ public class UIHealthBar : MonoBehaviour
     {
         Debug.Log("UIHealthBar Start");
         PlayerStatsEvents.OnPlayerStatsChanged += PlayerStatsChanged;
+    
     }
     
     void PlayerStatsChanged(Player player)
