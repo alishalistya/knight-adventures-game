@@ -15,4 +15,9 @@ public class MobSpawner : MonoBehaviour
     {
         Instantiate(mobPrefab, transform.position, Quaternion.identity);
     }
+
+    void OnDestroy()
+    {
+        CombatEvents.OnMobKilled -= SpawnMob;
+    }
 }

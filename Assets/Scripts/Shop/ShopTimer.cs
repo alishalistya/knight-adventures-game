@@ -50,8 +50,7 @@ public class ShopTimer : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnDestroy() {
+        ShopEvents.OnTimerStarted -= OnShopTimerStarted;
     }
 }

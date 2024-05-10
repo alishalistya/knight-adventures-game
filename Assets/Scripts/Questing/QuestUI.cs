@@ -43,7 +43,6 @@ public class QuestUI : MonoBehaviour
 
     public void UpdateQuestUI(Quest quest)
     {
-
         foreach (Transform child in container)
         {
             if (child == goalItemTemplate) continue;
@@ -63,5 +62,9 @@ public class QuestUI : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    void OnDestroy() {
+        QuestEvents.OnGoalProgressed -= UpdateQuestUI;
     }
 }
