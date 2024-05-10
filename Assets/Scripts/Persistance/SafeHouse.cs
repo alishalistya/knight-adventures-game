@@ -14,6 +14,7 @@ public class SafeHouse : MonoBehaviour
         TextMeshProUGUI informationText = SafeHouseUI.transform.Find("informationText").GetComponent<TextMeshProUGUI>();
         informationText.text = "Click The save button you want to save your progress";
         SafeHouseUI.SetActive(false);
+        PersistanceManager.Instance.LoadSaveDescriptions();
     }
 
     private void OnQuestCompleted(Quest quest)
@@ -21,12 +22,44 @@ public class SafeHouse : MonoBehaviour
         IsQuestCompleted = true;
     }
 
-    private void setSaveButton(Player player)
+    private void SetSaveButton(Player player)
     {
         Transform safeHouseUITransform = SafeHouseUI.transform;
+        SaveDescriptions.Description Description1 = PersistanceManager.Instance.SaveDescriptions.Descriptions[0];
+        SaveDescriptions.Description Description2 = PersistanceManager.Instance.SaveDescriptions.Descriptions[1];
+        SaveDescriptions.Description Description3 = PersistanceManager.Instance.SaveDescriptions.Descriptions[2];
         Button saveButton1 = safeHouseUITransform.Find("button1").GetComponent<Button>();
+        TextMeshProUGUI descText1 = saveButton1.transform.Find("descText").GetComponent<TextMeshProUGUI>();
+        if (Description1 != null) 
+        {
+            descText1.SetText(Description1.Name + " " + Description1.Time);
+        }
+        else 
+        {
+            descText1.SetText("Save 1 is empty");
+        }
+
+        Debug.Log(saveButton1.transform.Find("descText").GetComponent<TextMeshProUGUI>());
         Button saveButton2 = safeHouseUITransform.Find("button2").GetComponent<Button>();
+        TextMeshProUGUI descText2 = saveButton2.transform.Find("descText").GetComponent<TextMeshProUGUI>();
+        if (Description2 != null) 
+        {
+            descText2.SetText(Description2.Name + " " + Description2.Time);
+        }
+        else 
+        {
+            descText2.SetText("Save 2 is empty");
+        }
         Button saveButton3 = safeHouseUITransform.Find("button3").GetComponent<Button>();
+        TextMeshProUGUI descText3 = saveButton3.transform.Find("descText").GetComponent<TextMeshProUGUI>();
+        if (Description3 != null) 
+        {
+            descText3.SetText(Description3.Name + " " + Description3.Time);
+        }
+        else 
+        {
+            descText3.SetText("Save 3 is empty");
+        }
 
         saveButton1.onClick.AddListener(() =>
         {
@@ -53,7 +86,7 @@ public class SafeHouse : MonoBehaviour
             var player = other.GetComponent<Player>();
             if (!IsSaveButtonSet)
             {
-                setSaveButton(player);
+                SetSaveButton(player);
             }
             SafeHouseUI.SetActive(true);
         }
@@ -69,7 +102,6 @@ public class SafeHouse : MonoBehaviour
 
     public void SaveGame(Player player, int saveIndex)
     {
-        PersistanceManager.Instance.LoadSaveDescriptions();
         var saveData = new SaveData
         (
             GameManager.Instance.Statistics,
