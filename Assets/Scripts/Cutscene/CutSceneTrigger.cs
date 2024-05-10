@@ -9,6 +9,7 @@ public class CutSceneTrigger : MonoBehaviour
     PlayableDirector director;
     GameObject cutscene;
     [SerializeField] GameObject UI;
+    private Quest quest;
 
 
     private void Awake() {
@@ -22,9 +23,6 @@ public class CutSceneTrigger : MonoBehaviour
         director = GetComponentInChildren<PlayableDirector>();
         cutscene = GameObject.Find("Ending Cutscene");
         cutscene.SetActive(false);
-
-        
-
     }
 
 
@@ -35,7 +33,11 @@ public class CutSceneTrigger : MonoBehaviour
         if (director.state != PlayState.Playing)
         {
             director.Stop();
-            // SceneManager.LoadScene("Main Menu");
+            if ((quest != null) && quest.Completed)
+            {
+                Debug.Log("Quest completed. Loading main menu..");
+                SceneManager.LoadScene("Main Menu");
+            }
             cutscene.SetActive(false);
 
         }
@@ -43,14 +45,18 @@ public class CutSceneTrigger : MonoBehaviour
 
     public void PlayCutscene(Quest quest)
     {
-
+        
         Debug.Log("PlayCutscene called.");
         if (quest.QuestName == "Dead King's Rise")
         {
+            Debug.Log("Cutscene triggered.");
+            this.quest = quest;
             cutscene.SetActive(true);
-            director.Play();
             UI.SetActive(false);
-            GameManager.Instance.GameState = GameState.CUTSCENE;
+
+            director.Play();
+
+            // GameManager.Instance.GameState = GameState.CUTSCENE;
             // if (GameManager.Instance.FromLoad)
             // {
             //     director.Stop();
