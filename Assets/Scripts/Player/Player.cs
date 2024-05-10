@@ -15,6 +15,7 @@ public class Player : Entity, IShopCustomer
     [SerializeField] GameObject UIGameOver;
 
     [SerializeField] private GameObject[] PetPrefabs;
+    [SerializeField] private GameObject PowerOrbPrefabs;
 
     public GameManager gameManager;
 
@@ -219,8 +220,20 @@ public class Player : Entity, IShopCustomer
 
     public void CheatNextQuest()
     {
-        // QuestEvents.QuestCompleted();
+        var quest = FindObjectOfType<Quest>();
+        if (quest != null)
+        {
+            quest.CheatQuest();
+        }
     }
+
+    public void CheatGivePowerOrb()
+    {
+        float distanceInFront = 2f;
+        Vector3 positionInFront = transform.position + transform.forward * distanceInFront;
+        Instantiate(PowerOrbPrefabs, positionInFront, Quaternion.identity);
+    }
+
     private void OnDestroy() {
         QuestEvents.OnQuestCompleted -= AddGoldFromQuest;
 

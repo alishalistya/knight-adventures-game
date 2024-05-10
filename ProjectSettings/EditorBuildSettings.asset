@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Scene-1.unity
     guid: c7565a55e6a044e89b3848d35f7bc7e3
-  - enabled: 0
-    path: Assets/Scenes/Quest-4.unity
-    guid: dbb03f8cc4d9241e385af43dd292714e
   - enabled: 1
     path: Assets/Scenes/Quest-1.unity
     guid: 4a031c7bfea9c449ca4990cfb067c0f4
@@ -23,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Quest-3.unity
     guid: 3a563235da4ef4d3cbd410a9586b1d9f
+  - enabled: 1
+    path: Assets/Scenes/Quest-4.unity
+    guid: dbb03f8cc4d9241e385af43dd292714e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5a35c972e687deb48809ad726a7145c8, type: 2}

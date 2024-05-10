@@ -26,4 +26,9 @@ public class Quest : MonoBehaviour {
     private void OnDestroy() {
         Goals.ForEach(g => g.Cleanup());
     }
+    public void CheatQuest()
+    {
+        QuestEvents.QuestCompleted(this);
+        GiveReward();
+    }
 }
