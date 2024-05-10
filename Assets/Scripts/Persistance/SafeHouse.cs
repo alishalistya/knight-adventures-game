@@ -29,10 +29,15 @@ public class SafeHouse : MonoBehaviour
         SaveDescriptions.Description Description1 = PersistanceManager.Instance.SaveDescriptions.Descriptions[0];
         SaveDescriptions.Description Description2 = PersistanceManager.Instance.SaveDescriptions.Descriptions[1];
         SaveDescriptions.Description Description3 = PersistanceManager.Instance.SaveDescriptions.Descriptions[2];
+
+
         Button saveButton1 = safeHouseUITransform.Find("button1").GetComponent<Button>();
         TextMeshProUGUI descText1 = saveButton1.transform.Find("descText").GetComponent<TextMeshProUGUI>();
+
+
         if (Description1 != null && Description1.IsUsed)
         {
+
             descText1.SetText(Description1.ToString());
         }
         else
@@ -103,6 +108,8 @@ public class SafeHouse : MonoBehaviour
 
     public void SaveGame(Player player, int saveIndex)
     {
+        TMP_InputField userInputField = SafeHouseUI.transform.Find("saveInput").GetComponent<TMP_InputField>();
+
         var saveData = new SaveData
         (
             GameManager.Instance.Statistics,
@@ -118,7 +125,7 @@ public class SafeHouse : MonoBehaviour
             GameManager.Instance.IsAyamAlive,
             GameManager.Instance.CurrentQuest
         );
-        var SaveDescription = new SaveDescriptions.Description("Save " + saveIndex);
+        var SaveDescription = new SaveDescriptions.Description(userInputField.text + " - Save " + saveIndex);
         GameManager.SaveGame(saveData, SaveDescription, saveIndex - 1);
         SceneManager.LoadScene("Main Menu");
     }
