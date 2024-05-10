@@ -82,6 +82,7 @@ public class PersistanceManager
     public SaveData LoadGame(int saveIndex)
     {
         FileManager.LoadFromFile(GAME_SAVES_PREFIX + saveIndex.ToString() + ".json", out string jsonString);
+        Debug.Log("Loaded save data: " + jsonString);
         return JsonUtility.FromJson<SaveData>(jsonString);
     }
 }

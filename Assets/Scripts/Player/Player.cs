@@ -93,14 +93,15 @@ public class Player : Entity, IShopCustomer
         {
             Debug.Log("Saved Health: " + GameManager.Instance.PlayerHealth);
             initialInitialHealth = GameManager.Instance.PlayerHealth;
+            transform.SetPositionAndRotation(new Vector3(gameManager.PlayerPosition[0], gameManager.PlayerPosition[1], gameManager.PlayerPosition[2]), Quaternion.Euler(gameManager.PlayerRotation[0], gameManager.PlayerRotation[1], gameManager.PlayerRotation[2]));
         }
         else
         {
             initialInitialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
         }
-        
+
         Gold = GameManager.Instance.PlayerGold;
-        
+
         Debug.Log("Initial Player Health: " + initialInitialHealth);
 
         if (gameManager.HasKnight)

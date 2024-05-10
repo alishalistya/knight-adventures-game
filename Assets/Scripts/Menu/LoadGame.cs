@@ -29,9 +29,10 @@ public class LoadGame : MonoBehaviour
             buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = description.ToString();
             var button = buttons[i].GetComponent<Button>();
             button.onClick.RemoveAllListeners();
+            var loadIndex = i;
             button.onClick.AddListener(() =>
             {
-                SaveData saveData = PersistanceManager.Instance.LoadGame(i);
+                SaveData saveData = PersistanceManager.Instance.LoadGame(loadIndex);
                 GameManager.LoadGame(saveData);
             });
         }

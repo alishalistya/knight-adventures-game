@@ -20,13 +20,15 @@ public class GameManager
     public bool FromLoad = false;
     public int PlayerGold = 0;
     public int PlayerHealth = 200;
+    public float[] PlayerPosition;
+    public float[] PlayerRotation;
     public bool[] IsAyamAlive = new bool[] { false, false, false, false, false };
     public Difficulty Difficulty = Difficulty.Easy;
     public int buffDamageTaken = 0;
     public Quest CurrentQuest = null;
     public bool HasKnight;
     public bool HasMage;
-    
+
     private GameState _gameState;
     public GameState GameState
     {
@@ -72,7 +74,9 @@ public class GameManager
             IsAyamAlive = saveData.IsAyamAlive,
             CurrentQuest = saveData.CurrentQuest,
             HasKnight = saveData.PlayerHasKnight,
-            HasMage = saveData.PlayerHasMage
+            HasMage = saveData.PlayerHasMage,
+            PlayerPosition = saveData.Position,
+            PlayerRotation = saveData.Rotation
         };
         SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
     }
