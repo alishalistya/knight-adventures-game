@@ -6,6 +6,8 @@ public class MobSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject mobPrefab;
 
+    public int mobId = 0;
+
     void Awake()
     {
         CombatEvents.OnMobKilled += SpawnMob;
@@ -13,7 +15,10 @@ public class MobSpawner : MonoBehaviour
     
     void SpawnMob(Vector3 position, Mob mob)
     {
-        Instantiate(mobPrefab, transform.position, Quaternion.identity);
+        if (mobId == mob.ID)
+        {
+            Instantiate(mobPrefab, transform.position, Quaternion.identity);
+        }
     }
 
     void OnDestroy()

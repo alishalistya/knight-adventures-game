@@ -198,4 +198,7 @@ public class Player : Entity, IShopCustomer
             pet.TakeDamage(pet.Health.CurrentHealth.value);
         }
     }
+    private void OnDestroy() {
+        QuestEvents.OnQuestCompleted -= AddGoldFromQuest;
+    }
 }
