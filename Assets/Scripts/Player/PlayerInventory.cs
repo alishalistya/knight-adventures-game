@@ -28,7 +28,7 @@ public class PlayerInventory
 
     int _currentWeaponIndex;
 
-    int CurrentWeaponIndex
+    public int CurrentWeaponIndex
     {
         get { return _currentWeaponIndex; }
         set

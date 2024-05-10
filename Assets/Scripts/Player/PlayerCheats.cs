@@ -27,9 +27,9 @@ public class CheatEventEntry
 
 public class PlayerCheats : MonoBehaviour
 {
-  private static PlayerCheats _instance;
+  public static PlayerCheats _instance;
 
-  private StatusCheats _statusCheats = 0;
+  public StatusCheats _statusCheats = 0;
   private string compositeString = "";
 
   private float clearAfter = 1f;

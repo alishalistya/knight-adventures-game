@@ -12,14 +12,11 @@ public class GameManager
     public int QuestNumber = 1;
     public bool FromLoad = false;
     public int PlayerGold = 0;
-    public bool isAyamAlive1 = false;
-    public bool isAyamAlive2 = false;
-    public bool isAyamAlive3 = false;
-    public bool isAyamAlive4 = false;
-    public bool isAyamAlive5 = false;
+    public int PlayerHealth = 200;
+    public bool[] IsAyamAlive = new bool[] { false, false, false, false, false };
     public Difficulty Difficulty = Difficulty.Easy;
     public int buffDamageTaken = 0;
-
+    public Quest CurrentQuest = null;
     private GameManager()
     {
         PersistanceManager.Instance.LoadStatistics();
@@ -43,10 +40,13 @@ public class GameManager
         {
             Statistics = saveData.Statistics,
             QuestNumber = saveData.QuestNumber,
+            PlayerHealth = saveData.PlayerHealth,
             PlayerGold = saveData.PlayerGold,
             FromLoad = true,
             Difficulty = saveData.Difficulty,
             buffDamageTaken = saveData.BuffDamageTaken,
+            IsAyamAlive = saveData.IsAyamAlive,
+            CurrentQuest = saveData.CurrentQuest
         };
         SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
     }

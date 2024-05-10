@@ -14,15 +14,10 @@ public class SaveData
     public float[] Rotation;
     public int WeaponIndex;
     public StatusCheats Cheats;
-    public bool IsAyam1Alive;
-    public bool IsAyam2Alive;
-    public bool IsAyam3Alive;
-    public bool IsAyam4Alive;
-    public bool IsAyam5Alive;
-
+    public bool[] IsAyamAlive = new bool[] { false, false, false, false, false };
     public Difficulty Difficulty;
-
     public int BuffDamageTaken;
+    public Quest CurrentQuest = null;
 
     public SaveData(GameStatistics statistics,
         int playerHealth,
@@ -33,7 +28,9 @@ public class SaveData
         int weaponIndex, 
         StatusCheats cheats,
         Difficulty difficulty,
-        int buffDamageTaken)
+        int buffDamageTaken,
+        bool[] isAyamAlive, 
+        Quest quest)
     {
         Statistics = statistics;
         PlayerHealth = playerHealth;
@@ -45,5 +42,7 @@ public class SaveData
         Cheats = cheats;
         Difficulty = difficulty;
         BuffDamageTaken = buffDamageTaken;
+        IsAyamAlive = isAyamAlive;
+        CurrentQuest = quest;
     }
 }
