@@ -25,10 +25,10 @@ public class Hitbox : MonoBehaviour
             OnHitEvent?.Invoke(null);
             return;
         }
-        
+
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
 
-        if (hurtbox is null)
+        if (hurtbox == null)
         {
             return;
         }
@@ -47,7 +47,7 @@ public class Hitbox : MonoBehaviour
     {
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
 
-        if (hurtbox is not null)
+        if (hurtbox != null)
         {
             _triggered.Remove(hurtbox);
         }

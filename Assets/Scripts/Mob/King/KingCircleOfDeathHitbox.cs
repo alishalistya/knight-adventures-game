@@ -7,12 +7,12 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
 {
     [SerializeField] public Entity entity;
     [SerializeField] public KingCircleOfDeath damageable;
-    
+
     private AttackMultiplierBuff attackDebuff;
     private MovementSpeedMultiplierBuff movementDebuff;
-    
+
     public delegate void OnHit(Hurtbox hurtbox);
-    
+
     public event OnHit OnHitEvent;
 
     private readonly List<Hurtbox> _triggered = new List<Hurtbox>();
@@ -27,7 +27,7 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
 
     private float AttackDebuffValue => attackDebuffValue;
     private float MovementSpeedDebuffValue => baseSpeedDebuffValue;
-    
+
     protected float _difficultyMultiplier;
 
     protected void Awake()
@@ -51,10 +51,10 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
             OnHitEvent?.Invoke(null);
             return;
         }
-        
+
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
 
-        if (hurtbox is null)
+        if (hurtbox == null)
         {
             return;
         }
@@ -63,7 +63,7 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
         {
             var player = (Player)hurtbox.entity;
 
-            if (player is not null)
+            if (player != null)
             {
                 attackDebuff = new AttackMultiplierBuff("kingatkdebuff", AttackDebuffValue);
                 player.AttackMultiplierBuffs.Add(attackDebuff);
@@ -71,7 +71,7 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
                 player.Movement.MovementSpeedMultiplierBuffs.Add(movementDebuff);
             }
         }
-        
+
         _triggered.Add(hurtbox);
 
         PerformDamage();
@@ -86,7 +86,7 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
     {
         var hurtbox = other.gameObject.GetComponent<Hurtbox>();
 
-        if (hurtbox is not null)
+        if (hurtbox != null)
         {
             _triggered.Remove(hurtbox);
 
@@ -94,7 +94,7 @@ public class KingCircleOfDeathHitbox : MonoBehaviour
             {
                 var player = (Player)hurtbox.entity;
 
-                if (player is not null)
+                if (player != null)
                 {
                     attackDebuff.IsActive = false;
                     player.AttackMultiplierBuffs.Remove(attackDebuff);

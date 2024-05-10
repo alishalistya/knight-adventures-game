@@ -50,7 +50,7 @@ public abstract class Mob : Entity
     protected void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other is not null && other.gameObject == movement.player)
+        if (other != null && other.gameObject == movement.player)
         {
             // ... the player is no longer in range.
             PlayerInRange = false;
@@ -64,12 +64,19 @@ public abstract class Mob : Entity
         movement.enabled = false;
         movement.Anim.SetTrigger("Death");
         audioSource.PlayOneShot(audioDeath);
+        PersistanceManager.Instance.GlobalStat.AddKill();
+        GameManager.Instance.Statistics.AddKill();
         Destroy(gameObject, 2f);
     }
 
     protected override void OnDamaged(int prevHealth, int currentHealth)
     {
-        if (audioHurt is not null)
+        if (currentHealth < prevHealth)
+        {
+            PersistanceManager.Instance.GlobalStat.AddDamageDealt(prevHealth - currentHealth);
+            GameManager.Instance.Statistics.AddDamageDealt(prevHealth - currentHealth);
+        }
+        if (audioHurt != null)
         {
             audioSource.PlayOneShot(audioHurt);
         }
@@ -78,7 +85,7 @@ public abstract class Mob : Entity
     public override void OnStartAttackAnim()
     {
         base.OnStartAttackAnim();
-        if (audioAttack is not null)
+        if (audioAttack != null)
         {
             audioSource.PlayOneShot(audioAttack);
         }
