@@ -30,29 +30,30 @@ public class DifficultyOptionSystem : MonoBehaviour
     
     public void SetGameDifficulty()
     {
-        // todo yoni set game difficulty to prefs?
-        // PlayerPrefs.SetInt(DIFFICULTY_PREFS_KEY, difficulty);
-        // PlayerPrefs.Save();
         Toggle toggle = toggleGroup.ActiveToggles().FirstOrDefault();
         difficulty = GetGameDifficulty(toggle.name);
+        PlayerPrefs.SetInt(DIFFICULTY_PREFS_KEY, (int)difficulty);
+        // PlayerPrefs.Save();
     }
     
     public Difficulty GetGameDifficulty(string _difficulty)
     {
+        _difficulty = _difficulty.Substring(0, _difficulty.Length - 6);
         return (Difficulty)Enum.Parse(typeof(Difficulty), _difficulty);
     }
     
     public string GetGameDifficulty(Difficulty _difficulty)
     {
-        return _difficulty.ToString();
+        return _difficulty.ToString() + "Option";
     }
     
     public void SetCurrentDifficulty()
     {
-        // todo yoni set game difficulty to prefs?
-        // PlayerPrefs.SetInt(DIFFICULTY_PREFS_KEY, difficulty);
-        // PlayerPrefs.Save();
+        int currentDifficulty = PlayerPrefs.GetInt(DIFFICULTY_PREFS_KEY);
+        Difficulty difficulty = (Difficulty)currentDifficulty;
         Toggle toggle = toggleGroup.transform.Find(GetGameDifficulty(difficulty)).GetComponent<Toggle>();
         toggle.isOn = true;
+        PlayerPrefs.SetInt(DIFFICULTY_PREFS_KEY, (int)difficulty);
+        // PlayerPrefs.Save();
     }
 }

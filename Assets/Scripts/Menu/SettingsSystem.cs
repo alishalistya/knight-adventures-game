@@ -14,5 +14,8 @@ public class SettingsSystem : MonoBehaviour
     {
         // TODO: Save settings
         // Save settings to file
+        PlayerPrefs.Save();
     }
+    
+    
 }
