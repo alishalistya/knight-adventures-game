@@ -101,6 +101,8 @@ public class Player : Entity, IShopCustomer
         QuestEvents.OnQuestCompleted += AddGoldFromQuest;
         Inventory = new PlayerInventory(handslot, defaultWeapon, meleeWeapon, thirdWeapon);
 
+        initialInitialHealth = GameManager.Instance.PlayerHealth;
+
         PlayerStatsEvents.PlayerStatsChanged(this);
     }
 
@@ -237,7 +239,13 @@ public class Player : Entity, IShopCustomer
     private void OnDestroy() {
         QuestEvents.OnQuestCompleted -= AddGoldFromQuest;
 
-        gameManager.PlayerHealth = Health.CurrentHealth.value;
+        if (Health.CurrentHealth.value <= 0)
+        {
+            gameManager.PlayerHealth = initialMaxHealth;
+        } else {
+            gameManager.PlayerHealth = Health.CurrentHealth.value;
+        }
+
         gameManager.PlayerGold = Gold;
 
         PlayerStatsEvents.PlayerStatsChanged(this);

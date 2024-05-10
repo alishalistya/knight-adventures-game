@@ -177,15 +177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2669336
+      value: 0.26693356
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.4238033e-15
+      value: -0.000000028720944
       objectReference: {fileID: 0}
     - target: {fileID: 4420164651687526425, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.836517e-15
+      value: 0.00000000795524
       objectReference: {fileID: 0}
     - target: {fileID: 6281725811369552821, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_Name
@@ -23151,6 +23151,7 @@ MonoBehaviour:
   healthUI: {fileID: 1829247294}
   goldUI: {fileID: 1230423806}
   questUI: {fileID: 5188781261638736992}
+  player: {fileID: 1098777374046762319}
 --- !u!224 &1288985132475344682 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1532048925429222518, guid: 98a0a3b72e92a4c50949e1c3aa14f39b, type: 3}

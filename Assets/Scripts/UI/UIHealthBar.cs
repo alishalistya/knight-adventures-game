@@ -7,11 +7,12 @@ using TMPro;
 
 public class UIHealthBar : MonoBehaviour 
 {
-    // [SerializeField] private Image healthBar;
     [SerializeField] private Slider healthSlider;
 
     [SerializeField] private TMP_Text healthValue;
 
+    public int maxHealth = 200;
+    public int currentHealth = 200;
 
 
     public void Start()
@@ -23,8 +24,8 @@ public class UIHealthBar : MonoBehaviour
     
     void PlayerStatsChanged(Player player)
     {
-        float currentHealth = player.Health.CurrentHealth.value;
-        float maxHealth = player.Health.MaxHealth.value;
+        currentHealth = player.Health.CurrentHealth.value;
+        maxHealth = player.Health.MaxHealth.value;
         Debug.Log($"Current Health: {currentHealth} Max Health: {maxHealth}");
 
         healthSlider.maxValue = maxHealth;

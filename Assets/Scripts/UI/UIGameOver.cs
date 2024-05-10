@@ -14,7 +14,6 @@ public class UIGameOver : MonoBehaviour
     [SerializeField] GameObject healthUI;
     [SerializeField] GameObject goldUI;
     [SerializeField] GameObject questUI;
-
     void Start()
     {
 
@@ -49,8 +48,12 @@ public class UIGameOver : MonoBehaviour
     public void Retry()
     {
         Debug.Log("Retry");
+
+        GameManager.Instance.PlayerHealth = healthUI.GetComponent<UIHealthBar>().maxHealth;
+
         SceneManager.LoadScene(sceneName);
-        
+
+        Debug.Log("Player Health After Death: " + GameManager.Instance.PlayerHealth);
     }
 
     public void startGameOverTimer()
