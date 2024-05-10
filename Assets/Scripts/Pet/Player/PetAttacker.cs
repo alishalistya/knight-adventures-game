@@ -69,6 +69,10 @@ public class PetAttacker : /* BasePetPlayer */ Entity, IWeaponAnimationHandler
         if (other.gameObject == movement.target)
         {
             TargetInRange = true;
+            
+            // rotate to target 
+            Vector3 direction = movement.target.transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(direction);
         }
     }
 

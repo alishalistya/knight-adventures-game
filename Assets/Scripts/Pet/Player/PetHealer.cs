@@ -35,6 +35,7 @@ public class PetHealer: BasePetPlayer
         if (!movement.ownerEntity.IsDead 
             && !IsDead 
             && isReadyToHeal
+            && movement.ownerEntity.Health.CurrentHealth.value < movement.ownerEntity.Health.MaxHealth.value
             && Vector3.Distance(movement.owner.transform.position, transform.position) < movement._distanceToOwner
             )
         {

@@ -28,6 +28,10 @@ public class PetPlayerAttackMovement : PetPlayerMovement
         {
             setTarget(false);
         }
+        else if (targetEntity != null && targetEntity.IsDead)
+        {
+            setTarget(true);
+        }
         if ((!ownerEntity.IsDead
              && Vector3.Distance(owner.transform.position, transform.position) > _distanceToOwner)
              || target == null)
@@ -69,8 +73,6 @@ public class PetPlayerAttackMovement : PetPlayerMovement
             state = PetMovementState.Idle;
             transform.rotation = owner.transform.rotation;
         }
-
         Animating();
     }
-
 }

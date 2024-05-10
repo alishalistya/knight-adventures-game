@@ -1,4 +1,4 @@
-public class PetAttackWeapon : Damageable
+public class PetAttackWeapon : MeleeWeapon
 {
     protected int baseDamage = 20;
     protected int damage;
