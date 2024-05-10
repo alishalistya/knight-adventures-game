@@ -58,13 +58,15 @@ public class PersistanceManager
         else
         {
             SaveDescriptions = new SaveDescriptions();
+            Debug.Log("SaveDescriptions is null");
+            Debug.Log(JsonUtility.ToJson(SaveDescriptions));
         }
     }
 
     public void SaveSaveDescriptions()
     {
         var jsonString = JsonUtility.ToJson(SaveDescriptions);
-        FileManager.WriteToFile(STATISTICS_FILE_NAME, jsonString);
+        FileManager.WriteToFile(GAME_SAVES_DESCRIPTION_FILE_NAME, jsonString);
     }
 
     public void SaveGame(SaveData saveData, SaveDescriptions.Description description, int saveIndex)

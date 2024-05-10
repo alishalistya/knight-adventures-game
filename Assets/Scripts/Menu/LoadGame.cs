@@ -17,13 +17,11 @@ public class LoadGame : MonoBehaviour
         }
 
         PersistanceManager.Instance.LoadSaveDescriptions();
-        // TODO: remove this, only debug
-        PersistanceManager.Instance.SaveDescriptions.SetDummyData();
         print("Descriptions: " + PersistanceManager.Instance.SaveDescriptions.Descriptions.Count);
         for (int i = 0; i < PersistanceManager.Instance.SaveDescriptions.Descriptions.Count && i < 3; i++)
         {
             var description = PersistanceManager.Instance.SaveDescriptions.Descriptions[i];
-            if (description is null)
+            if (description is null || !description.IsUsed)
             {
                 continue;
             }
