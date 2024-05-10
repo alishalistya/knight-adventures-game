@@ -57,14 +57,14 @@ public class CutSceneTrigger : MonoBehaviour
             cutscene.SetActive(true);
             director.Play();
 
-            // 
-            // if (GameManager.Instance.FromLoad)
-            // {
-            //     director.Stop();
-            //     UI.SetActive(true);
-            //     cutscene.SetActive(false);
-            //     GameManager.Instance.GameState = GameState.PLAYING;
-            // }
+            GameManager.Instance.GameState = GameState.CUTSCENE;
+            if (GameManager.Instance.FromLoad)
+            {
+                director.Stop();
+                UI.SetActive(true);
+                cutscene.SetActive(false);
+                GameManager.Instance.GameState = GameState.PLAYING;
+            }
 
         }
     }
