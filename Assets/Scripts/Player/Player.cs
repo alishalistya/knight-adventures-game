@@ -189,4 +189,13 @@ public class Player : Entity, IShopCustomer
     {
         return Gold >= cost;
     }
+
+    public void KillAllMobPets()
+    {
+        var pets = FindObjectsOfType<BasePetMob>();
+        foreach (var pet in pets)
+        {
+            pet.TakeDamage(pet.Health.CurrentHealth.value);
+        }
+    }
 }
