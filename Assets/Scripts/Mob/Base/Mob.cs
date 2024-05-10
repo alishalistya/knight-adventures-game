@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Mob : Entity
 {
     public abstract int ID { get; }
-    [SerializeField] protected MobMovement movement;
+    [SerializeField] public MobMovement movement;
     [SerializeField] protected AudioClip audioAwake;
     [SerializeField] protected AudioClip audioDeath;
     [SerializeField] protected AudioClip audioHurt;

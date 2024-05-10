@@ -16,6 +16,15 @@ public class CutSceneSkill : MonoBehaviour
     public void PlayCutscene()
     {
         // GameManager.Instance.GameState = GameState.CUTSCENE;
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var enemyObject in enemies)
+        {
+        Mob enemy = enemyObject.GetComponent<Mob>();
+        if (enemy != null && enemy.movement != null)
+        {
+            enemy.TakeDamage(1000000);
+        }
+    }
         director.Play();
     }
 
