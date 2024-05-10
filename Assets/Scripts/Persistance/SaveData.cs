@@ -9,6 +9,8 @@ public class SaveData
     public int PlayerHealth;
     public int PlayerGold;
     public int QuestNumber;
+    public bool PlayerHasKnight;
+    public bool PlayerHasMage;
 
     public float[] Position;
     public float[] Rotation;
@@ -30,7 +32,10 @@ public class SaveData
         Difficulty difficulty,
         int buffDamageTaken,
         bool[] isAyamAlive, 
-        Quest quest)
+        Quest quest,
+        bool playerHasKnight,
+        bool playerHasMage
+        )
     {
         Statistics = statistics;
         PlayerHealth = playerHealth;
@@ -44,5 +49,7 @@ public class SaveData
         BuffDamageTaken = buffDamageTaken;
         IsAyamAlive = isAyamAlive;
         CurrentQuest = quest;
+        PlayerHasKnight = playerHasKnight;
+        PlayerHasMage = playerHasMage;
     }
 }

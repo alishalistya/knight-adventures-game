@@ -23,6 +23,7 @@ public class Quest3 : Quest
 
     protected override void GiveReward()
     {
+        base.GiveReward();
         SceneManager.LoadScene("Quest-4");
     }
 }

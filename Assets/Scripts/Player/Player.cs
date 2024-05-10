@@ -98,12 +98,20 @@ public class Player : Entity, IShopCustomer
         {
             initialInitialHealth = (int)(_playerDifficultyMultiplier * baseHealth);
         }
-
-        // todo update here to update initial health (examnple: case to load health from save game)
-
+        
         Gold = GameManager.Instance.PlayerGold;
-
+        
         Debug.Log("Initial Player Health: " + initialInitialHealth);
+
+        if (gameManager.HasKnight)
+        {
+            BuyItem(ShopItem.ShopItemType.Pet_1);
+        }
+
+        if (gameManager.HasMage)
+        {
+            BuyItem(ShopItem.ShopItemType.Pet_2);
+        }
     }
 
     new void Start()
@@ -125,8 +133,6 @@ public class Player : Entity, IShopCustomer
 
     void Update()
     {
-        PersistanceManager.Instance.GlobalStat.AddPlayTime(Time.deltaTime);
-        GameManager.Instance.Statistics.AddPlayTime(Time.deltaTime);
         if (IsDead)
         {
             return;

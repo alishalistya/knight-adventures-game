@@ -109,6 +109,24 @@ public class SafeHouse : MonoBehaviour
     public void SaveGame(Player player, int saveIndex)
     {
         TMP_InputField userInputField = SafeHouseUI.transform.Find("saveInput").GetComponent<TMP_InputField>();
+        var pets = GameObject.FindGameObjectsWithTag("Player's Pet");
+
+        bool hasKnight = false;
+        bool hasMage = false;
+
+        foreach (var pet in pets)
+        {
+            var petEntity = pet.GetComponent<Entity>();
+
+            if (petEntity is PetAttacker)
+            {
+                hasKnight = true;
+            }
+            else if (petEntity is PetHealer)
+            {
+                hasMage = true;
+            }
+        }
 
         var saveData = new SaveData
         (
@@ -123,8 +141,11 @@ public class SafeHouse : MonoBehaviour
             GameManager.Instance.Difficulty,
             GameManager.Instance.buffDamageTaken,
             GameManager.Instance.IsAyamAlive,
-            GameManager.Instance.CurrentQuest
+            GameManager.Instance.CurrentQuest,
+            hasKnight,
+            hasMage
         );
+        
         var SaveDescription = new SaveDescriptions.Description(userInputField.text + " - Save " + saveIndex);
         GameManager.SaveGame(saveData, SaveDescription, saveIndex - 1);
         SceneManager.LoadScene("Main Menu");

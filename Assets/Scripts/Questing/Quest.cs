@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,8 +22,30 @@ public class Quest : MonoBehaviour {
     protected virtual void GiveReward()
     {
         Debug.Log("Quest Completed");
-    }
+        
+        var pets = GameObject.FindGameObjectsWithTag("Player's Pet");
 
+        bool hasKnight = false;
+        bool hasMage = false;
+
+        foreach (var pet in pets)
+        {
+            var petEntity = pet.GetComponent<Entity>();
+
+            if (petEntity is PetAttacker)
+            {
+                hasKnight = true;
+            }
+            else if (petEntity is PetHealer)
+            {
+                hasMage = true;
+            }
+        }
+
+        GameManager.Instance.HasKnight = hasKnight;
+        GameManager.Instance.HasMage = hasMage;
+    }
+    
     private void OnDestroy() {
         Goals.ForEach(g => g.Cleanup());
     }

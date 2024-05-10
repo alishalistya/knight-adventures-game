@@ -15,6 +15,7 @@ public class Quest1 : Quest
 
     protected override void GiveReward()
     {
+        base.GiveReward();
         Debug.Log("Quest1 Completed");
         SceneManager.LoadScene("Quest-2");
     }

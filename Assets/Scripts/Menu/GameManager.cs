@@ -24,6 +24,9 @@ public class GameManager
     public Difficulty Difficulty = Difficulty.Easy;
     public int buffDamageTaken = 0;
     public Quest CurrentQuest = null;
+    public bool HasKnight;
+    public bool HasMage;
+    
     private GameState _gameState;
     public GameState GameState
     {
@@ -66,7 +69,9 @@ public class GameManager
             Difficulty = saveData.Difficulty,
             buffDamageTaken = saveData.BuffDamageTaken,
             IsAyamAlive = saveData.IsAyamAlive,
-            CurrentQuest = saveData.CurrentQuest
+            CurrentQuest = saveData.CurrentQuest,
+            HasKnight = saveData.PlayerHasKnight,
+            HasMage = saveData.PlayerHasMage
         };
         SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
     }

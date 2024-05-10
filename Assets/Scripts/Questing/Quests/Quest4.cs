@@ -23,6 +23,7 @@ public class Quest4 : Quest
 
     protected override void GiveReward()
     {
+        base.GiveReward();
         Debug.Log("Quest4 Completed");
         SceneManager.LoadScene("Main Menu");
     }
