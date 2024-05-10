@@ -9,13 +9,17 @@ public class PersistanceManager
     const string GAME_SAVES_PREFIX = "saves_";
     private static PersistanceManager _instance;
     public SaveDescriptions SaveDescriptions;
-    public GameStatistics GlobalStat = new();
+    public GameStatistics GlobalStat;
     public static PersistanceManager Instance
     {
         get
         {
+            bool isInstanceNull = _instance == null;
             _instance ??= new PersistanceManager();
-            _instance.LoadStatistics();
+            if (isInstanceNull)
+            {
+                _instance.LoadStatistics();
+            }
             return _instance;
         }
     }

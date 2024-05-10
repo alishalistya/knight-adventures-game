@@ -3,55 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class GameStatistics
 {
-  private int totalShots = 0;
-  private int totalHits = 0;
-
-  private float distanceTravelled = 0;
-
-  private float playTime = 0;
-
-  private float totalDamageDealt = 0;
-  private float totalDamageTaken = 0;
-  private float totalDeaths = 0;
-  private float totalKills = 0;
-
-  public int TotalShots { get => totalShots; }
-  public int TotalHits { get => totalHits; }
-  public float DistanceTravelled { get => distanceTravelled; }
+  public int TotalShots = 0;
+  public int TotalHits = 0;
+  public float DistanceTravelled = 0;
 
   public string DistanceTravelledString
   {
     get
     {
-      return (distanceTravelled / 1000f).ToString("F") + " km";
+      return (DistanceTravelled / 1000f).ToString("F") + " km";
     }
   }
-  public float PlayTime { get => playTime; }
+  public float PlayTime = 0;
 
   public string PlayTimeString
   {
     get
     {
-      TimeSpan time = TimeSpan.FromSeconds(playTime);
+      TimeSpan time = TimeSpan.FromSeconds(PlayTime);
       return time.ToString(@"hh\:mm\:ss");
     }
   }
-  public float TotalDamageDealt { get => totalDamageDealt; }
-  public float TotalDamageTaken { get => totalDamageTaken; }
-  public float TotalDeaths { get => totalDeaths; }
-  public float TotalKills { get => totalKills; }
+  public float TotalDamageDealt = 0;
+  public float TotalDamageTaken = 0;
+  public float TotalDeaths = 0;
+  public float TotalKills = 0;
 
   public void AddTotalShot()
   {
-    totalShots++;
+    TotalShots++;
   }
 
   public void AddTotalHit()
   {
-    totalHits++;
+    TotalHits++;
   }
 
   public void AddDistance(float distance)
@@ -60,7 +48,7 @@ public class GameStatistics
     {
       throw new System.ArgumentException("Distance cannot be negative");
     }
-    distanceTravelled += distance;
+    DistanceTravelled += distance;
   }
 
   public void AddPlayTime(float time)
@@ -69,7 +57,7 @@ public class GameStatistics
     {
       throw new System.ArgumentException("Time cannot be negative");
     }
-    playTime += time;
+    PlayTime += time;
   }
 
   public void AddDamageDealt(float damage)
@@ -78,7 +66,7 @@ public class GameStatistics
     {
       throw new System.ArgumentException("Damage cannot be negative");
     }
-    totalDamageDealt += damage;
+    TotalDamageDealt += damage;
   }
 
   public void AddDamageTaken(float damage)
@@ -87,16 +75,16 @@ public class GameStatistics
     {
       throw new System.ArgumentException("Damage cannot be negative");
     }
-    totalDamageTaken += damage;
+    TotalDamageTaken += damage;
   }
 
   public void AddDeath()
   {
-    totalDeaths++;
+    TotalDeaths++;
   }
 
   public void AddKill()
   {
-    totalKills++;
+    TotalKills++;
   }
 }

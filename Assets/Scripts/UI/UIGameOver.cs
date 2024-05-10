@@ -25,6 +25,7 @@ public class UIGameOver : MonoBehaviour
         questUI.SetActive(false);
 
         startGameOverTimer();
+        PersistanceManager.Instance.SaveStatistics();
     }
 
     void Update()
@@ -53,7 +54,6 @@ public class UIGameOver : MonoBehaviour
 
     public void startGameOverTimer()
     {
-        PersistanceManager.Instance.SaveStatistics();
         StartCoroutine(Timer());
     }
 

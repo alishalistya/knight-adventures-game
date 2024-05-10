@@ -19,7 +19,7 @@ public class GameManager
     public Quest CurrentQuest = null;
     private GameManager()
     {
-        PersistanceManager.Instance.LoadStatistics();
+        PersistanceManager.Instance.AssertInit();
     }
 
     public static void NewGame()
