@@ -23,7 +23,7 @@ public class UIGameOver : MonoBehaviour
         healthUI.SetActive(false);
         goldUI.SetActive(false);
         questUI.SetActive(false);
-        
+
         startGameOverTimer();
     }
 
@@ -41,7 +41,7 @@ public class UIGameOver : MonoBehaviour
     }
 
     public void MainMenu()
-    {   
+    {
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -49,11 +49,11 @@ public class UIGameOver : MonoBehaviour
     {
         Debug.Log("Retry");
         SceneManager.LoadScene(sceneName);
-        
     }
 
     public void startGameOverTimer()
     {
+        PersistanceManager.Instance.SaveStatistics();
         StartCoroutine(Timer());
     }
 
