@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class CutSceneTrigger : MonoBehaviour
 {
     PlayableDirector director;
     GameObject cutscene;
+    [SerializeField] GameObject UI;
+
+
+    private void Awake() {
+        QuestEvents.OnQuestCompleted += PlayCutscene;
+    }
+    
 
     // Start is called before the first frame update
     void Start()
@@ -15,42 +23,50 @@ public class CutSceneTrigger : MonoBehaviour
         cutscene = GameObject.Find("Ending Cutscene");
         cutscene.SetActive(false);
 
-        // if (cutscene != null)
-        // {
-        //     cutscene.SetActive(true); // Ensure the GameObject is active
-        //     Debug.Log("Cutscene activated at start.");
-        // }
-        // else
-        // {
-        //     Debug.Log("Failed to find the cutscene GameObject.");
-        // }
+        
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            cutscene.SetActive(true);
-            Debug.Log("P key was pressed.");
-            if (cutscene.activeSelf)
-            {
-                Debug.Log("Cutscene is active.");
-            }
-            else
-            {
-                Debug.Log("Cutscene is inactive.");
-            }
-
-            director.Play();
-        }
-
+        
         if (director.state != PlayState.Playing)
         {
             director.Stop();
+            // SceneManager.LoadScene("Main Menu");
             cutscene.SetActive(false);
+
         }
+    }
+
+    public void PlayCutscene(Quest quest)
+    {
+
+        Debug.Log("PlayCutscene called.");
+        if (quest.QuestName == "Dead King's Rise")
+        {
+            cutscene.SetActive(true);
+            director.Play();
+            UI.SetActive(false);
+            GameManager.Instance.GameState = GameState.CUTSCENE;
+            // if (GameManager.Instance.FromLoad)
+            // {
+            //     director.Stop();
+            //     UI.SetActive(true);
+            //     cutscene.SetActive(false);
+            //     GameManager.Instance.GameState = GameState.PLAYING;
+            // }
+
+        }
+            // cutscene.SetActive(true);
+            // director.Play();
+    }
+
+    private void OnDestroy()
+    {
+        QuestEvents.OnQuestCompleted -= PlayCutscene;
     }
 
 }

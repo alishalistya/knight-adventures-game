@@ -7257,7 +7257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457272427}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15331323, y: 0.000000017002963, z: -0.0000000026379658, w: 0.9881777}
+  m_LocalRotation: {x: 0.15331323, y: -0.000000017002963, z: 0.0000000026379658, w: 0.9881777}
   m_LocalPosition: {x: 24.9, y: 3, z: -12.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14019,11 +14019,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 978465816233043318, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016662847
+      value: 0.000000016662849
       objectReference: {fileID: 0}
     - target: {fileID: 978465816233043318, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004290583
+      value: -0.0000000042905834
       objectReference: {fileID: 0}
     - target: {fileID: 3318894297071311536, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_Follow
@@ -14079,11 +14079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017002959
+      value: -0.000000017002959
       objectReference: {fileID: 0}
     - target: {fileID: 6430619677676045396, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000026379647
+      value: 0.0000000026379647
       objectReference: {fileID: 0}
     - target: {fileID: 7641298933611678987, guid: 5bacf21b4123ed54eadf2d5ec829332a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22940,6 +22940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e5c7a7eb9c74831af91309b463d97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 47591641}
 --- !u!114 &1213925822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22952,7 +22953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba640997dea410e9f298791cff7837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutscene: {fileID: 1213925817}
+  cutscene: {fileID: 723858532}
   UI: {fileID: 47591641}
 --- !u!1001 &1214985995
 PrefabInstance:

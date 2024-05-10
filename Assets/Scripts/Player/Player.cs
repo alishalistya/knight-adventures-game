@@ -102,7 +102,7 @@ public class Player : Entity, IShopCustomer
 
         Gold = GameManager.Instance.PlayerGold;
 
-        Debug.Log("Initial Player Health: " + initialInitialHealth);
+        // Debug.Log("Initial Player Health: " + initialInitialHealth);
 
         if (gameManager.HasKnight)
         {

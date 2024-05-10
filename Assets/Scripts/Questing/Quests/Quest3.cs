@@ -17,7 +17,6 @@ public class Quest3 : Quest
 
         Goals.Add(new AreaGoal(this, "LocationArea", "Find the Mage!", false, 0, 1));
 
-
         Goals.ForEach(g => g.Init());
     }
 
