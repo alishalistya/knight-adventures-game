@@ -24,4 +24,9 @@ public class AreaGoal : Goal
             Evaluate();
         }
     }
+    public override void Cleanup()
+    {
+        base.Cleanup();
+        QuestEvents.OnItemCollected -= AreaDetected;
+    }
 }

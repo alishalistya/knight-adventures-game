@@ -19,6 +19,11 @@ public class UIGold : MonoBehaviour
 
     void PlayerStatsChanged(Player player)
     {
+        if (PlayerCheats.IsCheat(StatusCheats.MOTHERLODE))
+        {
+            goldValue.text = "inf";
+            return;
+        }
         int value = player.Gold;
         goldValue.text = value.ToString();
         Debug.Log(value);

@@ -22,4 +22,8 @@ public class Quest : MonoBehaviour {
     {
         Debug.Log("Quest Completed");
     }
+
+    private void OnDestroy() {
+        Goals.ForEach(g => g.Cleanup());
+    }
 }

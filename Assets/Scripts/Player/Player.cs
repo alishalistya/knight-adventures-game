@@ -181,12 +181,21 @@ public class Player : Entity, IShopCustomer
 
     public void RemoveGold(int amount)
     {
+        if (PlayerCheats.IsCheat(StatusCheats.MOTHERLODE))
+        {
+            PlayerStatsEvents.PlayerStatsChanged(this);
+            return;
+        }
         Gold -= amount;
         PlayerStatsEvents.PlayerStatsChanged(this);
     }
 
     public bool CheckGold(int cost)
     {
+        if (PlayerCheats.IsCheat(StatusCheats.MOTHERLODE))
+        {
+            return true;
+        }
         return Gold >= cost;
     }
 
@@ -197,6 +206,11 @@ public class Player : Entity, IShopCustomer
         {
             pet.TakeDamage(pet.Health.CurrentHealth.value);
         }
+    }
+
+    public void CheatNextQuest()
+    {
+        // QuestEvents.QuestCompleted();
     }
     private void OnDestroy() {
         QuestEvents.OnQuestCompleted -= AddGoldFromQuest;

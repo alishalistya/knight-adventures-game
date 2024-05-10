@@ -11,6 +11,7 @@ public class Goal
     public int RequiredAmount { get; set; }
 
     public virtual void Init() {}
+    public virtual void Cleanup() {}
 
     public void Evaluate()
     {

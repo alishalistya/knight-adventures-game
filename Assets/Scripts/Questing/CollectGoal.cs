@@ -24,4 +24,10 @@ public class CollectGoal : Goal
             Evaluate();
         }
     }
+
+    public override void Cleanup()
+    {
+        base.Cleanup();
+        QuestEvents.OnItemCollected -= ItemCollected;
+    }
 }

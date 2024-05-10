@@ -26,4 +26,10 @@ public class KillGoal : Goal
             Evaluate();
         }
     }
+
+    public override void Cleanup()
+    {
+        base.Cleanup();
+        CombatEvents.OnMobKilled -= MobKilled;
+    }
 }
