@@ -51,6 +51,7 @@ public class Quest : MonoBehaviour {
     }
     public void CheatQuest()
     {
+        Completed = true;
         QuestEvents.QuestCompleted(this);
         GiveReward();
     }

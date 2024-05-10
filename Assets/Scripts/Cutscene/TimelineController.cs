@@ -8,6 +8,7 @@ public class TimelineController : MonoBehaviour
     PlayableDirector director;
     [SerializeField] GameObject cutscene;
     [SerializeField] GameObject UI;
+    private bool isOpeningCutscenePlayed = true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class TimelineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (director.state != PlayState.Playing)
+        if (director.state != PlayState.Playing && isOpeningCutscenePlayed)
         {
             ShopEvents.ShopTimerStarted();
             director.Stop();
@@ -37,6 +38,13 @@ public class TimelineController : MonoBehaviour
             {
                 GameManager.Instance.GameState = GameState.PLAYING;
             }
+            isOpeningCutscenePlayed = false;
+
         }
+
+
+
     }
+
+
 }

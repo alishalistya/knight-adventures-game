@@ -15,7 +15,6 @@ public class CutSceneTrigger : MonoBehaviour
     private void Awake() {
         QuestEvents.OnQuestCompleted += PlayCutscene;
     }
-    
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,6 @@ public class CutSceneTrigger : MonoBehaviour
         cutscene = GameObject.Find("Ending Cutscene");
         cutscene.SetActive(false);
     }
-
 
     // Update is called once per frame
     void Update()
@@ -49,14 +47,17 @@ public class CutSceneTrigger : MonoBehaviour
         Debug.Log("PlayCutscene called.");
         if (quest.QuestName == "Dead King's Rise")
         {
+            Debug.Log(UI);
+            GameManager.Instance.GameState = GameState.CUTSCENE;
+
+            UI.SetActive(false);
             Debug.Log("Cutscene triggered.");
             this.quest = quest;
+            
             cutscene.SetActive(true);
-            UI.SetActive(false);
-
             director.Play();
 
-            // GameManager.Instance.GameState = GameState.CUTSCENE;
+            // 
             // if (GameManager.Instance.FromLoad)
             // {
             //     director.Stop();
@@ -66,8 +67,6 @@ public class CutSceneTrigger : MonoBehaviour
             // }
 
         }
-            // cutscene.SetActive(true);
-            // director.Play();
     }
 
     private void OnDestroy()
