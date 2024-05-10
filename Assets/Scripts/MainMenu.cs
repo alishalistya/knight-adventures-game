@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
     public void NewGame()
     {
         GameManager.NewGame();

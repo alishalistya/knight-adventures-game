@@ -929,6 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2122793986078393055}
+  - component: {fileID: 9022129188516901920}
   m_Layer: 5
   m_Name: SafeHouseUI
   m_TagString: Untagged
@@ -961,6 +962,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.0000009536743}
   m_SizeDelta: {x: 253.5591, y: 119.2375}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9022129188516901920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561331730728172392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86362adf6e2612046af534ee874a159b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6842293349122457939
 GameObject:
   m_ObjectHideFlags: 0

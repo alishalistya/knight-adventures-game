@@ -288,11 +288,9 @@ public class Player : Entity, IShopCustomer
         if (state != GameState.PLAYING)
         {
             DisableAction = true;
-            Cursor.visible = true;
         }
         else
         {
-            Cursor.visible = false;
             DisableAction = false;
         }
     }

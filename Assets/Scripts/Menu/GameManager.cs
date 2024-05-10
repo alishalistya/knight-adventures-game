@@ -43,6 +43,7 @@ public class GameManager
     {
         PersistanceManager.Instance.AssertInit();
         GameState = GameState.CUTSCENE;
+        Cursor.visible = false;
     }
 
     public static void NewGame()
