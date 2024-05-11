@@ -67,16 +67,21 @@ public class SafeHouse : MonoBehaviour
             descText3.SetText("Save 3 is empty");
         }
 
+        saveButton1.onClick.RemoveAllListeners();
+
         saveButton1.onClick.AddListener(() =>
         {
             SaveGame(player, 1);
         });
+
+        saveButton2.onClick.RemoveAllListeners();
 
         saveButton2.onClick.AddListener(() =>
         {
             SaveGame(player, 2);
         });
 
+        saveButton3.onClick.RemoveAllListeners();
         saveButton3.onClick.AddListener(() =>
         {
             SaveGame(player, 3);
@@ -146,13 +151,14 @@ public class SafeHouse : MonoBehaviour
             hasKnight,
             hasMage
         );
-        
+
         var SaveDescription = new SaveDescriptions.Description(userInputField.text + " - Save " + saveIndex);
         GameManager.SaveGame(saveData, SaveDescription, saveIndex - 1);
-        SceneManager.LoadScene("Main Menu");
+        SetSaveButton(player);
     }
 
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         QuestEvents.OnQuestCompleted -= OnQuestCompleted;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopEnabler : MonoBehaviour
 {
@@ -11,15 +12,39 @@ public class ShopEnabler : MonoBehaviour
     void Start()
     {
         isShopOpen = false;
+
     }
 
-    private void OnTriggerStay(Collider other) {
+    private void OnTriggerStay(Collider other)
+    {
         IShopCustomer customer = other.gameObject.GetComponent<IShopCustomer>();
+
+        var shopBtnObj = GameObject.FindGameObjectWithTag("ShopButton");
+        print(shopBtnObj);
+        if (shopBtnObj != null)
+        {
+            var shopButton = shopBtnObj.GetComponent<Button>();
+            shopButton.onClick.RemoveAllListeners();
+            shopButton.onClick.AddListener(() =>
+            {
+
+                if (!isShopOpen && customer != null)
+                {
+                    uiShop.Show(customer);
+                    isShopOpen = true;
+                }
+                else if (isShopOpen && customer != null)
+                {
+                    uiShop.Hide();
+                    isShopOpen = false;
+                }
+            });
+        }
 
         if (!isShopOpen && Input.GetKeyDown(KeyCode.B) && customer != null)
         {
             uiShop.Show(customer);
-            isShopOpen = true;  
+            isShopOpen = true;
             return;
         }
         else if (isShopOpen && Input.GetKeyDown(KeyCode.B) && customer != null)
@@ -41,7 +66,8 @@ public class ShopEnabler : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit(Collider other)
+    {
         IShopCustomer customer = other.gameObject.GetComponent<IShopCustomer>();
         if (customer != null)
         {

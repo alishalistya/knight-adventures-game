@@ -42,7 +42,7 @@ public class UIGameOver : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        GameManager.MainMenu();
     }
 
     public void Retry()

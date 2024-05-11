@@ -22,7 +22,7 @@ public class GameManager
     public int PlayerHealth = 200;
     public float[] PlayerPosition;
     public float[] PlayerRotation;
-    public bool[] IsAyamAlive = new bool[] { true, true, true, true, true};
+    public bool[] IsAyamAlive = new bool[] { true, true, true, true, true };
     public Difficulty Difficulty = Difficulty.Easy;
     public int buffDamageTaken = 0;
     public int[] GoalProgress = new int[] { 0, 0, 0, 0, 0 };
@@ -47,6 +47,7 @@ public class GameManager
         GameState = GameState.CUTSCENE;
         Cursor.visible = false;
     }
+
 
     public static void NewGame()
     {
@@ -93,5 +94,11 @@ public class GameManager
         Instance.QuestNumber++;
         Instance.FromLoad = false;
         SceneManager.LoadScene("Quest-" + Instance.QuestNumber);
+    }
+
+    public static void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+        PersistanceManager.Instance.SaveStatistics();
     }
 }

@@ -22,7 +22,8 @@ public class SaveDescriptions
 
     public override string ToString()
     {
-      DateTime dateTime = DateTime.UnixEpoch.AddSeconds(Time);
+      var offset = DateTimeOffset.FromUnixTimeSeconds(Time);
+      DateTime dateTime = DateTime.UnixEpoch.AddSeconds(Time + offset.Offset.TotalSeconds);
       return $"{Name}\n{dateTime:dd/MM/yyyy HH:mm}";
     }
 

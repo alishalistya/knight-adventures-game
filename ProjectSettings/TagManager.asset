@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Player's Pet
   - Mob's Pet
+  - ShopButton
   layers:
   - Default
   - TransparentFX

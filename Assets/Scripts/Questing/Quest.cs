@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quest : MonoBehaviour {
+public class Quest : MonoBehaviour
+{
     public int QuestInWhatScene { get; set; }
     public List<Goal> Goals { get; set; } = new List<Goal>();
     public string QuestName { get; set; }
@@ -10,10 +11,10 @@ public class Quest : MonoBehaviour {
     public bool Completed { get; set; }
     public int GoldReward { get; set; }
 
-    public void CheckGoals() 
+    public void CheckGoals()
     {
         Completed = Goals.TrueForAll(g => g.Completed);
-        if (Completed) 
+        if (Completed)
         {
             QuestEvents.QuestCompleted(this);
             GiveReward();
@@ -23,7 +24,7 @@ public class Quest : MonoBehaviour {
     protected virtual void GiveReward()
     {
         Debug.Log("Quest Completed");
-        
+
         var pets = GameObject.FindGameObjectsWithTag("Player's Pet");
 
         bool hasKnight = false;
@@ -46,8 +47,9 @@ public class Quest : MonoBehaviour {
         GameManager.Instance.HasKnight = hasKnight;
         GameManager.Instance.HasMage = hasMage;
     }
-    
-    private void OnDestroy() {
+
+    private void OnDestroy()
+    {
         Goals.ForEach(g => g.Cleanup());
     }
     public void CheatQuest()
@@ -74,5 +76,14 @@ public class Quest : MonoBehaviour {
             newGoalProgress[i] = Goals[i].CurrentAmount;
         }
         return newGoalProgress;
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.MainMenu();
+        }
     }
 }

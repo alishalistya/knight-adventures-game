@@ -134,6 +134,9 @@ public class Player : Entity, IShopCustomer
 
     void Update()
     {
+        PersistanceManager.Instance.GlobalStat.AddPlayTime(Time.deltaTime);
+        GameManager.Instance.Statistics.AddPlayTime(Time.deltaTime);
+
         if (IsDead)
         {
             return;
