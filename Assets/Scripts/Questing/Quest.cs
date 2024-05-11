@@ -45,7 +45,6 @@ public class Quest : MonoBehaviour {
 
         GameManager.Instance.HasKnight = hasKnight;
         GameManager.Instance.HasMage = hasMage;
-        GameManager.Instance.GoalProgress = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
     
     private void OnDestroy() {
@@ -67,11 +66,13 @@ public class Quest : MonoBehaviour {
         }
     }
 
-    public void SaveQuestToGoalProgress(int[] goalProgress)
+    public int[] SaveQuestToGoalProgress()
     {
+        var newGoalProgress = new int[Goals.Count];
         for (int i = 0; i < Goals.Count; i++)
         {
-            goalProgress[i] = Goals[i].CurrentAmount;
+            newGoalProgress[i] = Goals[i].CurrentAmount;
         }
+        return newGoalProgress;
     }
 }

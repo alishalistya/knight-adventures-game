@@ -15,7 +15,7 @@ public class Goal
 
     public void Evaluate()
     {
-        
+        GameManager.Instance.GoalProgress = Quest.SaveQuestToGoalProgress();
         if (CurrentAmount >= RequiredAmount)
         {
             Complete();
@@ -24,7 +24,6 @@ public class Goal
         {
             Completed = false;
         }
-        Quest.SaveQuestToGoalProgress(GameManager.Instance.GoalProgress);
         Debug.Log("Goal Progress: " + GameManager.Instance.GoalProgress);
         QuestEvents.GoalProgressed(Quest);
     }
