@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,17 @@ public class Quest3 : Quest
         Goals.Add(new AreaGoal(this, "LocationArea", "Find the Mage!", false, 0, 1));
 
         Goals.ForEach(g => g.Init());
+    }
+
+    private void Start()
+    {
+        if (GameManager.Instance.FromLoad)
+        {
+            foreach (var mob in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                Destroy(mob);
+            }
+        }
     }
 
     protected override void GiveReward()
