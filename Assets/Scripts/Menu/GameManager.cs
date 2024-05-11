@@ -22,10 +22,10 @@ public class GameManager
     public int PlayerHealth = 200;
     public float[] PlayerPosition;
     public float[] PlayerRotation;
-    public bool[] IsAyamAlive = new bool[] { false, false, false, false, false };
+    public bool[] IsAyamAlive = new bool[] { true, true, true, true, true};
     public Difficulty Difficulty = Difficulty.Easy;
     public int buffDamageTaken = 0;
-    public Quest CurrentQuest = null;
+    public int[] GoalProgress = new int[] { 0, 0, 0, 0, 0 };
     public bool HasKnight;
     public bool HasMage;
 
@@ -72,7 +72,7 @@ public class GameManager
             Difficulty = saveData.Difficulty,
             buffDamageTaken = saveData.BuffDamageTaken,
             IsAyamAlive = saveData.IsAyamAlive,
-            CurrentQuest = saveData.CurrentQuest,
+            GoalProgress = saveData.GoalProgress,
             HasKnight = saveData.PlayerHasKnight,
             HasMage = saveData.PlayerHasMage,
             PlayerPosition = saveData.Position,

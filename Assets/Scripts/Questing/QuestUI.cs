@@ -28,7 +28,6 @@ public class QuestUI : MonoBehaviour
 
         foreach (Goal goal in quest.Goals)
         {
-            Debug.Log("Loading Goal");
             Transform goalItemTransform = Instantiate(goalItemTemplate, container);
             goalItemTransform.name = "GoalItem" + (positionIndex + 1);
             string goalProgress = goal.Description + " " + goal.CurrentAmount + "/" + goal.RequiredAmount;

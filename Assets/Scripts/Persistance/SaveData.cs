@@ -16,10 +16,10 @@ public class SaveData
     public float[] Rotation;
     public int WeaponIndex;
     public StatusCheats Cheats;
-    public bool[] IsAyamAlive = new bool[] { false, false, false, false, false };
+    public bool[] IsAyamAlive = new bool[] { true, true, true, true, true};
     public Difficulty Difficulty;
     public int BuffDamageTaken;
-    public Quest CurrentQuest = null;
+    public int[] GoalProgress = new int[] { 0, 0, 0, 0, 0 };
 
     public SaveData(GameStatistics statistics,
         int playerHealth,
@@ -32,7 +32,7 @@ public class SaveData
         Difficulty difficulty,
         int buffDamageTaken,
         bool[] isAyamAlive,
-        Quest quest,
+        int[] goalProgress,
         bool playerHasKnight,
         bool playerHasMage
         )
@@ -48,7 +48,7 @@ public class SaveData
         Difficulty = difficulty;
         BuffDamageTaken = buffDamageTaken;
         IsAyamAlive = isAyamAlive;
-        CurrentQuest = quest;
+        GoalProgress = goalProgress;
         PlayerHasKnight = playerHasKnight;
         PlayerHasMage = playerHasMage;
     }

@@ -55,4 +55,21 @@ public class Quest : MonoBehaviour {
         QuestEvents.QuestCompleted(this);
         GiveReward();
     }
+
+    public void LoadQuestFromSave(int[] goalProgress)
+    {
+        for (int i = 0; i < Goals.Count; i++)
+        {
+            Goals[i].CurrentAmount = goalProgress[i];
+            Goals[i].Evaluate();
+        }
+    }
+
+    public void SaveQuestToGoalProgress(int[] goalProgress)
+    {
+        for (int i = 0; i < Goals.Count; i++)
+        {
+            goalProgress[i] = Goals[i].CurrentAmount;
+        }
+    }
 }

@@ -7,7 +7,21 @@ public class QuestGiver : MonoBehaviour
     [SerializeField] private GameObject quests;
     [SerializeField] private string questType;
     private Quest Quest { get; set; }
+ 
 
+    private void Awake() {
+        if (GameManager.Instance.FromLoad)
+        {
+            Debug.Log("Loading Quest Awake");
+            Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
+            Quest.LoadQuestFromSave(GameManager.Instance.GoalProgress);
+        }
+        else
+        {
+            Debug.Log("No Quest to load Awake");
+            Quest = null;
+        }
+    }
     void Start()
     {
         AssignQuest();
@@ -16,7 +30,16 @@ public class QuestGiver : MonoBehaviour
     void AssignQuest()
     {
         AssignedQuest = true;
-        Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
+        Debug.Log("Assigning Quest");
+        if (Quest != null)
+        {
+            Debug.Log("Quest already exists");
+        } 
+        else
+        {
+            Debug.Log("Creating Quest");
+            Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
+        }
         questUI.LoadQuest(Quest);
     }
 

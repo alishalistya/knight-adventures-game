@@ -45,7 +45,6 @@ public class SafeHouse : MonoBehaviour
             descText1.SetText("Save 1 is empty");
         }
 
-        Debug.Log(saveButton1.transform.Find("descText").GetComponent<TextMeshProUGUI>());
         Button saveButton2 = safeHouseUITransform.Find("button2").GetComponent<Button>();
         TextMeshProUGUI descText2 = saveButton2.transform.Find("descText").GetComponent<TextMeshProUGUI>();
         if (Description2 != null && Description2.IsUsed)
@@ -87,7 +86,8 @@ public class SafeHouse : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && IsQuestCompleted)
+        var mob = FindObjectOfType<Mob>();
+        if (other.CompareTag("Player") && (mob == null))
         {
             var player = other.GetComponent<Player>();
             if (!IsSaveButtonSet)
@@ -141,7 +141,7 @@ public class SafeHouse : MonoBehaviour
             GameManager.Instance.Difficulty,
             GameManager.Instance.buffDamageTaken,
             GameManager.Instance.IsAyamAlive,
-            GameManager.Instance.CurrentQuest,
+            GameManager.Instance.GoalProgress,
             hasKnight,
             hasMage
         );
