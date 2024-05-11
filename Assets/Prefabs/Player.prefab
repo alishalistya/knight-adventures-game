@@ -456,6 +456,7 @@ MonoBehaviour:
   toastText: {fileID: 3375434829288379740}
   cheatEvents:
   - cheatCode: bunuhyoni
+    name: KILL ALL PETS
     event:
       m_PersistentCalls:
         m_Calls:
@@ -472,6 +473,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - cheatCode: orbwangy
+    name: GET ORB
     event:
       m_PersistentCalls:
         m_Calls:
@@ -488,6 +490,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - cheatCode: lanjutbang
+    name: NEXT QUEST
     event:
       m_PersistentCalls:
         m_Calls:
@@ -504,6 +507,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - cheatCode: matiaja
+    name: 
     event:
       m_PersistentCalls:
         m_Calls:

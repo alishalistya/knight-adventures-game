@@ -22,6 +22,7 @@ public enum StatusCheats
 public class CheatEventEntry
 {
   public string cheatCode;
+  public string name;
   public UnityEvent<string> @event;
 }
 
@@ -117,6 +118,7 @@ public class PlayerCheats : MonoBehaviour
     {
       if (compositeString.EndsWith(cheatEvent.cheatCode))
       {
+        showToast("Cheat activated: " + cheatEvent.name, 2);
         print("Cheat activated: " + cheatEvent.cheatCode);
         cheatEvent.@event?.Invoke(cheatEvent.cheatCode);
         compositeString = string.Empty;
