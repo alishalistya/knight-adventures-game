@@ -29,6 +29,7 @@ Type this during gameplay to activate the cheats!
 - **TMPro**: Text Library used for UI in Canvas
 - **Cinemachine**: Library used for managing cutscenes
 - **AI Navigation**: Library used for AI Movement Navigation (retrieved from: https://docs.unity3d.com/Packages/com.unity.ai.navigation@2.0/manual/index.html)
+- **Input System**: For more flexible input handling (cheats, android joystick, etc.)
 
 # Screenshot
 
@@ -50,8 +51,8 @@ Here's a few screenshot! The rest will be available at the Screenshot folder.
 
 | NIM      | Name                    | Features                                                                      | Hours Spent |
 |----------|-------------------------|-------------------------------------------------------------------------------|-------------|
-| 13521045 | Fakhri Muhammad Mahendra | Shopkeeper, Orb Power Up, Save Game, Cheat, Quests, Game Manager            |             |
-| 13521087 | Razzan Daksana Yoni      | Main menu, Pet Movement, Pet Mobs, Pet Players, Cheat                                                              |             |
-| 13521093 | Akbar Maulana Ridho      | Cheat, All Mobs, Hitbox, Hurtbox, Mobs AI Movement, Mobs Weapon, Game Manager |             |
-| 13521101 | Arsa Izdihar Islam       | Entity, Statistik Game, Weapon, Cheat, Build Android, Multitype Input, Game Manager, Player Movements |             |
-| 13521171 | Alisha Listya            | Cutscenes, Skill Cutscene, Game Over, World Building, UI (Health Bar, Gold), Story, Asset Search                      |             |
+| 13521045 | Fakhri Muhammad Mahendra | Shopkeeper, Orb Power Up, Save Game, Cheat, Quests, Game Manager            | 50            |
+| 13521087 | Razzan Daksana Yoni      | Main menu, Pet Movement, Pet Mobs, Pet Players, Cheat                                                              | 50            |
+| 13521093 | Akbar Maulana Ridho      | Cheat, All Mobs, Hitbox, Hurtbox, Mobs AI Movement, Mobs Weapon, Game Manager | 50            |
+| 13521101 | Arsa Izdihar Islam       | Entity, Statistik Game, Weapon, Cheat, Build Android, Multitype Input, Game Manager, Player Movements | 50            |
+| 13521171 | Alisha Listya            | Cutscenes, Skill Cutscene, Game Over, World Building, UI (Health Bar, Gold), Story, Asset Search                      | 50            |
