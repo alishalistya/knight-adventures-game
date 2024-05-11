@@ -73,7 +73,14 @@ public class Player : Entity, IShopCustomer
     private bool _disableAction = true;
     private bool DisableAction
     {
-        get => _disableAction; set { _disableAction = value; movement.disableMove = value; Inventory.IsChangeEnabled = !value; }
+         
+            get => _disableAction; set 
+            { 
+                if (movement != null && Inventory != null)
+                {
+                    _disableAction = value; movement.disableMove = value; Inventory.IsChangeEnabled = !value; 
+                }
+            }
     }
 
     private void Awake()
