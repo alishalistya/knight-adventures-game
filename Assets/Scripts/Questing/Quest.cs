@@ -45,8 +45,7 @@ public class Quest : MonoBehaviour {
 
         GameManager.Instance.HasKnight = hasKnight;
         GameManager.Instance.HasMage = hasMage;
-
-        GameManager.Instance.GoalProgress = new int[10];
+        GameManager.Instance.GoalProgress = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
     
     private void OnDestroy() {

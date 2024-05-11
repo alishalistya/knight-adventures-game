@@ -21,6 +21,7 @@ public class SafeHouse : MonoBehaviour
     private void OnQuestCompleted(Quest quest)
     {
         IsQuestCompleted = true;
+        GameManager.Instance.GoalProgress = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
 
     private void SetSaveButton(Player player)

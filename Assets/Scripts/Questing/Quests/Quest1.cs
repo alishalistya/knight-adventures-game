@@ -18,6 +18,6 @@ public class Quest1 : Quest
     {
         base.GiveReward();
         Debug.Log("Quest1 Completed");
-        SceneManager.LoadScene("Quest-2");
+        GameManager.NextQuest();
     }
 }
