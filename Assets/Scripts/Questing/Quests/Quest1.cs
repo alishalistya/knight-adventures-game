@@ -5,6 +5,7 @@ public class Quest1 : Quest
 {
     public void Awake()
     {
+        QuestInWhatScene = 1;
         QuestName = "Get the CHIKENZ";
         Description = "You need to get the CHIKENZ, ";
         GoldReward = 20;

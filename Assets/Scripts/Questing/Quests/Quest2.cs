@@ -5,6 +5,7 @@ public class Quest2 : Quest
 {
     public void Awake()
     {
+        QuestInWhatScene = 2;
         QuestName = "Kill all the kerocos";
         Description = "Destroy the kerocos to save the town";
         GoldReward = 20;

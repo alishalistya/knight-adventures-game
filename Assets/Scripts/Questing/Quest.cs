@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Quest : MonoBehaviour {
+    public int QuestInWhatScene { get; set; }
     public List<Goal> Goals { get; set; } = new List<Goal>();
     public string QuestName { get; set; }
     public string Description { get; set; }
@@ -44,6 +45,8 @@ public class Quest : MonoBehaviour {
 
         GameManager.Instance.HasKnight = hasKnight;
         GameManager.Instance.HasMage = hasMage;
+
+        GameManager.Instance.GoalProgress = new int[10];
     }
     
     private void OnDestroy() {

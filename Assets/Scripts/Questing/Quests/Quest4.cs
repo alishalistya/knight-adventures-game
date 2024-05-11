@@ -5,6 +5,7 @@ public class Quest4 : Quest
 {
     public void Awake()
     {
+        QuestInWhatScene = 4;
         QuestName = "Dead King's Rise";
         Description = "Defeat the King.";
         GoldReward = 100;

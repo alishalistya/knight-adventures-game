@@ -40,6 +40,7 @@ public class QuestGiver : MonoBehaviour
             Debug.Log("Creating Quest");
             Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
         }
+        GameManager.Instance.QuestNumber = Quest.QuestInWhatScene;
         questUI.LoadQuest(Quest);
     }
 

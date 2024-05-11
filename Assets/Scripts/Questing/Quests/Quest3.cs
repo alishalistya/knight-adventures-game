@@ -5,6 +5,7 @@ public class Quest3 : Quest
 {
     public void Awake()
     {
+        QuestInWhatScene = 3;
         QuestName = "Keroco Conquest";
         Description = "Help the Blue Town!";
         GoldReward = 40;
