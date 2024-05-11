@@ -51,7 +51,7 @@ Here's a few screenshot! The rest will be available at the Screenshot folder.
 | NIM      | Name                    | Features                                                                      | Hours Spent |
 |----------|-------------------------|-------------------------------------------------------------------------------|-------------|
 | 13521045 | Fakhri Muhammad Mahendra | Shopkeeper, Orb Power Up, Save Game, Cheat, Quests, Game Manager            |             |
-| 13521087 | Razzan Daksana Yoni      | Main menu, Pet Movement, Pet Mobs, Pet Players                                                              |             |
+| 13521087 | Razzan Daksana Yoni      | Main menu, Pet Movement, Pet Mobs, Pet Players, Cheat                                                              |             |
 | 13521093 | Akbar Maulana Ridho      | Cheat, All Mobs, Hitbox, Hurtbox, Mobs AI Movement, Mobs Weapon, Game Manager |             |
 | 13521101 | Arsa Izdihar Islam       | Entity, Statistik Game, Weapon, Cheat, Build Android, Multitype Input, Game Manager, Player Movements |             |
 | 13521171 | Alisha Listya            | Cutscenes, Skill Cutscene, Game Over, World Building, UI (Health Bar, Gold), Story, Asset Search                      |             |
